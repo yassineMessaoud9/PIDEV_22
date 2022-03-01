@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherreserHotellController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/ServiceHotel.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/IserviceHotel.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/tourismeEtablissement.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherreserHotell.fxml</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AjouterReservationRestaurantController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/Hotel.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/Iservice.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/ServiceRestaurant.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AjouterHotelController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherHotelsController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AjouterReservationHotelController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherReservationRestaurantController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/ServiceReservationRestaurant.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/ShowhotelController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/ServiceReservationHotel.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/ServicetourismeEtablissment.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/serviceparent.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/servicefille.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/projet_pi/mainGui.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AjouterHotelsController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AjouterRestaurantController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/projet_pi/Projet_pi.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherRestauController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/ReservationHotel.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/MenuController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherReservationRestaurant.fxml</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/menu.fxml</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/ReservationRestaurant.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/IserviceRestau.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherReservationHotelController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/parent.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/Restaurant.java</file>
+        </group>
+    </open-files>
+</project-private>

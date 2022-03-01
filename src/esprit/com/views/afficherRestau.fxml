@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="780.0" prefWidth="1202.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AfficherRestauController">
+   <children>
+      <TableView fx:id="tablerestau" layoutX="27.0" layoutY="25.0" onMouseClicked="#onTableItemSelect" prefHeight="419.0" prefWidth="859.0">
+        <columns>
+          <TableColumn fx:id="idnomrestau" prefWidth="180.0" style="-fx-background-color: #F0F8FF;" text="nomrestaurant" />
+          <TableColumn fx:id="idtyperestau" prefWidth="137.0" style="-fx-background-color: #F0F8FF;" text="typeRestaurant" />
+            <TableColumn fx:id="idnombretable" minWidth="0.0" prefWidth="136.0" style="-fx-background-color: #F0F8FF;" text="nombreTable" />
+            <TableColumn fx:id="idlocalisation" prefWidth="133.0" style="-fx-background-color: #F0F8FF;" text="localisation" />
+            <TableColumn fx:id="idtelephone" prefWidth="128.0" style="-fx-background-color: #F0F8FF;" text="telephone" />
+            <TableColumn fx:id="idphoto" prefWidth="142.0" style="-fx-background-color: #F0F8FF;" text="photo" />
+        </columns>
+      </TableView>
+      <TextField fx:id="nomrestau" layoutX="952.0" layoutY="56.0" style="-fx-background-color: #E0FFFF;" />
+      <TextField fx:id="nbrtable" layoutX="961.0" layoutY="213.0" style="-fx-background-color: #E0FFFF;" />
+      <TextField fx:id="localisation" layoutX="962.0" layoutY="287.0" style="-fx-background-color: #E0FFFF;" />
+      <TextField fx:id="telephone" layoutX="962.0" layoutY="366.0" style="-fx-background-color: #E0FFFF;" />
+      <Button layoutX="941.0" layoutY="505.0" mnemonicParsing="false" onAction="#onUpdateRestau" prefHeight="47.0" prefWidth="180.0" style="-fx-background-color: #48D1CC;" text="modifier">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="photo" layoutX="961.0" layoutY="444.0" style="-fx-background-color: #E0FFFF;" />
+      <ComboBox fx:id="typerestau" layoutX="962.0" layoutY="138.0" prefHeight="31.0" prefWidth="180.0" style="-fx-background-color: #E0FFFF;" />
+      <Button layoutX="383.0" layoutY="505.0" mnemonicParsing="false" onAction="#deletehotel" prefHeight="59.0" prefWidth="256.0" style="-fx-background-color: #48D1CC;" text="supprimer">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="911.0" layoutY="636.0" mnemonicParsing="false" onAction="#getview" prefHeight="77.0" prefWidth="233.0" style="-fx-background-color: #48D1CC;" text="ajouter Restaurant">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView fill="#bc2525" glyphName="PENCIL" layoutX="1079.0" layoutY="541.0" size="40" />
+      <FontAwesomeIconView fill="#bc2525" glyphName="PENCIL" layoutX="1110.0" layoutY="696.0" size="40" wrappingWidth="57.28571319580078" />
+      <Button layoutX="67.0" layoutY="635.0" mnemonicParsing="false" onAction="#resetmenu" prefHeight="47.0" prefWidth="180.0" style="-fx-background-color: #40E0D0;" text="reset menu">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView fill="#900d0d" glyphName="SCISSORS" layoutX="579.0" layoutY="545.0" size="30" text="" />
+   </children>
+</AnchorPane>

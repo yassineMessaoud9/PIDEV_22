@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="649.0" prefWidth="1072.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AfficherreserHotellController">
+   <children>
+      <TableView fx:id="reservationhotel" layoutX="108.0" layoutY="48.0" prefHeight="533.0" prefWidth="911.0">
+         <columns>
+            <TableColumn fx:id="typechambre" prefWidth="111.0" text="typeChambre" />
+            <TableColumn fx:id="nbrnuit" prefWidth="139.0" text="nbrchambre" />
+            <TableColumn fx:id="dateReservation" prefWidth="125.0" text="dateReservation" />
+            <TableColumn fx:id="nbrpersonne" prefWidth="106.0" text="nbrPersonne" />
+            <TableColumn fx:id="datealler" prefWidth="113.0" text="datealler" />
+            <TableColumn fx:id="dateretour" prefWidth="97.0" text="dateretour" />
+            <TableColumn fx:id="idu" prefWidth="111.0" text="idu" />
+            <TableColumn fx:id="idtourisme" prefWidth="111.0" text="idtourisme" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

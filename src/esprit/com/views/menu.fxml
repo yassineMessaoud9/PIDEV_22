@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="529.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.MenuController">
+   <children>
+      <Button layoutX="5.0" layoutY="146.0" mnemonicParsing="false" onAction="#getviewHOTEL" onMouseClicked="#getview" prefHeight="76.0" prefWidth="308.0" style="-fx-background-color: #AFEEEE;" text="gestion des hotels">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font></Button>
+      <Button layoutX="10.0" layoutY="294.0" mnemonicParsing="false" onAction="#getviews2" prefHeight="86.0" prefWidth="298.0" style="-fx-background-color: #AFEEEE;" text="gestion des restaurants">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font></Button>
+      <Label layoutX="151.0" layoutY="84.0" prefHeight="21.0" prefWidth="384.0" text="Menu  gestion Hotels et Restaurants">
+         <font>
+            <Font name="Broadway" size="18.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="306.0" layoutY="84.0" prefHeight="64.0" prefWidth="200.0" />
+    <Button layoutX="340.0" layoutY="145.0" mnemonicParsing="false" onAction="#getview3" prefHeight="76.0" prefWidth="298.0" style="-fx-background-color: #AFEEEE;" text="reservation Hotels">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="340.0" layoutY="293.0" mnemonicParsing="false" onAction="#getview4" prefHeight="86.0" prefWidth="298.0" style="-fx-background-color: #AFEEEE;" text="reservation restaurants">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView glyphName="HOTEL" />
+      <FontAwesomeIconView fill="#2372d9" glyphName="HOTEL" layoutX="37.0" layoutY="197.0" size="40" wrappingWidth="43.7142858505249" />
+      <FontAwesomeIconView fill="#2372d9" glyphName="COFFEE" layoutX="347.0" layoutY="349.0" size="40" wrappingWidth="31.714285850524902" />
+      <FontAwesomeIconView fill="#2372d9" glyphName="APPLE" layoutX="21.0" layoutY="350.0" size="40" wrappingWidth="31.714285850524902" />
+      <FontAwesomeIconView fill="#2372d9" glyphName="BANK" layoutX="363.0" layoutY="197.0" size="40" wrappingWidth="43.7142858505249" />
+      <Button layoutX="5.0" layoutY="411.0" mnemonicParsing="false" onAction="#GETVIEWAFFICHAGE" prefHeight="86.0" prefWidth="308.0" style="-fx-background-color: #AFEEEE;" styleClass="getviewaffichage" text="AFFICHAGE DES RESERVATIONS HOTELS">
+         <font>
+            <Font name="Bodoni MT Black" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="341.0" layoutY="411.0" mnemonicParsing="false" onAction="#GETVIEWAFFICHAGEHOTEL" prefHeight="76.0" prefWidth="308.0" style="-fx-background-color: #AFEEEE;" text="AFFICHAGE DES RESERVATION RESTAURANTS">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

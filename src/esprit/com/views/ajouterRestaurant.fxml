@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjouterRestaurantController">
+   <children>
+      <Label layoutX="105.0" layoutY="56.0" text="nomRestau">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font></Label>
+      <Label layoutX="105.0" layoutY="110.0" text="TypeRestau">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font></Label>
+      <Label layoutX="105.0" layoutY="169.0" text="nombre Table ">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font></Label>
+      <Label layoutX="105.0" layoutY="223.0" text="localisation">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font></Label>
+      <Label layoutX="105.0" layoutY="279.0" text="telephone">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font></Label>
+      <Label layoutX="126.0" layoutY="339.0" text="photo">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font></Label>
+      <TextField fx:id="idnomrestau" layoutX="227.0" layoutY="51.0" style="-fx-background-color: #FFF5EE;" />
+      <ComboBox fx:id="idtyperestau" layoutX="237.0" layoutY="105.0" prefHeight="31.0" prefWidth="178.0" style="-fx-background-color: #FFF5EE;" />
+      <TextField fx:id="idnbrtable" layoutX="227.0" layoutY="163.0" style="-fx-background-color: #FFF5EE;" />
+      <TextField fx:id="idlocalisation" layoutX="218.0" layoutY="218.0" style="-fx-background-color: #FFF5EE;" />
+      <TextField fx:id="idtelephone" layoutX="218.0" layoutY="274.0" style="-fx-background-color: #FFF5EE;" />
+      <TextField fx:id="idphoto" layoutX="218.0" layoutY="334.0" style="-fx-background-color: #FFF5EE;" />
+      <Button layoutX="593.0" layoutY="260.0" mnemonicParsing="false" onAction="#ajouterRestau" style="-fx-background-color: #40E0D0;" text="envoyer">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="564.0" layoutY="164.0" mnemonicParsing="false" onAction="#resetmenu2" style="-fx-background-color: #40E0D0;" text="retour menu">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
