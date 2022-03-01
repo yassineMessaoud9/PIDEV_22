@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="611.0" prefWidth="892.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.SinscrireController">
+   <children>
+      <ImageView fitHeight="331.0" fitWidth="288.0" layoutX="302.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imges/logo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="nom" layoutX="48.0" layoutY="278.0" prefHeight="38.0" prefWidth="219.0" promptText="nom" />
+      <TextField fx:id="prenom" layoutX="48.0" layoutY="327.0" prefHeight="38.0" prefWidth="219.0" promptText="prenom" />
+      <TextField fx:id="adresse" layoutX="524.0" layoutY="278.0" prefHeight="38.0" prefWidth="219.0" promptText="adresse" />
+      <TextField fx:id="pays" layoutX="48.0" layoutY="428.0" prefHeight="38.0" prefWidth="219.0" promptText="pays" />
+      <TextField fx:id="email" layoutX="524.0" layoutY="327.0" prefHeight="38.0" prefWidth="219.0" promptText="email" />
+      <TextField fx:id="photo" layoutX="531.0" layoutY="428.0" prefHeight="38.0" prefWidth="219.0" promptText="photo" />
+      <TextField fx:id="role" layoutX="524.0" layoutY="378.0" prefHeight="38.0" prefWidth="219.0" promptText="Role" />
+      <Button fx:id="submit" layoutX="379.0" layoutY="533.0" mnemonicParsing="false" onAction="#sisncrire" prefHeight="53.0" prefWidth="134.0" style="-fx-background-color: green;" text="S'inscrire" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font></Button>
+      <Separator layoutX="438.0" layoutY="242.0" orientation="VERTICAL" prefHeight="271.0" prefWidth="5.0" />
+      <Text layoutX="271.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S'inscrire au TRIP TO DO">
+         <font>
+            <Font name="Arial Bold Italic" size="28.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="motpasse" layoutX="48.0" layoutY="378.0" prefHeight="38.0" prefWidth="219.0" promptText="motpasse" />
+   </children>
+</AnchorPane>

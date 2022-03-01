@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="807.0" prefWidth="1171.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjouterCommandeController">
+   <children>
+      <Text layoutX="430.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passer Une Commande">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="253.0" fitWidth="376.0" layoutX="446.0" layoutY="-30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imges/logo.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tablePlat" layoutX="39.0" layoutY="282.0" onMouseClicked="#onTableItemsSelect" prefHeight="361.0" prefWidth="380.0" style="-fx-background-color: white;">
+        <columns>
+          <TableColumn fx:id="nomplat" prefWidth="105.0" text="Nom Plat" />
+          <TableColumn fx:id="prixPlat" prefWidth="116.0" text="Prix Plat" />
+            <TableColumn fx:id="descriptionPlat" prefWidth="169.0" text="Description" />
+        </columns>
+      </TableView>
+      <TextField fx:id="latitude" layoutX="513.0" layoutY="282.0" prefHeight="41.0" prefWidth="349.0" promptText="latitude" />
+      <TextField fx:id="adress" layoutX="513.0" layoutY="517.0" prefHeight="41.0" prefWidth="349.0" promptText="Adresse" />
+      <TextField fx:id="longitude" layoutX="513.0" layoutY="404.0" prefHeight="41.0" prefWidth="349.0" promptText="longitude" />
+      <Text fill="#e81111" layoutX="39.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectionner des plats">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#403333" layoutX="467.0" layoutY="658.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix :" wrappingWidth="92.1953125">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text fx:id="Prix" fill="#860707" layoutX="534.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="278.1875">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Text>
+      <Button fx:id="commander" layoutX="935.0" layoutY="697.0" mnemonicParsing="false" onAction="#commander" prefHeight="69.0" prefWidth="179.0" style="-fx-background-color: green;" text="Commander" textFill="#fcfcfc">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Button>
+      <Text fx:id="idUserr" layoutX="73.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="89.9999999627471" />
+      <Text layoutX="24.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salut" />
+   </children>
+</AnchorPane>

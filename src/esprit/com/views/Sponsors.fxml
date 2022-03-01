@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="723.0" prefWidth="1009.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.SponsorsController">
+   <children>
+      <Line endX="951.0" endY="-1.52587890625E-5" layoutX="115.0" layoutY="95.0" startX="-116.99996948242188" startY="-3.0517578125E-5" />
+      <ImageView fitHeight="149.0" fitWidth="153.0" layoutX="-2.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: 50;">
+         <image>
+            <Image url="@imges/logo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Logout" layoutX="1010.0" layoutY="31.0" minWidth="38.0" mnemonicParsing="false" onAction="#Logout" prefHeight="32.0" prefWidth="38.0" style="-fx-background-color: white;">
+         <graphic>
+            <FontAwesomeIconView glyphName="SIGN_OUT" size="40" wrappingWidth="34.911458015441895" />
+         </graphic>
+      </Button>
+      <Button contentDisplay="TOP" layoutX="914.0" layoutY="15.0" mnemonicParsing="false" onAction="#Sponsors" prefHeight="43.0" prefWidth="82.0" style="-fx-background-color: white;" text="Sponsor">
+         <graphic>
+            <FontAwesomeIconView glyphName="DOLLAR" size="40" />
+         </graphic>
+      </Button>
+      <TableView fx:id="TableSponsor" layoutX="14.0" layoutY="169.0" onMouseClicked="#onTableItemSelect" prefHeight="479.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="ns" prefWidth="166.00003051757812" text="Nom Sponsors" />
+          <TableColumn fx:id="pd" prefWidth="137.99998474121094" text="Prix Donations" />
+            <TableColumn fx:id="dd" prefWidth="138.0" text="Date Début" />
+            <TableColumn fx:id="df" minWidth="0.0" prefWidth="156.99993896484375" text="Date Fin" />
+        </columns>
+      </TableView>
+      <Button fx:id="Delete" layoutX="105.0" layoutY="662.0" mnemonicParsing="false" onAction="#Delete" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 16;">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="30" />
+         </graphic>
+      </Button>
+      <Button fx:id="EditSponsors" layoutX="14.0" layoutY="664.0" mnemonicParsing="false" onAction="#EditSponsors" prefHeight="36.0" prefWidth="74.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-size: 16;">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="PENCIL_SQUARE_ALT" size="30" />
+         </graphic>
+      </Button>
+      <TextField fx:id="Recherche" layoutX="14.0" layoutY="133.0" onAction="#Recherche" prefHeight="25.0" prefWidth="277.0" promptText="Recherche" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="479.0" layoutX="647.0" layoutY="169.0" stroke="BLACK" strokeType="INSIDE" width="363.0" />
+      <Button fx:id="ajtsp" layoutX="295.0" layoutY="108.0" mnemonicParsing="false" onAction="#AjoutSposors" prefHeight="61.0" prefWidth="101.0" style="-fx-background-color: white;" textAlignment="CENTER" />
+      <FontAwesomeIconView fill="#1e0aa4" glyphName="PLUS" layoutX="318.0" layoutY="158.0" size="40" />
+      <Text fill="#f20f0f" layoutX="730.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier Sponsor" wrappingWidth="176.13671875">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="msp" layoutX="679.0" layoutY="277.0" prefHeight="41.0" prefWidth="300.0" promptText="Nom Sponsors" />
+      <TextField fx:id="mpd" layoutX="679.0" layoutY="362.0" prefHeight="41.0" prefWidth="300.0" promptText="Prix Donations" />
+      <DatePicker fx:id="mdd" layoutX="679.0" layoutY="441.0" prefHeight="41.0" prefWidth="300.0" promptText="Date début" />
+      <DatePicker fx:id="mdf" layoutX="678.0" layoutY="522.0" prefHeight="41.0" prefWidth="300.0" promptText="Date Fin" />
+   </children>
+</AnchorPane>
