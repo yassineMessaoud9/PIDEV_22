@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="555.0" prefWidth="951.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ReclamationController">
+   <children>
+      <TextField fx:id="prixTicket" layoutX="159.0" layoutY="99.0" promptText="titre" />
+      <TableView fx:id="tableT" layoutX="438.0" layoutY="33.0" onMouseClicked="#onTableItemSelect" prefHeight="291.0" prefWidth="493.0">
+         <columns>
+            <TableColumn fx:id="col_titre" prefWidth="75.0" text="titre" />
+            <TableColumn fx:id="col_Date" prefWidth="70.0" text="type" />
+            <TableColumn fx:id="col_Date1" prefWidth="150.0" text="descirption" />
+            <TableColumn fx:id="col_Date11" prefWidth="100.0" text="Date" />
+            <TableColumn fx:id="col_Date111" prefWidth="100.0" text="Etat" />
+         </columns>
+      </TableView>
+      <Button fx:id="rebtn" layoutX="504.0" layoutY="448.0" mnemonicParsing="false" onAction="#refreshi" prefHeight="31.0" prefWidth="89.0" text="Refresh" />
+      <Button fx:id="btADD" layoutX="152.0" layoutY="469.0" mnemonicParsing="false" onAction="#addRec" prefHeight="27.0" prefWidth="149.0" text="Ajouter" />
+      <Button fx:id="btndelRe" layoutX="616.0" layoutY="448.0" mnemonicParsing="false" onAction="#deleteRe" prefHeight="25.0" prefWidth="69.0" text="Delete" />
+      <Label layoutX="43.0" layoutY="103.0" prefHeight="17.0" prefWidth="89.0" text="TitreReclamation" textFill="#1140da" />
+      <Button fx:id="modifyb" layoutX="740.0" layoutY="448.0" mnemonicParsing="false" onAction="#modifyRe" prefHeight="31.0" prefWidth="96.0" text="Modifier" />
+      <Label layoutX="504.0" layoutY="349.0" prefHeight="27.0" prefWidth="69.0" text="Search" textFill="#1a65f2">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfSearch" layoutX="616.0" layoutY="343.0" prefHeight="39.0" prefWidth="275.0" />
+      <Label layoutX="50.0" layoutY="27.0" prefHeight="50.0" prefWidth="183.0" text="Reclamation" textFill="#0088ff">
+         <font>
+            <Font name="Haettenschweiler" size="32.0" />
+         </font>
+      </Label>
+      <TextField fx:id="descRe" alignment="TOP_LEFT" layoutX="152.0" layoutY="317.0" prefHeight="115.0" prefWidth="257.0" promptText="please type you reasons" />
+      <Label layoutX="43.0" layoutY="317.0" prefHeight="17.0" prefWidth="89.0" text="Description" textFill="#1140da" />
+      <Label layoutX="43.0" layoutY="162.0" prefHeight="17.0" prefWidth="107.0" text="TypeReclamation" textFill="#1140da" />
+      <ComboBox fx:id="TypeRe" layoutX="159.0" layoutY="158.0" prefHeight="25.0" prefWidth="183.0" promptText="please Select the type" />
+      <Label fx:id="getType" layoutX="34.0" layoutY="465.0" prefHeight="17.0" prefWidth="165.0" />
+      <DatePicker fx:id="dateT" layoutX="150.0" layoutY="247.0" />
+      <Label layoutX="43.0" layoutY="252.0" prefHeight="17.0" prefWidth="89.0" text="Date" textFill="#1140da" />
+   </children>
+</AnchorPane>

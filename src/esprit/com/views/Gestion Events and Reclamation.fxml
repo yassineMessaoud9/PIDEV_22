@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="esprit.com.views.GestionEventsAndReclamationController">
+   <children>
+      <Button fx:id="EVe" layoutX="110.0" layoutY="29.0" mnemonicParsing="false" onAction="#gotoEve" prefHeight="67.0" prefWidth="340.0" style="-fx-background-color: #00ccff;" text="Gestion Evenement" textFill="#fcfcfc">
+         <font>
+            <Font name="Elephant" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="tick" layoutX="110.0" layoutY="125.0" mnemonicParsing="false" onAction="#gottoTick" prefHeight="67.0" prefWidth="340.0" style="-fx-background-color: #00ccff;" text="Gestion Ticket" textFill="WHITE">
+         <font>
+            <Font name="Elephant" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="GeRe" layoutX="110.0" layoutY="222.0" mnemonicParsing="false" onAction="#goToRe" prefHeight="67.0" prefWidth="340.0" style="-fx-background-color: #00ccff;" text="Gestion Reclamation" textFill="WHITE">
+         <font>
+            <Font name="Elephant" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="AvisG" layoutX="110.0" layoutY="319.0" mnemonicParsing="false" onAction="#gotoAvis" prefHeight="67.0" prefWidth="340.0" style="-fx-background-color: #00ccff;" text="Gestion Avis" textFill="WHITE">
+         <font>
+            <Font name="Elephant" size="25.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="67.0" fitWidth="98.0" layoutX="462.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../src/58-588807_animaciones-social-events-icon-png-transparent-png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="67.0" fitWidth="88.0" layoutX="474.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../src/27-278343_giving-tickets-icon-ticket-teatro-png-transparent-png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="54.0" fitWidth="98.0" layoutX="472.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../src/100-1009875_rating-star-png-hd-toiles-avis.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="76.0" fitWidth="98.0" layoutX="469.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../src/request-icon-vector-filled-flat-sign-solid-pictogram-isolated-white-symbol-logo-illustration-request-vector-icon-sign-symbol-135537639.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
