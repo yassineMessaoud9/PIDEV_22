@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="850.0" prefWidth="1077.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AfficheAgenceController">
+   <children>
+      <Text fill="#99afda" layoutX="96.0" layoutY="139.0" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="40.0" text="Liste des agence de location de voitures">
+          <font>
+            <Font name="Arial Rounded MT Bold" size="44.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tableauaffiche" layoutX="138.0" layoutY="241.0" onMouseClicked="#onTableItemSelect" prefHeight="381.0" prefWidth="773.0" style="-fx-background-radius: 0;">
+        <columns>
+          <TableColumn fx:id="idNom" prefWidth="195.0" text="Nom" />
+          <TableColumn fx:id="idContact" minWidth="0.0" prefWidth="189.0" text="Contact" />
+            <TableColumn fx:id="idAdresse" prefWidth="207.0" text="Adresse" />
+            <TableColumn fx:id="idLogo" prefWidth="178.0" text="logo" />
+        </columns>
+      </TableView>
+      
+      <Button layoutX="321.0" layoutY="730.0" mnemonicParsing="false" onAction="#delete" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: #dd5050; -fx-background-size: 30; -fx-font-size: 18; -fx-text-fill: #ffffff; -fx-alignment: RIGHT; -fx-font-family: System;" text="Supprimer" />
+      <Button layoutX="575.0" layoutY="730.0" mnemonicParsing="false" onAction="#onUpdateAgence" prefHeight="44.0" prefWidth="127.0" style="-fx-background-color: #717ccc; -fx-font-size: 18; -fx-alignment: RIGHT; -fx-text-fill: #ffffff; -fx-font-family: system;" text="Modifier" />
+      <TextField fx:id="mIdNom" layoutX="212.0" layoutY="675.0" />
+      <TextField fx:id="mIdContact" layoutX="370.0" layoutY="675.0" />
+      <TextField fx:id="mIdAdresse" layoutX="529.0" layoutY="675.0" />
+      <TextField fx:id="mIdLogo" layoutX="685.0" layoutY="675.0" />
+      <FontAwesomeIconView fill="#65799e" glyphName="PLUS" layoutX="905.0" layoutY="236.0" onMouseClicked="#getAddView" size="40" />
+      <RadioButton fx:id="idTriNom" layoutX="170.0" layoutY="162.0" mnemonicParsing="false" onAction="#trierNom" text="Trier avec Nom" />
+      <TextField fx:id="tfsearch" layoutX="814.0" layoutY="157.0" prefHeight="26.0" prefWidth="212.0" promptText=" agence" />
+      <FontAwesomeIconView fill="#484886" glyphName="SEARCH" layoutX="787.0" layoutY="182.0" size="22.0" wrappingWidth="19.6328125" />
+      <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="427.0" layoutY="766.0" size="32.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" layoutX="667.0" layoutY="765.0" size="32" text="" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#717ccc" height="68.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1077.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="34.0" layoutY="46.0" onMouseClicked="#back" size="40" />
+   </children>
+</AnchorPane>
