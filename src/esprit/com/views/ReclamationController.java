@@ -137,7 +137,7 @@ public class ReclamationController implements Initializable {
                     ));
     
      
-        JOptionPane.showMessageDialog(null, "Evenement ajoutée");
+        JOptionPane.showMessageDialog(null, "Reclamation  ajoutée");
         
     }
 

@@ -55,7 +55,7 @@ public class TripToDo {
         //tri
         //sr.TRIPrix();
         //Avis
-        //sa.ajouter(new Avis(1,4,"yeser basaaa",5));
+        //sa.ajouter(new Avis(4,"yezzmortyy"));
        // System.out.println(sa.afficher("admin"));
         //sa.modifier(new Avis(1,10,"very nice app",5));
         //sa.supprimer(new Avis(1));

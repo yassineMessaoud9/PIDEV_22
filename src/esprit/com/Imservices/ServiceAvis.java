@@ -27,11 +27,11 @@ public class ServiceAvis implements IserviceEveReT <Avis>{
      
         
         try {
-            String req = "INSERT INTO Avis (rate, summary, idu) VALUES (?,?,?)";
+            String req = "INSERT INTO Avis (rate, NomAvis) VALUES (?,?)";
             PreparedStatement pst = cnx.prepareStatement(req);
             pst.setInt(1, a.getRate());
-            pst.setString(2, a.getSummary());
-            pst.setInt(3, a.getIdu());
+            pst.setString(2, a.getName());
+       
             pst.executeUpdate();
             System.out.println("Avis ajoutée !");
             
@@ -43,7 +43,7 @@ public class ServiceAvis implements IserviceEveReT <Avis>{
 
    
     public void supprimer(Avis a ) {
-       try {
+       /*try {
             String req = "DELETE FROM Avis WHERE idAvis=?";
             PreparedStatement pst = cnx.prepareStatement(req);
             pst.setInt(1, a.getId());
@@ -51,12 +51,12 @@ public class ServiceAvis implements IserviceEveReT <Avis>{
             System.out.println("Avis suprimée !");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
+        }*/
     }
 
   
     public void modifier(Avis a) {
-        try{
+       /* try{
             String req = "UPDATE Avis  SET  rate=?, summary=?, idu=?  WHERE idAvis=?";
             PreparedStatement pst = cnx.prepareStatement(req);
             pst.setInt(4, a.getId());
@@ -67,7 +67,7 @@ public class ServiceAvis implements IserviceEveReT <Avis>{
             System.out.println("Avis modifiée !");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
+        }*/
     }
 
 
@@ -80,7 +80,7 @@ public class ServiceAvis implements IserviceEveReT <Avis>{
             PreparedStatement pst = cnx.prepareStatement(req);
             ResultSet rs = pst.executeQuery();
             while(rs.next()) {
-                list.add(new Avis(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getInt(4)));
+                list.add(new Avis(rs.getInt(1),rs.getString(2)));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -88,7 +88,7 @@ public class ServiceAvis implements IserviceEveReT <Avis>{
         
         return list;
     }
-     public List<Avis> afficher(String role) {
+     /*public List<Avis> afficher(String role) {
         
         List<Avis> list = new ArrayList<>();
         
@@ -105,7 +105,7 @@ public class ServiceAvis implements IserviceEveReT <Avis>{
         }
         
         return list;
-    }
+    }*/
     
     
     

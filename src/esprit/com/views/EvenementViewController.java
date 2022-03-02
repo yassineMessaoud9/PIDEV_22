@@ -71,8 +71,13 @@ public class EvenementViewController implements Initializable {
     private void ajouterE(ActionEvent event) throws IOException {
         ServiceEvenement se = new ServiceEvenement();
        
-  
-        se.ajouter( 
+        if(title.getText().equals("")|| pays.getText().equals(""))
+        {
+             JOptionPane.showMessageDialog(null, "please enter required fileds");
+        }
+        else 
+        {
+               se.ajouter( 
                 new Evenement(
                 title.getText(),
                 pays.getText(),
@@ -87,6 +92,7 @@ public class EvenementViewController implements Initializable {
     
      
         JOptionPane.showMessageDialog(null, "Evenement ajoutée");
+        }
         
         //FXMLLoader loader = new FXMLLoader(getClass().getResource("EvenementView.fxml"));
         //Parent root=loader.load();

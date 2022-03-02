@@ -12,14 +12,20 @@ package esprit.com.entity;
 public class Avis {
     private int id ;
     private int rate;
-    private String summary;
-    private int idu;
+    private String name;
 
-    public Avis(int id, int rate, String summary, int idu) {
+
+    public Avis(int id, int rate, String name) {
         this.id = id;
         this.rate = rate;
-        this.summary = summary;
-        this.idu = idu;
+        this.name = name;
+        
+    }
+
+    public Avis( String name,int rate) {
+      
+        this.name = name;
+          this.rate = rate;
     }
 
  
@@ -32,13 +38,12 @@ public class Avis {
         this.id = id;
     }
 
-
-    public Avis(int rate, String summary, int idu) {
-        this.rate = rate;
-        this.summary = summary;
-        this.idu = idu;
+    public String getName() {
+        return name;
     }
-    
+
+
+
 
     public int getId() {
         return id;
@@ -48,13 +53,11 @@ public class Avis {
         return rate;
     }
 
-    public String getSummary() {
-        return summary;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getIdu() {
-        return idu;
-    }
+ 
 
     public void setId(int id) {
         this.id = id;
@@ -64,19 +67,12 @@ public class Avis {
         this.rate = rate;
     }
 
-    public void setSummary(String summary) {
-        this.summary = summary;
-    }
-
-    public void setIdu(int idu) {
-        this.idu = idu;
-    }
-
     @Override
     public String toString() {
-        return "Avis{" + "id=" + id + ", rate=" + rate + ", summary=" + summary + ", idu=" + idu + '}';
+        return "Avis{" + "id=" + id + ", rate=" + rate + ", name=" + name + '}';
     }
-    
+
+
     
     
  

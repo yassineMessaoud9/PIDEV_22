@@ -3,23 +3,31 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/Reclamationback.fxml</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/Avis.fxml</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/entity/TypeReclamation.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/ShowController.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/GestionEventsAndReclamationController.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/triptodo/TripToDo.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/src/27-278343_giving-tickets-icon-ticket-teatro-png-transparent-png.png</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/triptodo/tesfxml.java</file>
-            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/entity/Evenement.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/Imservices/ServiceReclamation.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/EvenementViewController.java</file>
-            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/Reclamation.fxml</file>
-            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/TicketFController.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/ModEventController.java</file>
-            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/ReclamationController.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/src/100-1009875_rating-star-png-hd-toiles-avis.png</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/entity/Reclamation.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/Imservices/ServiceEvenement.java</file>
-            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/entity/Ticket.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/Imservices/ServiceTicket.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/mailertest/util/JavaMail.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/entity/Evenement.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/AvisController.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/MailConfig.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/TicketFController.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/src/unnamed.png</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/ReclamationbackController.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/entity/Avis.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/Imservices/ServiceAvis.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/ReclamationController.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/entity/Ticket.java</file>
         </group>
     </open-files>
 </project-private>
