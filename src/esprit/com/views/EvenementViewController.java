@@ -21,6 +21,12 @@ import javax.swing.JOptionPane;
 import java.sql.Date;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import esprit.com.entity.Upload;
+import java.io.File;
+import javafx.scene.control.Label;
+import javafx.scene.text.Text;
+import org.controlsfx.control.Notifications;
 
 public class EvenementViewController implements Initializable {
 
@@ -57,6 +63,14 @@ public class EvenementViewController implements Initializable {
     @FXML
     private TextField desc;
     ZoneId defaultZoneId = ZoneId.systemDefault();
+    @FXML
+    private Button idupload;
+    
+    private File file;
+    String pic;
+    Text path;
+    @FXML
+    private Label path1;
     
     
   
@@ -70,14 +84,17 @@ public class EvenementViewController implements Initializable {
     @FXML
     private void ajouterE(ActionEvent event) throws IOException {
         ServiceEvenement se = new ServiceEvenement();
-       
+         Image ig = new Image("/esprit/com/src/wrong1.png");
         if(title.getText().equals("")|| pays.getText().equals(""))
         {
-             JOptionPane.showMessageDialog(null, "please enter required fileds");
+                Notifications notifications=Notifications.create();
+                notifications.graphic(new ImageView(ig));
+                notifications.text("Hello please fill the required fields");
+                notifications.show();
         }
         else 
         {
-               se.ajouter( 
+                se.ajouter( 
                 new Evenement(
                 title.getText(),
                 pays.getText(),
@@ -86,21 +103,33 @@ public class EvenementViewController implements Initializable {
                 Date.valueOf(datef.getValue()),
                 adr.getText(),
                 type.getSelectionModel().getSelectedItem().toString(),        
-                taswira.getText(),
+                pic,
                 Integer.parseInt(place.getText()),
                 desc.getText()));
     
      
-        JOptionPane.showMessageDialog(null, "Evenement ajoutée");
+                Image ig1 = new Image("/esprit/com/src/right1.png");
+                Notifications notifications=Notifications.create();
+                notifications.graphic(new ImageView(ig1));
+                notifications.text("Reclamation Ajoutée");
+                notifications.title("Success Message");
+                notifications.show();
         }
         
-        //FXMLLoader loader = new FXMLLoader(getClass().getResource("EvenementView.fxml"));
-        //Parent root=loader.load();
-        //tfNom.getScene().setRoot(root);
-        //EvenementViewController apc=loader.getController();
-        //apc.setIdN(tfNom.getText());
-        //apc.setIdp(tfprenom.getText());
-        
+    }
+
+    @FXML
+    private void upload(ActionEvent event) throws IOException {
+          FileChooser fileChooser = new FileChooser();
+            file= fileChooser.showOpenDialog(null);
+             FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (.jpg)", ".JPG");
+            FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (.png)", ".PNG");
+            fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
+
+            path1.setText("File:"+file);
+            //pic=(file.toURI().toString());
+            pic=new Upload().upload(file,"\\UploadFile");
+            System.out.println(pic);
     }
     
     

@@ -29,8 +29,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javax.swing.JOptionPane;
+import mailertest.util.JavaMail;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -124,21 +128,30 @@ public class ReclamationController implements Initializable {
     @FXML
     private void addRec(ActionEvent event) {
         
-  ServiceReclamation se = new ServiceReclamation();
-       
-  String desc  = se.makeFine(descRe.getText());
-        se.ajouter( 
-                new Reclamation(
-                prixTicket.getText(),
-                TypeRe.getSelectionModel().getSelectedItem().toString(),
-                desc,
-                Date.valueOf(dateT.getValue())
-                
-                    ));
-    
-     
-        JOptionPane.showMessageDialog(null, "Reclamation  ajoutée");
         
+        Image ig = new Image("/esprit/com/src/wrong1.png");
+            if(descRe.getText().equals("")|| prixTicket.getText().equals("") || TypeRe.getSelectionModel().getSelectedItem().toString().equals("")||dateT.getValue().equals("")){
+                       Notifications notifications=Notifications.create();
+                       notifications.graphic(new ImageView(ig));
+                       notifications.text("Hello please fill the required fields");
+                       notifications.show();
+                
+            }else{
+                  ServiceReclamation se = new ServiceReclamation();
+                  String desc  = se.makeFine(descRe.getText());
+                        se.ajouter( 
+                        new Reclamation(
+                        prixTicket.getText(),
+                        TypeRe.getSelectionModel().getSelectedItem().toString(),
+                        desc,
+                        Date.valueOf(dateT.getValue()) ));
+                        Image ig1 = new Image("/esprit/com/src/right1.png");
+                        Notifications notifications=Notifications.create();
+                        notifications.graphic(new ImageView(ig1));
+                        notifications.text("Reclamation Ajoutée");
+                        notifications.title("Success Message");
+                        notifications.show();
+            }       
     }
 
     @FXML

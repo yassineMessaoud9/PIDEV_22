@@ -25,6 +25,8 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -33,11 +35,18 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javax.swing.JOptionPane;
 import javafx.scene.input.MouseEvent;
+
+import javafx.util.converter.FloatStringConverter;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -86,12 +95,30 @@ public class TicketFController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-             
+        
+        tableT.setEditable(true);
         ServiceTicket st = new ServiceTicket();
         tickets = new ArrayList<>();
         st.afficher().stream().forEach((p) -> {s.add(p); tickets.add(p);} );
-        col_prix.setCellValueFactory(new PropertyValueFactory<>("prixTicket"));
         col_date.setCellValueFactory(new PropertyValueFactory<>("dateTicket"));
+      // col_date.setCellFactory(TextFieldTableCell.forTableColumn());
+        
+        col_prix.setCellValueFactory(new PropertyValueFactory<Ticket, Float>("prixTicket"));
+        col_prix.setCellFactory(TextFieldTableCell.forTableColumn(new FloatStringConverter()));
+        
+            col_prix.setOnEditCommit(new EventHandler<CellEditEvent<Ticket, Float>>() {
+            @Override
+            public void handle(CellEditEvent<Ticket, Float> event) {
+                Ticket tt = event.getRowValue();
+                tt.setPrixTicket(event.getNewValue());
+               ServiceTicket st = new  ServiceTicket();
+               st.modifier(tt);
+
+            }});
+            
+            //col_date.setOnEditCommit(event -> event.getRowValue().setDateTicket(event.getNewValue()));
+            
+            
         ObservableList<Ticket> data=FXCollections.observableArrayList(s);
         tableT.getItems().setAll(s);
             
@@ -138,12 +165,28 @@ public class TicketFController implements Initializable {
 
     @FXML
     private void ADDticket(ActionEvent event) {
-        ServiceTicket st = new ServiceTicket();
-        st.ajouter( 
-        new Ticket( Float.parseFloat(prixTicket.getText()),
-        Date.valueOf(dateT.getValue())));
-        update();
-        JOptionPane.showMessageDialog(null, "Ticket ajoutée");
+         Image ig = new Image("/esprit/com/src/wrong1.png");
+        if(prixTicket.getText().equals("") || dateT.getValue().equals("")){
+            Notifications notifications=Notifications.create();
+            notifications.graphic(new ImageView(ig));
+            notifications.text("Hello please fill the required fields");
+            notifications.title("Failed Message");
+            notifications.show();
+        }
+        else{
+              Image ig1 = new Image("/esprit/com/src/right1.png");
+
+            ServiceTicket st = new ServiceTicket();
+            st.ajouter(new Ticket( Float.parseFloat(prixTicket.getText()),Date.valueOf(dateT.getValue())));
+            update();
+            Notifications notifications=Notifications.create();
+            notifications.graphic(new ImageView(ig1));
+            notifications.text("Avis ajoutéé");
+            notifications.title("Success Message");
+            notifications.show();
+        }
+       
+        //JOptionPane.showMessageDialog(null, "Ticket ajoutée");
         
         
     }

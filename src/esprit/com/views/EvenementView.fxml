@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="852.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.EvenementViewController">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.EvenementViewController">
    <children>
       <Label layoutX="49.0" layoutY="14.0" prefHeight="54.0" prefWidth="209.0" text="Evenement" textAlignment="CENTER" textFill="#ff0e0e">
          <font>
@@ -85,5 +85,7 @@
             <Image url="@../src/58-588807_animaciones-social-events-icon-png-transparent-png.png" />
          </image>
       </ImageView>
+      <Button fx:id="idupload" layoutX="694.0" layoutY="209.0" mnemonicParsing="false" onAction="#upload" text="Upload" />
+      <Label fx:id="path1" layoutX="749.0" layoutY="209.0" prefHeight="25.0" prefWidth="165.0" />
    </children>
 </AnchorPane>

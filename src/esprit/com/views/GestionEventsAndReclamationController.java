@@ -86,7 +86,7 @@ public class GestionEventsAndReclamationController implements Initializable {
     @FXML
     private void gotoAvis(ActionEvent event) throws IOException {
           
-        Parent root = FXMLLoader.load(getClass().getResource("modEvent.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Avis.fxml"));
         
 
         Scene scene = new Scene(root);
