@@ -44,26 +44,28 @@ public class AvisController implements Initializable {
 
     @FXML
     private void Addrate(ActionEvent event) {
-         //Image ig = new Image("../src/wrong.png");
+         Image ig = new Image("/esprit/com/src/wrong1.png");
         if(idnom.getText().equals("")|| idrate.getRating()==0){
           
             Notifications notifications=Notifications.create();
-            //notifications.graphic(new ImageView(ig));
+            notifications.graphic(new ImageView(ig));
             notifications.text("Hello please fill the required fields");
             notifications.title("Failed Message");
             //notifications.hideAfter (Duration.);
-            notifications.darkStyle();
+           // notifications.darkStyle();
             //notifications.position(Pos.BASELINE CENTER);
             notifications.show();
             
         }
         else{
+             Image ig1 = new Image("/esprit/com/src/right1.png");
             ServiceAvis sa = new ServiceAvis();
             sa.ajouter(new Avis(idnom.getText(),(int)idrate.getRating()));
             Notifications notifications=Notifications.create();
+               notifications.graphic(new ImageView(ig1));
             notifications.text("Avis ajoutéé");
             notifications.title("Success Message");
-            notifications.darkStyle();
+            //notifications.darkStyle();
               notifications.show();
         }
     }
