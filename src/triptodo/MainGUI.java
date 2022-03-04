@@ -28,7 +28,7 @@ public class MainGUI extends Application {
    
 
         //FXMLLoader loader= new FXMLLoader(getClass().getResource("../esprit/com/views/ajoutagencelocation.fxml"));
-                FXMLLoader loader= new FXMLLoader(getClass().getResource("../esprit/com/views/afficheAgence.fxml"));
+                FXMLLoader loader= new FXMLLoader(getClass().getResource("../esprit/com/views/ajoutlocation.fxml"));
 
         Parent root= loader.load();  
         Scene scene = new Scene(root);

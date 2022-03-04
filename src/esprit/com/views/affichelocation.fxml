@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="838.0" prefWidth="1089.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AffichelocationController">
+<AnchorPane id="AnchorPane" prefHeight="854.0" prefWidth="1081.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AffichelocationController">
    <children>
       <TableView fx:id="tableaulocaffiche" layoutX="22.0" layoutY="207.0" prefHeight="425.0" prefWidth="1049.0">
          <columns>
@@ -30,6 +30,7 @@
       <Button layoutX="448.0" layoutY="698.0" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="51.0" prefWidth="197.0" style="-fx-background-color: #ff9457; -fx-background-size: 30; -fx-font-size: 20; -fx-text-fill: #ffffff; -fx-alignment: RIGHT; -fx-font-family: System;" text="Supprimer" />
       <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="590.0" layoutY="736.0" size="35.0" wrappingWidth="34.28572753071785" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8542a4" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1089.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="27.0" layoutY="52.0" size="40" />
+      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="27.0" layoutY="52.0" onMouseClicked="#back" size="40" />
+      <FontAwesomeIconView fill="#f87833" glyphName="PLUS" layoutX="1024.0" layoutY="201.0" onMouseClicked="#getAddView" size="40" />
    </children>
 </AnchorPane>

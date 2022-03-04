@@ -33,25 +33,27 @@ public class TripToDo {
   // Imagencelocation ag= new Imagencelocation();
   
    Imlocation l= new Imlocation();
-   //Imlocation l= new Imlocation();
+   Imvoiture v= new Imvoiture();
     // Imsaison sais= new Imsaison();
     // sais.modifier(new Saison(2,"hi"));
     
      
      
-  List<Location> a=  l. afficherlocation();
-        System.out.println(a);
-//v.ajouter(new Voiture (2222,"kia","http lien",5,8,1));
-//v.supprimervoiture(new Voiture(1111));
-//v.modifiervoiture(new Voiture(1111,"bmw serie 5","lien",5,11,1));
-//System.out.print(ag.afficher());
+ // List<Location> a=  l. afficherlocation();
+        //System.out.println(a);
+//v.ajouter(new Voiture (12387456, "kia", "photo", 5, 5, "50dt", "agence"));
+
+
+//v.modifier(new Voiture(1111,"bmw ","lien",5,11,"10dt",1));
+System.out.print(v.afficherTest());
 
 
 //ag.supprimeragencelocation(new Agencelocation(1));
 //System.out.print(ag.afficheragencelocation());
 
 //l.ajouterlocation(new Location(2,Date.valueOf("2002-02-05"),Date.valueOf("2002-02-05"),Timestamp.valueOf(LocalDateTime.of(2022, 5 , 12, 8, 15, 20, 345000000)),100,1,333333,1)) ;
-//l.supprimerlocation(new Location(1));
+
+//v.supprimer(new Voiture(1111, "MAr", "lien", 5, 11, "10dt", 16));
 
 
 

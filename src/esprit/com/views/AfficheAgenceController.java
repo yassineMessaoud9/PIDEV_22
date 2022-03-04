@@ -157,11 +157,6 @@ public class AfficheAgenceController implements Initializable {
             a=tableauaffiche.getSelectionModel().getSelectedItems().get(0);
 
       ag.supprimer(new Agencelocation(a.getIdAgence()));
-
-        System.out.println(a);
-                System.out.println(agl);
-
-        
       agl.forEach(obsagencelist::remove);
   clearFields();
      

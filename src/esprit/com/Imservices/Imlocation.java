@@ -10,6 +10,7 @@ import esprit.com.entity.Location;
 import esprit.com.entity.Voiture;
 import esprit.com.utils.ConnectionBd;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -117,7 +118,7 @@ public class Imlocation implements gestionLocationVoiture <Location> {
            List<Location> list = new ArrayList<Location>();
         
         try {
-            String req = "SELECT datedebutLocation, datefinLocation,dateLocation,montant,prenom,marqueVoiture,nomSaison FROM locationvoiture as l  , utilisateur as u ,voiture as v, saison as s WHERE l.matricule=v.matricule AND l.idU=u.idU AND l.id_saison=s.idSaison;";
+            String req = "SELECT datedebutLocation, datefinLocation,dateLocation,montant,prenom,marqueVoiture,nomSaison FROM locationvoiture as l  , utilisateur as u ,voitureee as v, saison as s WHERE l.matricule=v.matricule AND l.idU=u.idU AND l.id_saison=s.idSaison;";
             PreparedStatement pst = cnx.prepareStatement(req);
             ResultSet rs = pst.executeQuery();
             while(rs.next()) {
@@ -130,4 +131,7 @@ public class Imlocation implements gestionLocationVoiture <Location> {
         return list;
     }
 
+       
+      
+       
 }

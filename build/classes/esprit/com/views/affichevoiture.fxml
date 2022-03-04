@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="851.0" prefWidth="1078.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AffichevoitureController">
+<AnchorPane id="AnchorPane" prefHeight="851.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AffichevoitureController">
    <children>
       <TableView fx:id="tableauvaffiche" layoutX="86.0" layoutY="213.0" onMouseClicked="#onTableItemSelect" prefHeight="425.0" prefWidth="907.0">
         <columns>
@@ -28,15 +28,18 @@
             <Font name="Arial Rounded MT Bold" size="44.0" />
          </font>
       </Text>
-      <Button layoutX="331.0" layoutY="740.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: #dd5050; -fx-background-size: 30; -fx-font-size: 18; -fx-text-fill: #ffffff; -fx-alignment: RIGHT; -fx-font-family: System;" text="Supprimer" />
+      <Button layoutX="331.0" layoutY="740.0" mnemonicParsing="false" onAction="#delete" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: #dd5050; -fx-background-size: 30; -fx-font-size: 18; -fx-text-fill: #ffffff; -fx-alignment: RIGHT; -fx-font-family: System;" text="Supprimer" />
       <Button layoutX="585.0" layoutY="740.0" mnemonicParsing="false" onAction="#onUpdateVoiture" prefHeight="44.0" prefWidth="127.0" style="-fx-background-color: #717ccc; -fx-font-size: 18; -fx-alignment: RIGHT; -fx-text-fill: #ffffff; -fx-font-family: system;" text="Modifier" />
-      <TextField fx:id="mIdNom" layoutX="222.0" layoutY="685.0" />
-      <TextField fx:id="mIdContact" layoutX="380.0" layoutY="685.0" />
-      <TextField fx:id="mIdAdresse" layoutX="539.0" layoutY="685.0" />
-      <TextField fx:id="mIdLogo" layoutX="695.0" layoutY="685.0" />
+      <TextField fx:id="matricule" layoutX="23.0" layoutY="685.0" />
+      <TextField fx:id="marque" layoutX="204.0" layoutY="685.0" />
+      <TextField fx:id="nbrplaces" layoutX="391.0" layoutY="685.0" />
+      <TextField fx:id="nbrchev" layoutX="577.0" layoutY="685.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="437.0" layoutY="776.0" size="32.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" layoutX="677.0" layoutY="775.0" size="32" text="" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb7878" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1079.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="23.0" layoutY="52.0" onMouseClicked="#back" size="40" />
+      <TextField fx:id="tarifpj" layoutX="764.0" layoutY="685.0" />
+      <TextField fx:id="photo" layoutX="951.0" layoutY="685.0" prefHeight="31.0" prefWidth="108.0" />
+      <FontAwesomeIconView fill="#eb7878" glyphName="PLUS" layoutX="977.0" layoutY="205.0" onMouseClicked="#getAddView" size="40" />
    </children>
 </AnchorPane>

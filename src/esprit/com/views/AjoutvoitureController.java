@@ -34,6 +34,7 @@ import javax.swing.JOptionPane;
  * @author ons
  */
 public class AjoutvoitureController implements Initializable {
+        int x ;
 
     @FXML
     private TextField amatricule;
@@ -47,6 +48,7 @@ public class AjoutvoitureController implements Initializable {
     private TextField achevaux;
     @FXML
     private ComboBox<String> aagence;
+    
     private TextField anomagence;
     @FXML
     private TextField atarif;
@@ -62,7 +64,8 @@ public class AjoutvoitureController implements Initializable {
     @FXML
     private void ajouterVoiture(ActionEvent event) throws IOException {
          Imvoiture v= new Imvoiture();
-     v.ajouter(new Voiture(Integer.parseInt(amatricule.getText()),amarque.getText(),aphoto.getText(),Integer.parseInt(aplaces.getText()),Integer.parseInt(achevaux.getText()),atarif.getText(),Integer.parseInt(anomagence.getText())));
+        System.out.println("agence eeee"+x);
+     v.ajouter(new Voiture(Integer.parseInt(amatricule.getText()),amarque.getText(),aphoto.getText(),Integer.parseInt(aplaces.getText()),Integer.parseInt(achevaux.getText()),Integer.parseInt(atarif.getText()),x));
      JOptionPane.showMessageDialog(null, "Agence ajouter!");
      
        Parent page2 = FXMLLoader.load(getClass().getResource("affichevoiture.fxml"));
@@ -92,9 +95,9 @@ public class AjoutvoitureController implements Initializable {
             ResultSet rs = pst.executeQuery();
             while(rs.next()) {
             aagence.getItems().addAll(rs.getString("nomAgence"));
-            aagence.getItems().addAll(rs.getInt("idAgence"));
-           
-            }
+            x=rs.getInt("idAgence");
+                System.out.println(x);
+                        }
             
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

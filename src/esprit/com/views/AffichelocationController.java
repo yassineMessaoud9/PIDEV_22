@@ -16,11 +16,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -86,7 +91,7 @@ public class AffichelocationController implements Initializable {
             a=tableaulocaffiche.getSelectionModel().getSelectedItems().get(0);
 
       l.supprimer(new Location(a.getIdLocation()));
-
+        System.out.println(a.getIdLocation());
         System.out.println(a);
                 System.out.println(agl);
 
@@ -95,4 +100,24 @@ public class AffichelocationController implements Initializable {
 
      
     }  
+    
+     @FXML
+    private void back(MouseEvent event) throws IOException {
+          Parent page2 = FXMLLoader.load(getClass().getResource("locationvoituremain.fxml"));
+
+                Scene scene2 = new Scene(page2);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(scene2);
+                app_stage.show();
+    }
+
+    @FXML
+    private void getAddView(MouseEvent event) throws IOException {
+          Parent page2 = FXMLLoader.load(getClass().getResource("ajoutlocation.fxml"));
+
+                Scene scene2 = new Scene(page2);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(scene2);
+                app_stage.show();
+    }
 }

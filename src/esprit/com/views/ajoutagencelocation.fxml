@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="851.0" prefWidth="1074.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjoutagencelocationController">
    <children>
@@ -50,5 +51,10 @@
       </Button>
       <FontAwesomeIconView fill="WHITE" glyphName="CHECK" layoutX="620.0" layoutY="710.0" size="35.0" text="" wrappingWidth="22.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="330.0" layoutY="710.0" size="35.0" wrappingWidth="22.0" />
+      <Text fx:id="textError" fill="#eb2828" layoutX="138.0" layoutY="787.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="809.9999937415123">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="38.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

@@ -32,6 +32,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -58,117 +60,134 @@ public class AffichevoitureController implements Initializable {
     private TableColumn<Voiture, Integer> idNbrPlace;
     @FXML
     private TableColumn<Voiture, Integer> idNbrCh;
-   
 
-       private   Voiture voiture ;
-       
-        ObservableList<Voiture> obsvoiturelist=FXCollections.observableArrayList();
-    @FXML
-    private TextField mIdNom;
-    @FXML
-    private TextField mIdContact;
-    @FXML
-    private TextField mIdAdresse;
-    @FXML
-    private TextField mIdLogo;
+    private Voiture voiture;
+
+    ObservableList<Voiture> obsvoiturelist = FXCollections.observableArrayList();
+
     @FXML
     private TableColumn<Voiture, String> idtarif;
- 
+
     @FXML
     private TableColumn<Voiture, String> idNomAgence;
+    @FXML
+    private TextField matricule;
+    @FXML
+    private TextField marque;
+    @FXML
+    private TextField nbrplaces;
+    @FXML
+    private TextField nbrchev;
+    @FXML
+    private TextField tarifpj;
+    @FXML
+    private TextField photo;
 
     /**
      * Initializes the controller class.
      */
-        
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    
 
-            Connection cnx = ConnectionBd.getInstance().getCnx();
-            
+        Connection cnx = ConnectionBd.getInstance().getCnx();
+
+        Imvoiture v = new Imvoiture();
+
+        v.afficherTest().stream().forEach((p) -> {
+            obsvoiturelist.add(p);
+        });
+
+        idMatricule.setCellValueFactory(new PropertyValueFactory<>("matricule"));
+        idMarque.setCellValueFactory(new PropertyValueFactory<>("marqueVoiture"));
+        idPhoto.setCellValueFactory(new PropertyValueFactory<>("photoVoiture"));
+        idNbrPlace.setCellValueFactory(new PropertyValueFactory<>("nbplace"));
+        idNbrCh.setCellValueFactory(new PropertyValueFactory<>("nbrchevaux"));
+        idtarif.setCellValueFactory(new PropertyValueFactory<>("tarif"));
+        idNomAgence.setCellValueFactory(new PropertyValueFactory<>("nomAgence"));
+
+        tableauvaffiche.setItems(obsvoiturelist);
       
-            Imvoiture v= new Imvoiture();
-            
-            v.afficherTest().stream().forEach((p) -> {obsvoiturelist.add(p);});
-              
-            idMatricule.setCellValueFactory(new PropertyValueFactory<>("matricule"));          
-            idMarque.setCellValueFactory(new PropertyValueFactory<>("marqueVoiture"));            
-            idPhoto.setCellValueFactory(new PropertyValueFactory<>("photoVoiture"));           
-            idNbrPlace.setCellValueFactory(new PropertyValueFactory<>("nbplace"));           
-            idNbrCh.setCellValueFactory(new PropertyValueFactory<>("nbrchevaux"));         
-            idtarif.setCellValueFactory(new PropertyValueFactory<>("tarif"));
-            idNomAgence.setCellValueFactory(new PropertyValueFactory<>("nomAgence"));
-             
-                tableauvaffiche.setItems(obsvoiturelist);
-                 System.out.println( v.afficherTest());
-            //  try {
-            //String req= "select nomAgence from voiture JOIN agencelocation USING (idAgence) ";
-            //PreparedStatement pst = cnx.prepareStatement(req);
-            
-            
-           // ResultSet rs = pst.executeQuery();
-          // Map <String,Object> newMap = new HashMap<String,Object>()  ;
-                   
-                   
-           // while(rs.next()) {
-           //  newMap.put("idNomAgence",rs.getString(1));
-                
-           //   System.out.println(newMap);  
-                
-           // }
-               // System.out.println(rs);
-               
-               
-                // }
-                //  } catch (SQLException ex) {
-                //   System.out.println(ex.getMessage());
-                //  }
-                
-                
-                
-                
-                
-                
-        
+
     }
 
     @FXML
     private void onUpdateVoiture(ActionEvent event) {
+        Imvoiture v = new Imvoiture();
+        voiture.setMatricule(Integer.parseInt(matricule.getText()));
+        voiture.setMarqueVoiture(marque.getText());
+        voiture.setPhotoVoiture(photo.getText());
+        voiture.setNbplace(Integer.parseInt(nbrplaces.getText()));
+        voiture.setNbrchevaux(Integer.parseInt(nbrchev.getText()));
+        voiture.setTarif( Integer.parseInt(tarifpj.getText()));
+        System.out.println("Id V "+voiture.getId_voiture());
+       v.modifier(new Voiture(voiture.getId_voiture(),Integer.parseInt(matricule.getText()), marque.getText(), photo.getText(), Integer.parseInt(nbrplaces.getText()), Integer.parseInt(nbrchev.getText()),Integer.parseInt( tarifpj.getText())));
+
+        new Alert(Alert.AlertType.INFORMATION, "done", ButtonType.CLOSE).show();
+        clearFields();
+        obsvoiturelist.set(tableauvaffiche.getSelectionModel().getFocusedIndex(), voiture);
+
     }
 
     @FXML
     private void back(MouseEvent event) throws IOException {
-         Parent page2 = FXMLLoader.load(getClass().getResource("locationvoituremain.fxml"));
+        Parent page2 = FXMLLoader.load(getClass().getResource("locationvoituremain.fxml"));
 
-                Scene scene2 = new Scene(page2);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                app_stage.setScene(scene2);
-                app_stage.show();
+        Scene scene2 = new Scene(page2);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
     }
-    
-    
-    
-    
-    
-      @FXML
-  public void onTableItemSelect(){
-      mIdNom.opacityProperty();
-  voiture = tableauvaffiche.getSelectionModel().getSelectedItem();
-  
- 
-      mIdNom.setText(voiture.getNomAgence());
-     
-  }
-    
+
+    @FXML
+    public void onTableItemSelect() {
+      // matricule.opacityProperty();
+        voiture = tableauvaffiche.getSelectionModel().getSelectedItem();
+
+        matricule.setText(String.valueOf(voiture.getMatricule()));
+        marque.setText(voiture.getMarqueVoiture());
+        nbrplaces.setText(String.valueOf(voiture.getNbplace()));
+        tarifpj.setText(String.valueOf(voiture.getTarif()));
+        nbrchev.setText(String.valueOf(voiture.getNbrchevaux()));
+        photo.setText(voiture.getPhotoVoiture());
+                System.out.println(voiture.getId_voiture());
+
+    }
+
+    @FXML
+
+    private void delete(ActionEvent event) throws IOException, SQLException {
+        Imvoiture imv = new Imvoiture();
+        Voiture v = new Voiture();
+       
+        ObservableList obsvoiturelist, agl;
+        obsvoiturelist = tableauvaffiche.getItems();
+        agl = tableauvaffiche.getSelectionModel().getSelectedItems();
+        v = tableauvaffiche.getSelectionModel().getSelectedItems().get(0);
+       
+        imv.supprimer(new Voiture(v.getMatricule()));
+        agl.forEach(obsvoiturelist::remove);
+        clearFields();
+
+    }
+
+    public void clearFields() {
+        matricule.clear();
+        marque.clear();
+        nbrplaces.clear();
+        tarifpj.clear();
+        nbrchev.clear();
+        photo.clear();
+    }
+
+    @FXML
+    private void getAddView(MouseEvent event) throws IOException {
+
+        Parent page2 = FXMLLoader.load(getClass().getResource("ajoutvoiture.fxml"));
+
+        Scene scene2 = new Scene(page2);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
+    }
+
 }
-       
-       
-       
-    
-
-      
-     
-        
-    
-

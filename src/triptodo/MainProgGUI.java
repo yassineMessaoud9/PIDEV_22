@@ -26,7 +26,7 @@ public class MainProgGUI extends Application {
     public void start(Stage primaryStage) throws IOException {
          FXMLLoader loader= new FXMLLoader(getClass().getResource("../esprit/com/views/locationvoituremain.fxml"));
 
-         //FXMLLoader loader= new FXMLLoader(getClass().getResource("../esprit/com/views/ajoutagencelocation.fxml"));
+        // FXMLLoader loader= new FXMLLoader(getClass().getResource("../esprit/com/views/ajoutvoiture.fxml"));
         Parent root= loader.load();  
         Scene scene = new Scene(root);
         primaryStage.setTitle("Ajouter Agence de Location");

@@ -10,20 +10,49 @@ package esprit.com.entity;
  * @author ons
  */
 public class Voiture {
+    private int id_voiture ;
     private int matricule ;
     private String marqueVoiture;
     private String photoVoiture;
     private int nbplace;
     private int nbrchevaux;
-    private String tarif;
+    private int tarif;
     private int idAgence;
     private String nomAgence;
 
     public Voiture() {
     }
 
+    public Voiture(int matricule) {
+        this.matricule = matricule;
+    }
 
-    public Voiture(int matricule, String marqueVoiture, String photoVoiture, int nbplace, int nbrchevaux, String tarif, String nomAgence) {
+  
+
+    public Voiture(int id_voiture, int matricule, String marqueVoiture, String photoVoiture, int nbplace, int nbrchevaux, int tarif, int idAgence, String nomAgence) {
+        this.id_voiture = id_voiture;
+        this.matricule = matricule;
+        this.marqueVoiture = marqueVoiture;
+        this.photoVoiture = photoVoiture;
+        this.nbplace = nbplace;
+        this.nbrchevaux = nbrchevaux;
+        this.tarif = tarif;
+        this.idAgence = idAgence;
+        this.nomAgence = nomAgence;
+    }
+
+    public Voiture(int id_voiture, int matricule, String marqueVoiture, String photoVoiture, int nbplace, int nbrchevaux, int tarif) {
+        this.id_voiture = id_voiture;
+        this.matricule = matricule;
+        this.marqueVoiture = marqueVoiture;
+        this.photoVoiture = photoVoiture;
+        this.nbplace = nbplace;
+        this.nbrchevaux = nbrchevaux;
+        this.tarif = tarif;
+    }
+
+    public Voiture(int id_voiture, int matricule, String marqueVoiture, String photoVoiture, int nbplace, int nbrchevaux, int tarif, String nomAgence) {
+        this.id_voiture = id_voiture;
         this.matricule = matricule;
         this.marqueVoiture = marqueVoiture;
         this.photoVoiture = photoVoiture;
@@ -32,9 +61,36 @@ public class Voiture {
         this.tarif = tarif;
         this.nomAgence = nomAgence;
     }
-@Override
-    public String toString() {
-        return "Voiture{" + "matricule=" + matricule + ", marqueVoiture=" + marqueVoiture + ", photoVoiture=" + photoVoiture + ", nbplace=" + nbplace + ", nbrchevaux=" + nbrchevaux + ", tarif=" + tarif + ", nomAgence=" + nomAgence + '}';
+    
+
+    public Voiture(int id_voiture, int matricule, String marqueVoiture, String photoVoiture, int nbplace, int nbrchevaux, int tarif, int idAgence) {
+        this.id_voiture = id_voiture;
+        this.matricule = matricule;
+        this.marqueVoiture = marqueVoiture;
+        this.photoVoiture = photoVoiture;
+        this.nbplace = nbplace;
+        this.nbrchevaux = nbrchevaux;
+        this.tarif = tarif;
+        this.idAgence = idAgence;
+    }
+    
+
+    public Voiture(int matricule, String marqueVoiture, String photoVoiture, int nbplace, int nbrchevaux, int tarif, int idAgence) {
+        this.matricule = matricule;
+        this.marqueVoiture = marqueVoiture;
+        this.photoVoiture = photoVoiture;
+        this.nbplace = nbplace;
+        this.nbrchevaux = nbrchevaux;
+        this.tarif = tarif;
+        this.idAgence = idAgence;
+    }
+
+    public int getId_voiture() {
+        return id_voiture;
+    }
+
+    public void setId_voiture(int id_voiture) {
+        this.id_voiture = id_voiture;
     }
 
     public int getMatricule() {
@@ -51,14 +107,6 @@ public class Voiture {
 
     public void setMarqueVoiture(String marqueVoiture) {
         this.marqueVoiture = marqueVoiture;
-    }
-
-    public String getNomAgence() {
-        return nomAgence;
-    }
-
-    public void setNomAgence(String nomAgence) {
-        this.nomAgence = nomAgence;
     }
 
     public String getPhotoVoiture() {
@@ -85,11 +133,11 @@ public class Voiture {
         this.nbrchevaux = nbrchevaux;
     }
 
-    public String getTarif() {
+    public int getTarif() {
         return tarif;
     }
 
-    public void setTarif(String tarif) {
+    public void setTarif(int tarif) {
         this.tarif = tarif;
     }
 
@@ -101,38 +149,20 @@ public class Voiture {
         this.idAgence = idAgence;
     }
 
-    public Voiture(int matricule) {
-        this.matricule = matricule;
+    public String getNomAgence() {
+        return nomAgence;
     }
 
-    public Voiture(int matricule, String marqueVoiture, String photoVoiture, int nbplace, int nbrchevaux, String tarif, int idAgence) {
-        this.matricule = matricule;
-        this.marqueVoiture = marqueVoiture;
-        this.photoVoiture = photoVoiture;
-        this.nbplace = nbplace;
-        this.nbrchevaux = nbrchevaux;
-        this.tarif = tarif;
-        this.idAgence = idAgence;
+    public void setNomAgence(String nomAgence) {
+        this.nomAgence = nomAgence;
     }
 
-    public Voiture(String marqueVoiture, String photoVoiture, int nbplace, int nbrchevaux, String tarif, int idAgence) {
-        this.marqueVoiture = marqueVoiture;
-        this.photoVoiture = photoVoiture;
-        this.nbplace = nbplace;
-        this.nbrchevaux = nbrchevaux;
-        this.tarif = tarif;
-        this.idAgence = idAgence;
+    @Override
+    public String toString() {
+        return "Voiture{" + "id_voiture=" + id_voiture + ", matricule=" + matricule + ", marqueVoiture=" + marqueVoiture + ", photoVoiture=" + photoVoiture + ", nbplace=" + nbplace + ", nbrchevaux=" + nbrchevaux + ", tarif=" + tarif + ", idAgence=" + idAgence +'}';
     }
 
-    public Voiture(int matricule, String marqueVoiture, String photoVoiture, int nbplace, int nbrchevaux, String tarif) {
-        this.matricule = matricule;
-        this.marqueVoiture = marqueVoiture;
-        this.photoVoiture = photoVoiture;
-        this.nbplace = nbplace;
-        this.nbrchevaux = nbrchevaux;
-        this.tarif = tarif;
-    }
 
-    
+
     
 }

@@ -17,7 +17,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
@@ -36,6 +39,8 @@ public class AjoutagencelocationController implements Initializable {
     private TextField idAdresse;
     @FXML
     private TextField idLogo;
+    @FXML
+    private Text textError;
 
     /**
      * Initializes the controller class.
@@ -47,7 +52,21 @@ public class AjoutagencelocationController implements Initializable {
 
     @FXML
     private void ajouterAgence(ActionEvent event) throws IOException{
-     Imagencelocation ag= new Imagencelocation();
+          Imagencelocation ag= new Imagencelocation();
+      if((idNom.getText().length()>9) ) {
+                            new Alert(Alert.AlertType.ERROR,"ce champ de passe 9",ButtonType.CLOSE).show();
+
+         }
+       else if ( Integer.parseInt(idContact.getText())<99999999 || Integer.parseInt(idContact.getText())>9999999 ){ 
+                            new Alert(Alert.AlertType.ERROR,"telephone invalide veuillez saisir 8 CHIFFRES" ,ButtonType.CLOSE).show();
+       
+         } 
+          
+       else if
+         (idNom.getText().equals("")|| Integer.parseInt(idContact.getText())==0||idAdresse.getText().equals("")||idLogo.getText().equals("")){ 
+         textError.setText("Tous les champs sont obligatoires!!");}
+     else{
+     
      ag.ajouter(new Agencelocation(idNom.getText(),Integer.parseInt(idContact.getText()),idAdresse.getText(),idLogo.getText()));
      JOptionPane.showMessageDialog(null, "Agence ajouter!");
      
@@ -57,7 +76,7 @@ public class AjoutagencelocationController implements Initializable {
                 Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 app_stage.setScene(scene2);
                 app_stage.show();
-    }
+   } }
 
     @FXML
     private void Return(ActionEvent event) throws IOException {
@@ -68,5 +87,6 @@ public class AjoutagencelocationController implements Initializable {
                 app_stage.setScene(scene2);
                 app_stage.show();
     }
+    
     
 }
