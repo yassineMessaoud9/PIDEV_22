@@ -6,11 +6,18 @@
 package esprit.com.views;
 
 import esprit.com.ImServices.ImUtilisateur;
+import static esprit.com.ImServices.ImUtilisateur.PHOTO;
+import static esprit.com.ImServices.ImUtilisateur.idUser;
 import static esprit.com.ImServices.ImUtilisateur.nameUser;
 import esprit.com.entity.Utilisateur;
+import esprit.com.utils.ConnectionBd;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,25 +27,25 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import java.util.List;
+import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
-import javafx.scene.input.ContextMenuEvent;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.ScrollEvent;
+import javafx.scene.control.TableColumn.CellEditEvent;
+import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.converter.IntegerStringConverter;
 
 /**
  * FXML Controller class
@@ -50,6 +57,8 @@ public class ListeUtilisateurController implements Initializable {
     private Utilisateur Utilisateur;
     private ImUtilisateur uti;
 
+    private String path;
+    private int id = idUser;
     @FXML
     private TableView<Utilisateur> TableUtilisateur;
     @FXML
@@ -65,9 +74,9 @@ public class ListeUtilisateurController implements Initializable {
     @FXML
     private TableColumn<Utilisateur, String> role;
     @FXML
-    private TableColumn<Utilisateur, String> isActive;
+    private TableColumn<Utilisateur, Integer> isActive;
     @FXML
-    private TableColumn<Utilisateur, String> photo;
+    private TableColumn<Utilisateur, ImageView> photo;
 
     ObservableList<Utilisateur> obsUtilisateurlist = FXCollections.observableArrayList();
     @FXML
@@ -95,7 +104,10 @@ public class ListeUtilisateurController implements Initializable {
     @FXML
     private Button Logout;
     @FXML
-    private Text idUser;
+    private Text idUserr;
+    @FXML
+    private ImageView image;
+    private Image image1;
 
     /**
      * Initializes the controller class.
@@ -104,34 +116,128 @@ public class ListeUtilisateurController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         LoadData();
     }
-    
+
     private void LoadData() {
-            ImUtilisateur im = new ImUtilisateur();
+        TableUtilisateur.setEditable(true);
+        ImUtilisateur im = new ImUtilisateur();
         im.affiche().stream().forEach((p) -> {
             obsUtilisateurlist.add(p);
         });
         nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        nom.setCellFactory(TextFieldTableCell.forTableColumn());
+        nom.setOnEditCommit(new EventHandler<CellEditEvent<Utilisateur, String>>() {
+            @Override
+            public void handle(CellEditEvent<Utilisateur, String> event) {
+                Utilisateur uti = event.getRowValue();
+               uti.setNom(event.getNewValue());
+               ImUtilisateur utIm = new ImUtilisateur();
+               utIm.modifier(uti);
+//uti.modifier(new Utilisateur(Utilisateur.getIdU(), nom.getText(), prenom.getText(), adresse.getText(), email.getText(), photo.getText(), pays.getText(), role.getText(), Integer.parseInt(isActive.getText())));
+
+            }
+
+        });
         prenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        prenom.setCellFactory(TextFieldTableCell.forTableColumn());
+        prenom.setOnEditCommit(new EventHandler<CellEditEvent<Utilisateur, String>>() {
+            @Override
+            public void handle(CellEditEvent<Utilisateur, String> event) {
+                Utilisateur uti = event.getRowValue();
+                uti.setPrenom(event.getNewValue());
+               ImUtilisateur utIm = new ImUtilisateur();
+               utIm.modifier(uti);
+
+            }
+
+        });
         adresse.setCellValueFactory(new PropertyValueFactory<>("adresse"));
+        adresse.setCellFactory(TextFieldTableCell.forTableColumn());
+        adresse.setOnEditCommit(new EventHandler<CellEditEvent<Utilisateur, String>>() {
+            @Override
+            public void handle(CellEditEvent<Utilisateur, String> event) {
+                Utilisateur uti = event.getRowValue();
+                uti.setAdresse(event.getNewValue());
+                               ImUtilisateur utIm = new ImUtilisateur();
+               utIm.modifier(uti);
+
+            }
+
+        });
         email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        email.setCellFactory(TextFieldTableCell.forTableColumn());
+        email.setOnEditCommit(new EventHandler<CellEditEvent<Utilisateur, String>>() {
+            @Override
+            public void handle(CellEditEvent<Utilisateur, String> event) {
+                Utilisateur uti = event.getRowValue();
+                uti.setEmail(event.getNewValue());
+                               ImUtilisateur utIm = new ImUtilisateur();
+               utIm.modifier(uti);
+
+            }
+
+        });
         pays.setCellValueFactory(new PropertyValueFactory<>("pays"));
+        pays.setCellFactory(TextFieldTableCell.forTableColumn());
+        pays.setOnEditCommit(new EventHandler<CellEditEvent<Utilisateur, String>>() {
+            @Override
+            public void handle(CellEditEvent<Utilisateur, String> event) {
+                Utilisateur uti = event.getRowValue();
+                uti.setPays(event.getNewValue());
+                               ImUtilisateur utIm = new ImUtilisateur();
+               utIm.modifier(uti);
+
+            }
+
+        });
         role.setCellValueFactory(new PropertyValueFactory<>("role"));
+        role.setCellFactory(TextFieldTableCell.forTableColumn());
+        role.setOnEditCommit(new EventHandler<CellEditEvent<Utilisateur, String>>() {
+            @Override
+            public void handle(CellEditEvent<Utilisateur, String> event) {
+                Utilisateur uti = event.getRowValue();
+                uti.setRole(event.getNewValue());
+                               ImUtilisateur utIm = new ImUtilisateur();
+               utIm.modifier(uti);
+
+            }
+
+        });
 
         isActive.setCellValueFactory(new PropertyValueFactory<>("Active"));
+       isActive.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        isActive.setOnEditCommit(new EventHandler<CellEditEvent<Utilisateur, Integer>>() {
+            @Override
+            public void handle(CellEditEvent<Utilisateur, Integer> event) {
+                Utilisateur uti = event.getRowValue();
+                uti.setActive(event.getNewValue());
+                               ImUtilisateur utIm = new ImUtilisateur();
+               utIm.modifier(uti);
+
+            }
+
+        });
+
         photo.setCellValueFactory(new PropertyValueFactory<>("photo"));
+      //  photo.setCellFactory(TextFieldTableCell.forTableColumn());
 
         TableUtilisateur.setItems(obsUtilisateurlist);
 
-            TriChoice.getItems().addAll("aucun", "Trier Selon Nom", "Trier Selon Pays", "Trier Selon Compte Activé");
-            
-Rechercher.textProperty().addListener((obs, oldText, newText) -> {
-                List<Utilisateur> ae = im.Search(newText);
-                TableUtilisateur.getItems().setAll(ae);
+        TriChoice.getItems().addAll("aucun", "Trier Selon Nom", "Trier Selon Pays", "Trier Selon Compte Activé");
 
-    });
+        Rechercher.textProperty().addListener((obs, oldText, newText) -> {
+            List<Utilisateur> ae = im.Search(newText);
+            TableUtilisateur.getItems().setAll(ae);
 
-idUser.setText(nameUser);
- }
+        });
+
+        idUserr.setText(nameUser);
+        System.out.println(PHOTO);
+
+        image1 = new Image("/esprit/com/logo/" + PHOTO);
+        image.setImage(image1);
+
+    }
+
     @FXML
     private void Delete(ActionEvent event) throws IOException, SQLException {
         ImUtilisateur imt = new ImUtilisateur();
@@ -165,7 +271,7 @@ idUser.setText(nameUser);
         mrole.setText(Utilisateur.getRole());
         mActive.setText(String.valueOf(Utilisateur.isActive()));
         mpohto.setText(Utilisateur.getPhoto());
-       textMOd.setText(Utilisateur.getNom());
+        textMOd.setText(Utilisateur.getNom());
 
     }
 
@@ -184,16 +290,16 @@ idUser.setText(nameUser);
     private void EditUtili(ActionEvent event) throws IOException {
         ImUtilisateur uti = new ImUtilisateur();
 
-        Utilisateur.setNom(mnom.getText());
-        Utilisateur.setPrenom(mprenom.getText());
-        Utilisateur.setAdresse(madresse.getText());
-        Utilisateur.setEmail(memail.getText());
-        Utilisateur.setPays(mpays.getText());
-        Utilisateur.setRole(mrole.getText());
-        Utilisateur.setActive(Integer.parseInt(mActive.getText()));
-        Utilisateur.setPhoto(mpohto.getText());
+        Utilisateur.setNom(nom.getText());
+        Utilisateur.setPrenom(prenom.getText());
+        Utilisateur.setAdresse(adresse.getText());
+        Utilisateur.setEmail(email.getText());
+        Utilisateur.setPays(pays.getText());
+        Utilisateur.setRole(role.getText());
+        Utilisateur.setActive(Integer.parseInt(isActive.getText()));
+        Utilisateur.setPhoto(photo.getText());
         //   uti.modifier(new Utilisateur(1,"ayass","mess","Ariana Soghra","maha.mess@gmail.com","yassine","photo","tunis","utilisateur",1));
-        uti.modifier(new Utilisateur(Utilisateur.getIdU(), mnom.getText(), mprenom.getText(), madresse.getText(), memail.getText(), mpohto.getText(), mpays.getText(), mrole.getText(), Integer.parseInt(mActive.getText())));
+        uti.modifier(new Utilisateur(Utilisateur.getIdU(), nom.getText(), prenom.getText(), adresse.getText(), email.getText(), photo.getText(), pays.getText(), role.getText(), Integer.parseInt(isActive.getText())));
 
         new Alert(Alert.AlertType.INFORMATION, Utilisateur.getNom() + " Modifier !!", ButtonType.APPLY.CLOSE).show();
         clearFields();
@@ -230,7 +336,7 @@ idUser.setText(nameUser);
         pays.setCellValueFactory(new PropertyValueFactory<>("pays"));
         role.setCellValueFactory(new PropertyValueFactory<>("role"));
 
-        isActive.setCellValueFactory(new PropertyValueFactory<>("activated"));
+        isActive.setCellValueFactory(new PropertyValueFactory<>("Active"));
         photo.setCellValueFactory(new PropertyValueFactory<>("photo"));
 
         TableUtilisateur.getItems().setAll(a);
@@ -268,32 +374,32 @@ idUser.setText(nameUser);
 
     @FXML
     private void Logout(ActionEvent event) throws IOException {
-             Parent page2 = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Parent page2 = FXMLLoader.load(getClass().getResource("Login.fxml"));
 
-                Scene scene2 = new Scene(page2);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                app_stage.setScene(scene2);
-                app_stage.show();
+        Scene scene2 = new Scene(page2);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
     }
 
     @FXML
     private void Sponsors(ActionEvent event) throws IOException {
-         Parent page2 = FXMLLoader.load(getClass().getResource("Sponsors.fxml"));
+        Parent page2 = FXMLLoader.load(getClass().getResource("Sponsors.fxml"));
 
-                Scene scene2 = new Scene(page2);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                app_stage.setScene(scene2);
-                app_stage.show();
+        Scene scene2 = new Scene(page2);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
     }
 
     @FXML
     private void Plat(ActionEvent event) throws IOException {
-         Parent page2 = FXMLLoader.load(getClass().getResource("AjouterCommande.fxml"));
+        Parent page2 = FXMLLoader.load(getClass().getResource("AjouterCommande.fxml"));
 
-                Scene scene2 = new Scene(page2);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                app_stage.setScene(scene2);
-                app_stage.show();
+        Scene scene2 = new Scene(page2);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
     }
 
 }

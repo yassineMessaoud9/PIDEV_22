@@ -29,7 +29,7 @@ import javafx.stage.Stage;
  */
 public class VerifCodeResController implements Initializable {
 
-    public String email="aa";
+    public String email = "aa";
     @FXML
     private TextField code;
     @FXML
@@ -41,7 +41,7 @@ public class VerifCodeResController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void Verif(ActionEvent event) throws IOException {
@@ -50,21 +50,19 @@ public class VerifCodeResController implements Initializable {
             mqte.setText("Champ Manquant");
         } else if (uti.reset(new Reset(Integer.parseInt(code.getText())))) {
 
-           
-            
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifierMdp.fxml"));
-        Parent root = loader.load();
-     code.getScene().setRoot(root);
-        
-        ModifierMdpController apc = loader.getController();
-        apc.setTxt1(EmailRes);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifierMdp.fxml"));
+            Parent root = loader.load();
+            code.getScene().setRoot(root);
 
-        }else{
-                        mqte.setText("Un erreur survenu");
+            ModifierMdpController apc = loader.getController();
+            apc.setTxt1(EmailRes);
+
+        } else {
+            mqte.setText("Un erreur survenu");
 
         }
-{
+        {
         }
     }
-    
+
 }

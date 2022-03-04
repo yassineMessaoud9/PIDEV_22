@@ -124,7 +124,7 @@ public class AjouterCommandeController implements Initializable {
         prixPlat.setCellValueFactory(new PropertyValueFactory<>("prixPlat"));
         descriptionPlat.setCellValueFactory(new PropertyValueFactory<>("description"));
         tablePlat.setItems(obsPlat);
-idUserr.setText(String.valueOf(idUser).toString());
+idUserr.setText(nameUser);
     }
 
 

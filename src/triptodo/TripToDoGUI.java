@@ -5,6 +5,7 @@
  */
 package triptodo;
 
+import com.teamdev.jxmaps.javafx.MapView;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
+/** 
  *
  * @author Yassine
  */
@@ -20,9 +21,9 @@ public class TripToDoGUI extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-       // FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/ListCommandeClient.fxml"));
-      // FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/AjouterCommande.fxml"));
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/Login.fxml"));
+     // FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/ListeUtilisateur.fxml"));
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/login.fxml"));
+      //FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/sinscrire.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
 
@@ -31,6 +32,8 @@ public class TripToDoGUI extends Application {
         primaryStage.show();
         primaryStage.setResizable(false);
 
+    
+    
     }
 
     /**

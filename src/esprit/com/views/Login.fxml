@@ -33,11 +33,16 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Button fx:id="reset" layoutX="418.0" layoutY="635.0" mnemonicParsing="false" onAction="#reset" prefHeight="31.0" prefWidth="163.0" style="-fx-background-color: #5b6ff5;" text="Reset Mot de passe" textFill="WHITE">
+      <Button fx:id="reset" layoutX="365.0" layoutY="635.0" mnemonicParsing="false" onAction="#reset" prefHeight="31.0" prefWidth="137.0" style="-fx-background-color: #5b6ff5;" text="Reset Mot de passe" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
       <FontAwesomeIconView fill="#f5f5f5" glyphName="SIGN_IN" layoutX="588.0" layoutY="598.0" size="40" wrappingWidth="45.714284896850586" />
+      <Button layoutX="520.0" layoutY="635.0" mnemonicParsing="false" onAction="#sinscrire" prefHeight="31.0" prefWidth="115.0" style="-fx-background-color: green;" text="S'inscrire" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

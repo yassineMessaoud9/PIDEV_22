@@ -17,7 +17,7 @@
 <AnchorPane id="AnchorPane" prefHeight="812.0" prefWidth="1046.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ListeUtilisateurController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fafdff03" height="511.0" layoutX="652.0" layoutY="249.0" stroke="BLACK" strokeType="INSIDE" width="393.0" />
-      <TableView fx:id="TableUtilisateur" layoutX="3.0" layoutY="200.0" onMouseClicked="#onTableItemSelect" prefHeight="562.0" prefWidth="616.0" style="-fx-border-color: dark;">
+      <TableView fx:id="TableUtilisateur" editable="true" layoutX="3.0" layoutY="200.0" onMouseClicked="#onTableItemSelect" prefHeight="562.0" prefWidth="616.0" style="-fx-border-color: dark;" tableMenuButtonVisible="true">
         <columns>
           <TableColumn fx:id="nom" prefWidth="75.0" text="Nom" />
           <TableColumn fx:id="prenom" prefWidth="75.0" text="Prenom" />
@@ -28,6 +28,9 @@
             <TableColumn fx:id="isActive" prefWidth="75.0" text="Active" />
             <TableColumn fx:id="photo" prefWidth="74.0" text="Photo" />
         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
       <Button layoutX="105.0" layoutY="767.0" mnemonicParsing="false" onAction="#Delete" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 16;">
          <graphic>
@@ -73,7 +76,8 @@
             <Image url="@imges/img_174839.png" />
          </image>
       </ImageView>
-      <Text fx:id="idUser" layoutX="63.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="89.9999999627471" />
+      <Text fx:id="idUserr" layoutX="63.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="89.9999999627471" />
       <Text layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salut" />
+      <ImageView fx:id="image" fitHeight="92.0" fitWidth="121.0" layoutX="311.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

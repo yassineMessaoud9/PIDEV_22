@@ -63,7 +63,11 @@ public class LoginController implements Initializable {
             obli.setStyle("-fx-text-fill: #ff0000;");
 
         } else {
-            
+            if (!email.getText().contains("@")) {
+                            obli.setText("Respecter format email!!");
+            obli.setStyle("-fx-text-fill: #ff0000;");
+
+            }else
                 if (uti.login(new Utilisateur(email.getText(), motpasse.getText())).equals("Admin")) {
 
                 Stage stage = (Stage) Login.getScene().getWindow();
@@ -98,5 +102,16 @@ public class LoginController implements Initializable {
                 app_stage.setScene(scene2);
                 app_stage.show();
 
+    }
+
+    @FXML
+    private void sinscrire(ActionEvent event) throws IOException {
+        
+         Parent page2 = FXMLLoader.load(getClass().getResource("sinscrire.fxml"));
+
+                Scene scene2 = new Scene(page2);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(scene2);
+                app_stage.show();
     }
 }

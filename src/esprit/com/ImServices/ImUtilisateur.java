@@ -32,6 +32,7 @@ public class ImUtilisateur implements IServicesUtilisateur<Utilisateur> {
     public static String nameUser;
     public static int idUser;
     public static String EmailRes;
+    public static String PHOTO;
 
     Connection cnx = ConnectionBd.getInstance().getCnx();
 
@@ -75,6 +76,7 @@ public class ImUtilisateur implements IServicesUtilisateur<Utilisateur> {
                             idUser = rs.getInt("idU");
                             nameUser = rs.getString("nom");
                             role = rs.getString("role");
+                            PHOTO=rs.getString("photo");
                             System.out.println(" Salut :" + nameUser);
 
                         } else {
@@ -99,7 +101,7 @@ public class ImUtilisateur implements IServicesUtilisateur<Utilisateur> {
             String req = "SELECT * from utilisateur";
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
-            while (rs.next()) {
+            while (rs.next() && (rs.getInt("idU")!=idUser)) {
                 list.add(new Utilisateur(rs.getInt("idU"), rs.getString("nom"), rs.getString("prenom"), rs.getString("adresse"), rs.getString("email"), rs.getString("motpasse"),
                         rs.getString("photo"), rs.getString("pays"), rs.getString("role"), rs.getInt("activated")));
             }

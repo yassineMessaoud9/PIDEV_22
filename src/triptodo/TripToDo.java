@@ -46,7 +46,7 @@ public class TripToDo {
  //uti.registre(new Utilisateur("ayass","mess","Ariana Soghra","medyassinee.messaoud@esprit.tn","maha","photo","tunis","Admin"));
      //  uti.modifier(new Utilisateur(6,"yassine.messaoud98@gmail.com","maha"));
           //  uti.modifierMopasst(new Utilisateur("maha.mess@gmail.com","maha"));
-//System.out.println(uti.affiche());
+System.out.println(uti.affiche());
         //uti.Supprimer(new Utilisateur(2));
      //   uti.modifier(new Utilisateur(1,"ayass","mesas","Ariana Soghra","maha.mess@gmail.com","photooo","tunis","utilisateur",1));
         // uti.Search(new Utilisateur(9)); 
@@ -99,7 +99,7 @@ public class TripToDo {
            ImCommandeRestau imc = new ImCommandeRestau();
           // imc.ajout(new CommandeRestau(10.2, Date.valueOf("2020-12-12"),[1,1],1,10.66,20.54,"Tunis"));
            
-        System.out.println(imc.afficherTest());
+   //     System.out.println(imc.afficherTest());
 
         
 
