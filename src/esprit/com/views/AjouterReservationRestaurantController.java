@@ -31,6 +31,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -90,6 +91,13 @@ public class AjouterReservationRestaurantController implements Initializable {
                 Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 app_stage.setScene(scene2);
                 app_stage.show();
+                  Notifications notifications=Notifications.create();
+        notifications.text("reset menu");
+        notifications.title("Success Message");
+     //   notifications.hideAfter(Duration.seconds(4));
+       notifications.darkStyle();
+     /*   notifications.position(Pos.BOTTOM_CENTER);*/
+        notifications.show();
     }
     }
     

@@ -7,16 +7,22 @@ package esprit.com.views;
 
 import esprit.com.Iservices.ServiceHotel;
 import esprit.com.entity.Hotel;
+import esprit.com.entity.upload;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,14 +33,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.WritableImage;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javax.imageio.ImageIO;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -79,6 +91,8 @@ public class AfficherHotelsController implements Initializable {
     private TextField txtsearch;
     @FXML
     private Button idajout;
+    @FXML
+    private Label img;
 
 
     /**
@@ -242,6 +256,25 @@ public class AfficherHotelsController implements Initializable {
                 Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 app_stage.setScene(scene2);
                 app_stage.show();
+    }
+
+    @FXML
+    private void uploadPic(ActionEvent event) throws IOException {
+       File file;
+       String pic;
+
+        FileChooser fileChooser = new FileChooser();
+         file = fileChooser.showOpenDialog(null);
+             FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG files (.jpg)", ".JPG");
+            FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG files (.png)", ".PNG");
+            fileChooser.getExtensionFilters().addAll(extFilterJPG, extFilterPNG);
+
+            img.setText("File:"+file);
+            //pic=(file.toURI().toString());
+            pic=new upload().upload(file,"\\esma");
+            System.out.println(pic);
+       
+            
     }
     }
 

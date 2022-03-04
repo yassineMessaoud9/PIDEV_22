@@ -7,15 +7,20 @@
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/ServiceHotel.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/IserviceHotel.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/tourismeEtablissement.java</file>
-            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherreserHotell.fxml</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AjouterReservationRestaurantController.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/Hotel.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/PdfController.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/Iservice.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/ServiceRestaurant.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/newCascadeStyleSheet.css</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AjouterHotelController.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherHotelsController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/NotifiicationController.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AjouterReservationHotelController.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherReservationRestaurantController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/showhotel.fxml</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/MailingController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/pdf.fxml</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/ServiceReservationRestaurant.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/ShowhotelController.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/ServiceReservationHotel.java</file>
@@ -24,17 +29,23 @@
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/servicefille.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/projet_pi/mainGui.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AjouterHotelsController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/mailingSend.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/mailing.fxml</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AjouterRestaurantController.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/MailsenderController.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/projet_pi/Projet_pi.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherRestauController.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/ReservationHotel.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/MenuController.java</file>
-            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherReservationRestaurant.fxml</file>
-            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/menu.fxml</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/DARKMODE.fxml</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/darkmode.css</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/ReservationRestaurant.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/Iservices/IserviceRestau.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/AfficherReservationHotelController.java</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/parent.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/upload.java</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/mailsender.fxml</file>
+            <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/views/notifiication.fxml</file>
             <file>file:/C:/Users/MediaHelp/Downloads/projet_pi/src/esprit/com/entity/Restaurant.java</file>
         </group>
     </open-files>

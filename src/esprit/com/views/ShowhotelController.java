@@ -31,10 +31,16 @@ import javax.swing.text.Document;
 import java.io.BufferedReader;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.Window;
+import static sun.management.ConnectorAddressLink.export;
 
 
 /**
@@ -79,6 +85,10 @@ public class ShowhotelController implements Initializable {
     private DatePicker datealler1;
     @FXML
     private DatePicker dateretour11;
+    @FXML
+    private AnchorPane report;
+    @FXML
+    private Button export;
 
     /**
      * Initializes the controller class.
@@ -100,7 +110,10 @@ public class ShowhotelController implements Initializable {
      nbrpersonne.setCellValueFactory(new PropertyValueFactory<>("nbrPersonne"));
      datealler.setCellValueFactory(new PropertyValueFactory<>("dateretourReser"));
         dateretour.setCellValueFactory(new PropertyValueFactory<>("dateretourReser"));
+        
        tableReser.setItems(obsrehotellist);
+              //   export.setOnAction(event ->{pdf(event);});
+
        
     }    
      @FXML
@@ -195,8 +208,31 @@ dateretour11.getEditor().clear();
 //        
 //        
 //        
+
+    @FXML
+    private void envoyermail(ActionEvent event) {
+    }
+
+    @FXML
+    private void pdf(ActionEvent event) {
+          System.out.println("To Printer!");
+         PrinterJob job = PrinterJob.createPrinterJob();
+           if(job != null){
+             Window primaryStage = null;
+             job.showPrintDialog(primaryStage); 
+            
+             Node root=this.tableReser;   
+              job.printPage(root);
+              job.endJob();
+                
+    }
    }
-    
+
+    @FXML
+    private void changevalue(ActionEvent event) {
+    }
+
+}
     
 
    

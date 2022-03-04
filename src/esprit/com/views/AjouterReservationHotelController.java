@@ -34,8 +34,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 
 /**
  * FXML Controller class
@@ -60,6 +63,14 @@ public class AjouterReservationHotelController implements Initializable {
     private DatePicker dateretour;
     @FXML
     private TextField idu;
+    @FXML
+    private Text idtext;
+    @FXML
+    private Text idchambre;
+    @FXML
+    private Text Textnbrnuit;
+    @FXML
+    private Text textcs;
 
     /**
      * Initializes the controller class.
@@ -87,13 +98,31 @@ public class AjouterReservationHotelController implements Initializable {
     @FXML
     private void ajouterReservationHotel(ActionEvent event) {
         ServiceReservationHotel sR = new ServiceReservationHotel();
+         if(typechambre.getText().equals("")|| Integer.parseInt(nbrnuit.getText())==0||Integer.parseInt(idu.getText())==0||(comboxoHotel.getSelectionModel().getSelectedItem().intValue()==0||dateReservation.getValue().equals(""))){ 
+         textcs.setText("saisir  tous les champs!");
+       
+         }
+        else if((typechambre.getText().length()>9) ) {
+                            new Alert(Alert.AlertType.ERROR,"ce champ de passe 9",ButtonType.CLOSE).show();
 
-        sR.ajouter(new ReservationHotel(typechambre.getText(),Integer.parseInt(nbrnuit.getText()),Date.valueOf(dateReservation.getValue()),Integer.parseInt(nbrpersonne.getText()),Date.valueOf(datealler.getValue()),Date.valueOf(dateretour.getValue()),Integer.parseInt(idu.getText()),comboxoHotel.getSelectionModel().getSelectedItem().intValue()));
+         }
+         else if((Integer.parseInt(nbrnuit.getText())==0) ) {
+               new Alert(Alert.AlertType.ERROR,"ce champ ne peux pas etre null",ButtonType.CLOSE).show();
+             }
+       
+           else if(ctrl()==false ) {
+               new Alert(Alert.AlertType.ERROR,"datedebut ne peut pas etre superier a datefin",ButtonType.CLOSE).show();
+             }
+         else{
+        sR.ajouter(new ReservationHotel(typechambre.getText(),
+                Integer.parseInt(nbrnuit.getText()),Date.valueOf(dateReservation.getValue()),Integer.parseInt(nbrpersonne.getText()),Date.valueOf(datealler.getValue()),Date.valueOf(dateretour.getValue()),Integer.parseInt(idu.getText()),comboxoHotel.getSelectionModel().getSelectedItem().intValue()));
 
 
 
-       JOptionPane.showMessageDialog(null, "reservationRestau ajoutèe");
-    }
+       JOptionPane.showMessageDialog(null, "reservationRestau ajoutèe VOUS A"+calculerNobreJours());
+        }
+         }
+    
 
     @FXML
     private void retourmenu(ActionEvent event) throws IOException {
@@ -105,6 +134,28 @@ public class AjouterReservationHotelController implements Initializable {
                 app_stage.setScene(scene2);
                 app_stage.show();
     }
+    public boolean ctrl()
+{String d=datealler.getValue().toString();String f=dateretour.getValue().toString();
+     String[] d1=d.split("-");
+     String[] f1=f.split("-");
+     if(Integer.valueOf(d1[0])<=Integer.valueOf(f1[0])  && Integer.valueOf(d1[1])<=Integer.valueOf(f1[1]) && Integer.valueOf(d1[2])<=Integer.valueOf(f1[2]) )
+          return true;
+     return false;
+
+
+}
+    public int calculerNobreJours()  {
+          String datea=datealler.getValue().toString();
+    String dater=dateretour.getValue().toString();
+    String[] aller=datea.split("-");
+    String[] retour=dater.split("-");
+   int nbrjrs= Integer.valueOf(retour[2])- Integer.valueOf(aller[2]);
+   int nbrmoi =(Integer.valueOf(retour[1])- Integer.valueOf(aller[1]))*30;
+   int nbrannee =(Integer.valueOf(retour[0])- Integer.valueOf(aller[0]))*360;
+   
+
+   return (nbrjrs+nbrmoi+nbrannee);
+  }  
     }
    
 

@@ -26,13 +26,13 @@ public class mainGui extends Application {
     public void start(Stage primaryStage) throws IOException {
      //  FXMLLoader loader=new FXMLLoader(getClass().getResource("../esprit/com/views/ajouterHotels.fxml"));
    //    FXMLLoader loader=new FXMLLoader(getClass().getResource("../esprit/com/views/afficherHotels.fxml"));
-       FXMLLoader loader=new FXMLLoader(getClass().getResource("../esprit/com/views/menu.fxml"));
+       
+   //FXMLLoader loader=new FXMLLoader(getClass().getResource("../esprit/com/views/notification.fxml"));
                                              //       FXMLLoader loader=new FXMLLoader(getClass().getResource("../esprit/com/views/ajouterRestaurant.fxml"));
          //       FXMLLoader loader=new FXMLLoader(getClass().getResource("../esprit/com/views/afficherRestau.fxml"));
          //   FXMLLoader loader=new FXMLLoader(getClass().getResource("../esprit/com/views/ajouterReservationHotel.fxml"));
                     //  FXMLLoader loader=new FXMLLoader(getClass().getResource("../esprit/com/views/AfficherReservationRestaurant.fxml"));
-                //   FXMLLoader loader=new FXMLLoader(getClass().getResource("../esprit/com/views/showhotel.fxml"));
-
+               FXMLLoader loader=new FXMLLoader(getClass().getResource("../esprit/com/views/menu.fxml"));
 
 
 

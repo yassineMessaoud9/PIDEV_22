@@ -74,5 +74,7 @@
             </Button>
          </buttons>
       </ButtonBar>
+      <Button layoutX="434.0" layoutY="579.0" mnemonicParsing="false" onAction="#uploadPic" text="Button" />
+      <Label fx:id="img" layoutX="499.0" layoutY="541.0" text="Label" />
    </children>
 </AnchorPane>

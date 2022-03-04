@@ -19,6 +19,7 @@ import esprit.com.entity.ReservationHotel;
 import esprit.com.entity.ReservationRestaurant;
 import esprit.com.entity.Restaurant;
 import esprit.com.entity.fille;
+import esprit.com.entity.mailingSend;
 import esprit.com.entity.parent;
 import esprit.com.entity.tourismeEtablissement;
 
@@ -69,8 +70,9 @@ sH.supprimer(new Hotel(48));
      //  System.out.println(sR.afficher());
 
          ServiceReservationRestaurant sRR = new ServiceReservationRestaurant();
-         
+         mailingSend ml= new mailingSend();
         
+       ml.send("asmaoudherfi91@gmail.com","esmaesprit2000","yassine.ayadi2@esprit.tn", "njareb", "hello");
          // sRR.supprimer(new ReservationRestaurant(12,13,Date.valueOf("2019-12-10") ,5,1));
 //sRR.modifier(new ReservationRestaurant(14,Date.valueOf("2019-12-11"),Date.valueOf("2017-12-10"),Date.valueOf("2019-12-10")));
  // sRR.supprimer(new ReservationRestaurant(11));
