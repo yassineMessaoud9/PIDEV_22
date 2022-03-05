@@ -11,6 +11,7 @@ import esprit.com.Iservices.ServiceRestaurant;
 import esprit.com.entity.Hotel;
 import esprit.com.entity.ReservationHotel;
 import esprit.com.entity.Restaurant;
+import esprit.com.entity.keyvalueReservationHotel;
 import esprit.com.utils.ConnectionBd;
 import java.io.IOException;
 import java.net.URL;
@@ -39,6 +40,7 @@ import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ChoiceBox;
 
 /**
  * FXML Controller class
@@ -71,7 +73,10 @@ public class AjouterReservationHotelController implements Initializable {
     private Text Textnbrnuit;
     @FXML
     private Text textcs;
-
+    @FXML
+    private ChoiceBox<keyvalueReservationHotel> nomhotell;
+    private ServiceHotel shotel= new ServiceHotel();
+int idhotel;
     /**
      * Initializes the controller class.
      */
@@ -80,7 +85,7 @@ public class AjouterReservationHotelController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
              Connection bd1=ConnectionBd.getInstance().getCnx();
 
-       List<Hotel> list = new ArrayList<>();
+     /*  List<Hotel> list = new ArrayList<>();
         
         try {
             String req = "SELECT idhotel FROM hotel";
@@ -91,14 +96,25 @@ public class AjouterReservationHotelController implements Initializable {
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
+        } */
       // TODO
+        shotel.afficher().forEach((p)->{
+            nomhotell .getItems().add(new keyvalueReservationHotel(p.getIdhotel(),p.getNomhotel())); 
+             
+             
+        });
+      //System.out.println();
+      nomhotell.setOnAction(event -> {
+              idhotel=nomhotell.getValue().getIdhotel();
+              System.out.println(idhotel);
+              
+              });
     }    
 
     @FXML
     private void ajouterReservationHotel(ActionEvent event) {
         ServiceReservationHotel sR = new ServiceReservationHotel();
-         if(typechambre.getText().equals("")|| Integer.parseInt(nbrnuit.getText())==0||Integer.parseInt(idu.getText())==0||(comboxoHotel.getSelectionModel().getSelectedItem().intValue()==0||dateReservation.getValue().equals(""))){ 
+         if(typechambre.getText().equals("")|| Integer.parseInt(nbrnuit.getText())==0||Integer.parseInt(idu.getText())==0||(nomhotell.getSelectionModel().getSelectedItem().toString().equals("")||dateReservation.getValue().equals(""))){ 
          textcs.setText("saisir  tous les champs!");
        
          }
@@ -115,11 +131,11 @@ public class AjouterReservationHotelController implements Initializable {
              }
          else{
         sR.ajouter(new ReservationHotel(typechambre.getText(),
-                Integer.parseInt(nbrnuit.getText()),Date.valueOf(dateReservation.getValue()),Integer.parseInt(nbrpersonne.getText()),Date.valueOf(datealler.getValue()),Date.valueOf(dateretour.getValue()),Integer.parseInt(idu.getText()),comboxoHotel.getSelectionModel().getSelectedItem().intValue()));
+                Integer.parseInt(nbrnuit.getText()),Date.valueOf(dateReservation.getValue()),Integer.parseInt(nbrpersonne.getText()),Date.valueOf(datealler.getValue()),Date.valueOf(dateretour.getValue()),Integer.parseInt(idu.getText()),idhotel));
 
 
 
-       JOptionPane.showMessageDialog(null, "reservationRestau ajoutèe VOUS A"+calculerNobreJours());
+       JOptionPane.showMessageDialog(null, "reservationRestau ajoutèe VOUS ALLREZ PASSER UN SEJOUR DE "+calculerNobreJours());
         }
          }
     

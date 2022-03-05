@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="1045.0" styleClass="dark" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ShowhotelController">
    <children>
-      <TableView fx:id="tableReser" layoutX="46.0" layoutY="49.0" onMouseClicked="#onTableItemSelect" prefHeight="343.0" prefWidth="676.0">
+      <TableView fx:id="tableReser" layoutX="14.0" layoutY="50.0" onMouseClicked="#onTableItemSelect" prefHeight="343.0" prefWidth="794.0">
         <columns>
           <TableColumn fx:id="typech" prefWidth="115.0" style="-fx-background-color: #F0F8FF;" text="typeChambre" />
           <TableColumn fx:id="nbrnuit" prefWidth="102.0" style="-fx-background-color: #F0F8FF;" text="nbr nuit" />
@@ -20,9 +20,7 @@
             <TableColumn fx:id="nbrpersonne" prefWidth="110.0" style="-fx-background-color: #F0F8FF;" text="nbrpersonne" />
             <TableColumn fx:id="datealler" prefWidth="110.0" style="-fx-background-color: #F0F8FF;" text="datealler" />
             <TableColumn fx:id="dateretour" prefWidth="118.0" style="-fx-background-color: #F0F8FF;" text="dateretour" />
-            <TableColumn fx:id="dateretour1" prefWidth="129.0" text="idhotel" />
-            <TableColumn fx:id="dateretour2" prefWidth="158.0" text="idU" />
-            <TableColumn fx:id="dateretour21" prefWidth="158.0" text="idreser" />
+            <TableColumn fx:id="dateretour1" prefWidth="118.0" style="-fx-background-color: #F0F8FF;" text="dateretour" />
         </columns>
       </TableView>
       <Button layoutX="860.0" layoutY="392.0" mnemonicParsing="false" onAction="#updateReservation" prefHeight="58.0" prefWidth="149.0" style="-fx-background-color: #40E0D0;" text="modifier">
@@ -35,12 +33,12 @@
             <Font name="Broadway" size="15.0" />
          </font>
       </Button>
-      <TextField fx:id="typeCh" layoutX="751.0" layoutY="71.0" prefHeight="31.0" prefWidth="199.0" style="-fx-background-color: #FAEBD7;" />
-      <TextField fx:id="nbrnuit1" layoutX="751.0" layoutY="123.0" prefHeight="31.0" prefWidth="199.0" style="-fx-background-color: #FAEBD7;" />
-      <DatePicker fx:id="datereserv1" layoutX="751.0" layoutY="180.0" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #FAEBD7;" />
-      <TextField fx:id="nbpersonne" layoutX="747.0" layoutY="232.0" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #FAEBD7;" />
-      <DatePicker fx:id="datealler1" layoutX="746.0" layoutY="280.0" style="-fx-background-color: #FAEBD7;" />
-      <DatePicker fx:id="dateretour11" layoutX="751.0" layoutY="338.0" style="-fx-background-color: #FAEBD7;" />
+      <TextField fx:id="typeCh" layoutX="811.0" layoutY="61.0" prefHeight="31.0" prefWidth="199.0" style="-fx-background-color: #FAEBD7;" />
+      <TextField fx:id="nbrnuit1" layoutX="811.0" layoutY="111.0" prefHeight="31.0" prefWidth="199.0" style="-fx-background-color: #FAEBD7;" />
+      <DatePicker fx:id="datereserv1" layoutX="807.0" layoutY="174.0" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #FAEBD7;" />
+      <TextField fx:id="nbpersonne" layoutX="821.0" layoutY="221.0" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #FAEBD7;" />
+      <DatePicker fx:id="datealler1" layoutX="802.0" layoutY="272.0" style="-fx-background-color: #FAEBD7;" />
+      <DatePicker fx:id="dateretour11" layoutX="816.0" layoutY="332.0" style="-fx-background-color: #FAEBD7;" />
       <FontAwesomeIconView fill="#bc2525" glyphName="PENCIL" layoutX="969.0" layoutY="440.0" size="40" />
       <FontAwesomeIconView fill="#900d0d" glyphName="SCISSORS" layoutX="493.0" layoutY="437.0" size="30" text="" />
       <Button layoutX="631.0" layoutY="411.0" mnemonicParsing="false" onAction="#getview" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #40E0D0;" text="reset">

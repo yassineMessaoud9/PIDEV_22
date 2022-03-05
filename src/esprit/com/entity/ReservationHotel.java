@@ -24,6 +24,7 @@ public class ReservationHotel {
       
        private int  idU;
         private int idTourisme;
+     private   String nomhotel;
 
     public ReservationHotel(int idReservationHotel, String typeChambre, int nbrNuit, Date dateReservation, int nbrPersonne, Date dateallerReser, Date dateretourReser, int idU, int idTourisme) {
         this.idReservationHotel = idReservationHotel;
@@ -141,13 +142,10 @@ public class ReservationHotel {
         this.idTourisme = idTourisme;
     }
 
-    @Override
+  
 
  
-    public String toString() {
-        return "ReservationHotel{" + "idReservationHotel=" + idReservationHotel + ", typeChambre=" + typeChambre + ", nbrNuit=" + nbrNuit + ", dateReservation=" + dateReservation + ", nbrPersonne=" + nbrPersonne + ", dateallerReser=" + dateallerReser + ", dateretourReser=" + dateretourReser + ", idU=" + idU + ", idTourisme=" + idTourisme + '}';
-    }
-
+   
     public ReservationHotel(String typeChambre, int nbrNuit, Date dateReservation, int nbrPersonne, Date dateallerReser, Date dateretourReser) {
         this.typeChambre = typeChambre;
         this.nbrNuit = nbrNuit;
@@ -155,6 +153,52 @@ public class ReservationHotel {
         this.nbrPersonne = nbrPersonne;
         this.dateallerReser = dateallerReser;
         this.dateretourReser = dateretourReser;
+    }
+
+    @Override
+    public String toString() {
+        return "ReservationHotel{" + "idReservationHotel=" + idReservationHotel + ", typeChambre=" + typeChambre + ", nbrNuit=" + nbrNuit + ", dateReservation=" + dateReservation + ", nbrPersonne=" + nbrPersonne + ", dateallerReser=" + dateallerReser + ", dateretourReser=" + dateretourReser + ", idU=" + idU + ", nomhotel=" + nomhotel + '}';
+    }
+
+    public ReservationHotel(int idReservationHotel, String typeChambre, int nbrNuit, Date dateReservation, int nbrPersonne, Date dateallerReser, Date dateretourReser, int idU, String nomhotel) {
+        this.idReservationHotel = idReservationHotel;
+        this.typeChambre = typeChambre;
+        this.nbrNuit = nbrNuit;
+        this.dateReservation = dateReservation;
+        this.nbrPersonne = nbrPersonne;
+        this.dateallerReser = dateallerReser;
+        this.dateretourReser = dateretourReser;
+        this.idU = idU;
+        this.nomhotel = nomhotel;
+    }
+
+    public ReservationHotel(int idReservationHotel, String typeChambre, int nbrNuit, Date dateReservation, int nbrPersonne, Date dateallerReser, Date dateretourReser, String nomhotel) {
+        this.idReservationHotel = idReservationHotel;
+        this.typeChambre = typeChambre;
+        this.nbrNuit = nbrNuit;
+        this.dateReservation = dateReservation;
+        this.nbrPersonne = nbrPersonne;
+        this.dateallerReser = dateallerReser;
+        this.dateretourReser = dateretourReser;
+        this.nomhotel = nomhotel;
+    }
+
+    public ReservationHotel(String typeChambre, int nbrNuit, Date dateReservation, int nbrPersonne, Date dateallerReser, Date dateretourReser, String nomhotel) {
+        this.typeChambre = typeChambre;
+        this.nbrNuit = nbrNuit;
+        this.dateReservation = dateReservation;
+        this.nbrPersonne = nbrPersonne;
+        this.dateallerReser = dateallerReser;
+        this.dateretourReser = dateretourReser;
+        this.nomhotel = nomhotel;
+    }
+
+    public String getNomhotel() {
+        return nomhotel;
+    }
+
+    public void setNomhotel(String nomhotel) {
+        this.nomhotel = nomhotel;
     }
    
         

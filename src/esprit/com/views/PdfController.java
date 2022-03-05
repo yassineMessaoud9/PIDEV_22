@@ -5,9 +5,15 @@
  */
 package esprit.com.views;
 
+import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.pdf.PdfDocument;
+import com.itextpdf.text.pdf.PdfWriter;
 import esprit.com.Iservices.ServiceReservationHotel;
 import esprit.com.entity.Hotel;
 import esprit.com.entity.ReservationHotel;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.util.ResourceBundle;
@@ -25,6 +31,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Window;
+import javax.swing.text.Document;
+ 
+
 
 /**
  * FXML Controller class
@@ -53,20 +62,12 @@ public class PdfController implements Initializable {
     private TableColumn<ReservationHotel, Date> datealler;
     @FXML
     private TableColumn<ReservationHotel, Date> dateretour;
-    @FXML
-    private TableColumn<?, ?> dateretour1;
-    @FXML
-    private TableColumn<?, ?> dateretour2;
-    @FXML
-    private TableColumn<?, ?> dateretour21;
                  ObservableList<ReservationHotel> obsrehotellist=FXCollections.observableArrayList();
     private AnchorPane report11;
     @FXML
-    private AnchorPane report50;
-    @FXML
     private AnchorPane report88;
     @FXML
-    private AnchorPane report12;
+    private AnchorPane idpane1;
 
   
     /**
@@ -98,20 +99,23 @@ public class PdfController implements Initializable {
 
 
     @FXML
-    private void savepdf(ActionEvent event) {
-         System.out.println("To Printer!");
+    private void savepdf(ActionEvent event)  {
+     System.out.println("To Printer!");
+       
          PrinterJob job = PrinterJob.createPrinterJob();
            if(job != null){
              Window primaryStage = null;
              job.showPrintDialog(primaryStage); 
             
-             Node root=this.report50;   
+             Node root=this.idpane1;   
               job.printPage(root);
-              job.endJob();
+              
+              job.endJob(); 
+
+    
         
     }
-    
-}
+    }
 
     @FXML
     private void onTableItemSelect(MouseEvent event) {

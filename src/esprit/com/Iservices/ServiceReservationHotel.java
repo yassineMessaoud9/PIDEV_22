@@ -85,11 +85,11 @@ public class ServiceReservationHotel implements  Iservice <ReservationHotel>{
         List<ReservationHotel> list = new ArrayList<>();
         
         try {
-            String req = "SELECT * FROM reservationhotels";
+            String req = "SELECT idReservationHotel ,typeChambre,nbrnuit,datereservation,nbrpersonne,dateallerReser,dateretourReser,nomhotel FROM `reservationhotels` jOIN hotel USING (idhotel);";
             Statement st = bd1.createStatement();
             ResultSet rs = st.executeQuery(req);
             while(rs.next()) {
-                list.add(new ReservationHotel(rs.getInt("idReservationHotel"), rs.getString("typeChambre"), rs.getInt("nbrnuit"), rs.getDate("datereservation"),rs.getInt("nbrpersonne"),rs.getDate("dateallerReser"),rs.getDate("dateretourReser"),rs.getInt("idU"),rs.getInt("idhotel")));
+                list.add(new ReservationHotel(rs.getInt("idReservationHotel"), rs.getString("typeChambre"), rs.getInt("nbrnuit"), rs.getDate("datereservation"),rs.getInt("nbrpersonne"),rs.getDate("dateallerReser"),rs.getDate("dateretourReser"),rs.getString("nomhotel")));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

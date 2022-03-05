@@ -68,12 +68,6 @@ public class ShowhotelController implements Initializable {
     private TableColumn<ReservationHotel, Integer> dateretour;
  private ReservationHotel rhotel ;
     @FXML
-    private TableColumn<ReservationHotel, Integer> dateretour1;
-    @FXML
-    private TableColumn<ReservationHotel, Integer> dateretour2;
-    @FXML
-    private TableColumn<ReservationHotel, Integer> dateretour21;
-    @FXML
     private TextField typeCh;
     @FXML
     private TextField nbrnuit1;
@@ -89,6 +83,8 @@ public class ShowhotelController implements Initializable {
     private AnchorPane report;
     @FXML
     private Button export;
+    @FXML
+    private TableColumn<ReservationHotel,String > dateretour1;
 
     /**
      * Initializes the controller class.
@@ -110,7 +106,8 @@ public class ShowhotelController implements Initializable {
      nbrpersonne.setCellValueFactory(new PropertyValueFactory<>("nbrPersonne"));
      datealler.setCellValueFactory(new PropertyValueFactory<>("dateretourReser"));
         dateretour.setCellValueFactory(new PropertyValueFactory<>("dateretourReser"));
-        
+                dateretour1.setCellValueFactory(new PropertyValueFactory<>("nomhotel"));
+
        tableReser.setItems(obsrehotellist);
               //   export.setOnAction(event ->{pdf(event);});
 
