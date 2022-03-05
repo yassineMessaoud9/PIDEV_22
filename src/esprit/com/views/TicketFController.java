@@ -5,8 +5,10 @@
  */
 package esprit.com.views;
 
+import esprit.com.Imservices.ServiceEvenement;
 import esprit.com.Imservices.ServiceTicket;
 import esprit.com.entity.Ticket;
+import esprit.com.entity.key_valueEvenement;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
@@ -32,6 +34,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
@@ -83,28 +86,61 @@ public class TicketFController implements Initializable {
     private RadioButton tribDate;
     
     
-    @FXML
-    private TextField prixField;
     
 
     private List<Ticket> tickets;
     
     private Ticket Tickett;
+    @FXML
+    private ChoiceBox<key_valueEvenement> choixName;
+    
+    private ServiceEvenement ev = new  ServiceEvenement();
+    int idE;
+    @FXML
+    private TableColumn<Ticket, String> col_nom1;
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) { 
+        
         
         tableT.setEditable(true);
         ServiceTicket st = new ServiceTicket();
+        List<Ticket>lt =st.afficherjoin();
         tickets = new ArrayList<>();
-        st.afficher().stream().forEach((p) -> {s.add(p); tickets.add(p);} );
-        col_date.setCellValueFactory(new PropertyValueFactory<>("dateTicket"));
-      // col_date.setCellFactory(TextFieldTableCell.forTableColumn());
+        
+       
+
+           
+        col_date.setCellValueFactory(new PropertyValueFactory<Ticket,String>("dateTicket"));
+  
+        //col_date.setCellFactory(TextFieldTableCell.forTableColumn());
         
         col_prix.setCellValueFactory(new PropertyValueFactory<Ticket, Float>("prixTicket"));
         col_prix.setCellFactory(TextFieldTableCell.forTableColumn(new FloatStringConverter()));
+        col_nom1.setCellValueFactory(new PropertyValueFactory<>("intituleEve"));
+        tableT.getItems().setAll(lt);
+                
+        
+         
+         
+             ev.afficherjointure().forEach((p)->{
+             choixName.getItems().add(new key_valueEvenement(p.getId(),p.getIntituleEve())); 
+             
+             
+             });
+             choixName.setOnAction(event -> {
+              idE=choixName.getValue().getId();
+              System.out.println(idE);
+              
+              });
+             
+        
+
+        
+   
+        
         
             col_prix.setOnEditCommit(new EventHandler<CellEditEvent<Ticket, Float>>() {
             @Override
@@ -116,11 +152,10 @@ public class TicketFController implements Initializable {
 
             }});
             
-            //col_date.setOnEditCommit(event -> event.getRowValue().setDateTicket(event.getNewValue()));
+  
             
-            
-        ObservableList<Ticket> data=FXCollections.observableArrayList(s);
-        tableT.getItems().setAll(s);
+       /* ObservableList<Ticket> data=FXCollections.observableArrayList(s);
+        tableT.getItems().setAll(s);*/
             
                 
         tfSearch.textProperty().addListener((obs, oldText, newText) -> {
@@ -135,15 +170,17 @@ public class TicketFController implements Initializable {
                 List<Ticket> ae = fsp.search(Float.parseFloat(newText));
                 tableT.getItems().setAll(ae);
                   });
+
              
     }
     @FXML
     private void refresh(ActionEvent event) throws SQLException {
         
                 ServiceTicket sp = new ServiceTicket();
-                List<Ticket> a = sp.afficher();
+                List<Ticket> a = sp.afficherjoin();
                 col_prix.setCellValueFactory(new PropertyValueFactory<>("prixTicket"));
                 col_date.setCellValueFactory(new PropertyValueFactory<>("dateTicket"));
+                col_nom1.setCellValueFactory(new PropertyValueFactory<>("intituleEve"));
                 ObservableList<Ticket> data=FXCollections.observableArrayList(s);
                 tableT.getItems().setAll(a);
      
@@ -177,7 +214,7 @@ public class TicketFController implements Initializable {
               Image ig1 = new Image("/esprit/com/src/right1.png");
 
             ServiceTicket st = new ServiceTicket();
-            st.ajouter(new Ticket( Float.parseFloat(prixTicket.getText()),Date.valueOf(dateT.getValue())));
+            st.ajouter(new Ticket( Float.parseFloat(prixTicket.getText()),Date.valueOf(dateT.getValue()),idE));
             update();
             Notifications notifications=Notifications.create();
             notifications.graphic(new ImageView(ig1));
@@ -212,20 +249,7 @@ public class TicketFController implements Initializable {
 
     @FXML
     private void modify(ActionEvent event) throws SQLException {
-        /*Ticket t=new Ticket();
-        ObservableList s,tick;
-        ServiceTicket sf=new ServiceTicket();
-        tick=tableT.getSelectionModel().getSelectedItems();
-        t=tableT.getSelectionModel().getSelectedItems().get(0);
-        //Float.parseFloat(prixTicket.setText(t.getPrixTicket()));
-
-       Ticket f = new Ticket(Float.parseFloat(prixTicket.getText()),Timestamp.valueOf(dateT.getValue().atTime(LocalTime.MIN)));
-        sf.modifier(f);
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Note!");
-            alert.setHeaderText(null);
-            alert.setContentText("Ticket modified successfully.");
-            Optional<ButtonType> result = alert.showAndWait();*/
+       
         ServiceTicket ag= new ServiceTicket();
       
        
@@ -233,11 +257,7 @@ public class TicketFController implements Initializable {
    
 
       
-       //LocalDate localDate = this.dateT.getValue();
-       //Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
-       // java.sql.Date date = (java.sql.Date) LocalDate.from(instant);
-        
-              // LocalDateTime localDate = this.dateT.getValue();
+      
         
         int id = -1;
         for(Ticket ti : tickets){

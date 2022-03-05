@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package esprit.com.views;
-
+package com.twilio;
 import esprit.com.Imservices.ServiceEvenement;
 import esprit.com.Imservices.ServiceReclamation;
 import esprit.com.Imservices.ServiceTicket;
@@ -36,6 +36,12 @@ import javax.swing.JOptionPane;
 import mailertest.util.JavaMail;
 import org.controlsfx.control.Notifications;
 
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
+import com.twilio.http.HttpClient;
+import com.twilio.http.NetworkHttpClient;
+import com.twilio.http.TwilioRestClient;
 /**
  * FXML Controller class
  *
@@ -77,6 +83,8 @@ public class ReclamationController implements Initializable {
         @FXML
     private TextField descRe;
         private Reclamation Re;
+    @FXML
+    private TextField smsfield;
 
     /**
      * Initializes the controller class.
@@ -194,6 +202,27 @@ public class ReclamationController implements Initializable {
         st.modifier(this.Re.getIntituleReclamation(), t);
         refreshi(null);
         System.out.println(t);
+    }
+
+    @FXML
+    private void sendsms(ActionEvent event) {
+        
+           // Twilio.init("AC7caedd3a6b9c25ac6b692e7e107ad122", "b72dad74f586b63305c3e2ac25131df3");
+              ProxiedTwilioClientCreator clientCreator = new ProxiedTwilioClientCreator(
+                      "AC7caedd3a6b9c25ac6b692e7e107ad122",
+                      "b72dad74f586b63305c3e2ac25131df3",
+                        "127.0.0.1",
+                        8888);
+              
+            
+                TwilioRestClient twilioRestClient = clientCreator.getClient();
+                Twilio.setRestClient(twilioRestClient);
+             Message message = Message.creator(new PhoneNumber("+21656788559"),
+                new PhoneNumber("+13042444539"), smsfield.getText()).create();
+               System.out.println(message.getSid());
+             
+          
+        
     }
     
 }

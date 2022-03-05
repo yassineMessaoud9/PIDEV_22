@@ -3,7 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/Avis.fxml</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/entity/TypeReclamation.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/ShowController.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/GestionEventsAndReclamationController.java</file>
@@ -11,6 +10,7 @@
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/triptodo/TripToDo.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/src/27-278343_giving-tickets-icon-ticket-teatro-png-transparent-png.png</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/triptodo/tesfxml.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/ProxiedTwilioClientCreator.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/Imservices/ServiceReclamation.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/EvenementViewController.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/src/wrong.png</file>
@@ -27,6 +27,7 @@
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/AvisController.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/src/right.png</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/MailConfig.java</file>
+            <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/entity/key_valueEvenement.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/TicketFController.java</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/src/unnamed.png</file>
             <file>file:/C:/Users/Utilisateur/Downloads/TripToDo/TripToDo/src/esprit/com/views/ReclamationbackController.java</file>

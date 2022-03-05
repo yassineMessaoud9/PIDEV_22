@@ -33,11 +33,11 @@ public class ServiceTicket implements IserviceEveReT<Ticket>{
      
         
         try {
-            String req = "INSERT INTO Ticket( prixTicket,dateTicket) VALUES (?,?)";
+            String req = "INSERT INTO Ticket( prixTicket,dateTicket,idEve) VALUES (?,?,?)";
             PreparedStatement pst = cnx.prepareStatement(req);
             pst.setFloat(1, t.getPrixTicket());
             pst.setDate(2, t.getDateTicket());
-            //pst.setInt(3, t.getIdut());
+            pst.setInt(3, t.getIdEve());
          
   
             
@@ -63,7 +63,7 @@ public class ServiceTicket implements IserviceEveReT<Ticket>{
 
   
     public void modifier(Ticket t) {
-        System.out.println("ggg " + t.toString());
+       
         try{
             String req = "UPDATE Ticket SET prixTicket=?, dateTicket=? WHERE idTicket=?";
             PreparedStatement pst = cnx.prepareStatement(req);
@@ -96,6 +96,26 @@ public class ServiceTicket implements IserviceEveReT<Ticket>{
         
         return list;
     }
+        public List<Ticket> afficherjoin() {
+        
+        List<Ticket> list = new ArrayList<>();
+        
+        try {
+            String req = "select idTicket, prixTicket,dateTicket,intituleEve from ticket JOIN evenement USING (idEve);";
+            PreparedStatement pst = cnx.prepareStatement(req);
+            ResultSet rs = pst.executeQuery();
+            while(rs.next()) {
+                list.add(new Ticket(rs.getInt( "idTicket"), rs.getFloat("prixTicket"), rs.getDate("dateTicket"),rs.getString("intituleEve")));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return list;
+    }
+    
+    
+    
        public ObservableList<Ticket> getticketliste() throws SQLException {
            String req = "SELECT * FROM Ticket";
         ObservableList<Ticket> ticketList = FXCollections.observableArrayList();

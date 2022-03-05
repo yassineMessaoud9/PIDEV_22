@@ -27,6 +27,11 @@ public class Avis {
         this.name = name;
           this.rate = rate;
     }
+        public Avis( int rate,String name) {
+      
+        this.name = name;
+          this.rate = rate;
+    }
 
  
     

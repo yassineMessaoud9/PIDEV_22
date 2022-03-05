@@ -22,11 +22,11 @@
             <TableColumn fx:id="col_Date111" prefWidth="100.0" text="Etat" />
          </columns>
       </TableView>
-      <Button fx:id="rebtn" layoutX="504.0" layoutY="448.0" mnemonicParsing="false" onAction="#refreshi" prefHeight="31.0" prefWidth="89.0" text="Refresh" />
+      <Button fx:id="rebtn" layoutX="559.0" layoutY="417.0" mnemonicParsing="false" onAction="#refreshi" prefHeight="31.0" prefWidth="89.0" text="Refresh" />
       <Button fx:id="btADD" layoutX="152.0" layoutY="469.0" mnemonicParsing="false" onAction="#addRec" prefHeight="27.0" prefWidth="149.0" text="Ajouter" />
-      <Button fx:id="btndelRe" layoutX="616.0" layoutY="448.0" mnemonicParsing="false" onAction="#deleteRe" prefHeight="25.0" prefWidth="69.0" text="Delete" />
+      <Button fx:id="btndelRe" layoutX="671.0" layoutY="417.0" mnemonicParsing="false" onAction="#deleteRe" prefHeight="31.0" prefWidth="89.0" text="Delete" />
       <Label layoutX="43.0" layoutY="103.0" prefHeight="17.0" prefWidth="89.0" text="TitreReclamation" textFill="#1140da" />
-      <Button fx:id="modifyb" layoutX="740.0" layoutY="448.0" mnemonicParsing="false" onAction="#modifyRe" prefHeight="31.0" prefWidth="96.0" text="Modifier" />
+      <Button fx:id="modifyb" layoutX="795.0" layoutY="417.0" mnemonicParsing="false" onAction="#modifyRe" prefHeight="31.0" prefWidth="96.0" text="Modifier" />
       <Label layoutX="504.0" layoutY="349.0" prefHeight="27.0" prefWidth="69.0" text="Search" textFill="#1a65f2">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -45,5 +45,8 @@
       <Label fx:id="getType" layoutX="34.0" layoutY="465.0" prefHeight="17.0" prefWidth="165.0" />
       <DatePicker fx:id="dateT" layoutX="150.0" layoutY="247.0" />
       <Label layoutX="43.0" layoutY="252.0" prefHeight="17.0" prefWidth="89.0" text="Date" textFill="#1140da" />
+      <Label layoutX="324.0" layoutY="496.0" prefHeight="31.0" prefWidth="248.0" text="Still got any problems ? send us a message" />
+      <TextField fx:id="smsfield" layoutX="556.0" layoutY="499.0" prefHeight="25.0" prefWidth="257.0" />
+      <Button layoutX="843.0" layoutY="499.0" mnemonicParsing="false" onAction="#sendsms" text="Send" />
    </children>
 </AnchorPane>

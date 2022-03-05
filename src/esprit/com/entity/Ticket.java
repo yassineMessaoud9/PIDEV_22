@@ -15,6 +15,8 @@ public class Ticket {
    private int idTicket;
     private float prixTicket;
     private Date dateTicket;
+    private int idEve;
+    private String intituleEve;
 
     public Ticket() {
     }
@@ -23,8 +25,24 @@ public class Ticket {
         this.idTicket = idTicket;
     }
 
+    public Ticket(int idTicket, float prixTicket, Date dateTicket, String intituleEve) {
+        this.idTicket = idTicket;
+        this.prixTicket = prixTicket;
+        this.dateTicket = dateTicket;
+        this.intituleEve = intituleEve;
+    }
+    
+
     public Ticket(float prixTicket) {
         this.prixTicket = prixTicket;
+    }
+
+    public int getIdEve() {
+        return idEve;
+    }
+
+    public void setIdEve(int idEve) {
+        this.idEve = idEve;
     }
     
 
@@ -43,10 +61,13 @@ public class Ticket {
         this.dateTicket = dateTicket;
     }
     
+    
+    
 
-    public Ticket(float prixTicket, Date dateTicket, int idut) {
+    public Ticket(float prixTicket, Date dateTicket, int idEve) {
         this.prixTicket = prixTicket;
         this.dateTicket = dateTicket;
+        this.idEve=idEve;
     }
     
      public Ticket(int idut, Date dateTicket, float prixTicket) {
@@ -79,11 +100,22 @@ public class Ticket {
         this.dateTicket = dateTicket;
     }
 
-    @Override
-    public String toString() {
-        return "Ticket{" + "idTicket=" + idTicket + ", prixTicket=" + prixTicket + ", dateTicket=" + dateTicket + "}";
+    public String getIntituleEve() {
+        return intituleEve;
+    }
+
+    public void setIntituleEve(String intituleEve) {
+        this.intituleEve = intituleEve;
     }
     
+
+    @Override
+    public String toString() {
+        return "Ticket{" + "idTicket=" + idTicket + ", prixTicket=" + prixTicket + ", dateTicket=" + dateTicket + ", intituleEve=" + intituleEve + '}';
+    }
+
+  
+   
     
     
     

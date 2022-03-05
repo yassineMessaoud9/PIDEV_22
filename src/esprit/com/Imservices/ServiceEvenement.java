@@ -123,6 +123,24 @@ public class ServiceEvenement implements IserviceEveReT <Evenement>{
         
         return list;
     }
+        
+    public List<Evenement> afficherjointure() {
+        
+        List<Evenement> list = new ArrayList<>();
+        
+        try {
+            String req = "SELECT * FROM Evenement";
+            PreparedStatement pst = cnx.prepareStatement(req);
+            ResultSet rs = pst.executeQuery();
+            while(rs.next()) {
+                list.add(new Evenement(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getFloat(4), rs.getDate(5), rs.getDate(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getInt(10),rs.getString(11)));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return list;
+    }
     public List<Evenement> search (String val){
         
       List<Evenement> list1= new ArrayList<>();

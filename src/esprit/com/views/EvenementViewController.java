@@ -85,11 +85,17 @@ public class EvenementViewController implements Initializable {
     private void ajouterE(ActionEvent event) throws IOException {
         ServiceEvenement se = new ServiceEvenement();
          Image ig = new Image("/esprit/com/src/wrong1.png");
-        if(title.getText().equals("")|| pays.getText().equals(""))
+        if(title.getText().equals("")|| pays.getText().equals("")||Float.parseFloat(prix.getText())== 0 || desc.getText().equals(""))
         {
                 Notifications notifications=Notifications.create();
                 notifications.graphic(new ImageView(ig));
                 notifications.text("Hello please fill the required fields");
+                notifications.show();
+        }
+        else if(ctrl()==false){
+                Notifications notifications=Notifications.create();
+                notifications.graphic(new ImageView(ig));
+                notifications.text("date debut ne peux pas etre superieur a date fin");
                 notifications.show();
         }
         else 
@@ -131,6 +137,16 @@ public class EvenementViewController implements Initializable {
             pic=new Upload().upload(file,"\\UploadFile");
             System.out.println(pic);
     }
+    public boolean ctrl()
+        {   String d=dated.getValue().toString();
+            String f=datef.getValue().toString();
+            String[] first=d.split("-");
+            String[] last=f.split("-");
+            if(Integer.valueOf(first[0])<=Integer.valueOf(last[0])  && Integer.valueOf(first[1])<=Integer.valueOf(last[1]) && Integer.valueOf(first[2])<=Integer.valueOf(last[2]) )
+          return true;
+         return false;
+
+        }
     
     
 }
