@@ -23,6 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -57,7 +58,7 @@ public class AjoutagencelocationController implements Initializable {
                             new Alert(Alert.AlertType.ERROR,"ce champ de passe 9",ButtonType.CLOSE).show();
 
          }
-       else if ( Integer.parseInt(idContact.getText())<99999999 || Integer.parseInt(idContact.getText())>9999999 ){ 
+       else if ( Integer.parseInt(idContact.getText())>99999999  ){ 
                             new Alert(Alert.AlertType.ERROR,"telephone invalide veuillez saisir 8 CHIFFRES" ,ButtonType.CLOSE).show();
        
          } 
@@ -66,9 +67,14 @@ public class AjoutagencelocationController implements Initializable {
          (idNom.getText().equals("")|| Integer.parseInt(idContact.getText())==0||idAdresse.getText().equals("")||idLogo.getText().equals("")){ 
          textError.setText("Tous les champs sont obligatoires!!");}
      else{
+           
      
      ag.ajouter(new Agencelocation(idNom.getText(),Integer.parseInt(idContact.getText()),idAdresse.getText(),idLogo.getText()));
-     JOptionPane.showMessageDialog(null, "Agence ajouter!");
+      Notifications notifications=Notifications.create();
+       notifications.text("agence ajoutée");
+            notifications.title("Sucess Message");
+            notifications.show();
+     //JOptionPane.showMessageDialog(null, "Agence ajouter!");
      
        Parent page2 = FXMLLoader.load(getClass().getResource("afficheAgence.fxml"));
 

@@ -5,9 +5,11 @@
  */
 package esprit.com.views;
 
+import esprit.com.Imservices.Imagencelocation;
 import esprit.com.Imservices.Imvoiture;
 import esprit.com.entity.Agencelocation;
 import esprit.com.entity.Voiture;
+import esprit.com.entity.keyValueAgence;
 import esprit.com.utils.ConnectionBd;
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +25,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -46,26 +49,41 @@ public class AjoutvoitureController implements Initializable {
     private TextField aplaces;
     @FXML
     private TextField achevaux;
-    @FXML
     private ComboBox<String> aagence;
     
     private TextField anomagence;
     @FXML
     private TextField atarif;
+    @FXML
+    private ChoiceBox<keyValueAgence> selectagence;
+    
+    int idagence;
+    
+ Imagencelocation serviceagence = new Imagencelocation();
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    LoadData();
+        
+          serviceagence.afficher().forEach((p)->{
+             selectagence.getItems().add(new keyValueAgence(p.getIdAgence(),p.getNomAgence())); 
+             
+             
+        }); selectagence.setOnAction(event -> {
+              idagence=selectagence.getValue().getIdAgence();
+              System.out.println(idagence);
+              
+              });
+    
     }    
 
     @FXML
     private void ajouterVoiture(ActionEvent event) throws IOException {
          Imvoiture v= new Imvoiture();
-        System.out.println("agence eeee"+x);
-     v.ajouter(new Voiture(Integer.parseInt(amatricule.getText()),amarque.getText(),aphoto.getText(),Integer.parseInt(aplaces.getText()),Integer.parseInt(achevaux.getText()),Integer.parseInt(atarif.getText()),x));
+        System.out.println("agence eeee"+idagence);
+     v.ajouter(new Voiture(Integer.parseInt(amatricule.getText()),amarque.getText(),aphoto.getText(),Integer.parseInt(aplaces.getText()),Integer.parseInt(achevaux.getText()),Integer.parseInt(atarif.getText()),idagence));
      JOptionPane.showMessageDialog(null, "Agence ajouter!");
      
        Parent page2 = FXMLLoader.load(getClass().getResource("affichevoiture.fxml"));

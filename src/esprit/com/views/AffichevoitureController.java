@@ -92,11 +92,8 @@ public class AffichevoitureController implements Initializable {
         Connection cnx = ConnectionBd.getInstance().getCnx();
 
         Imvoiture v = new Imvoiture();
-
         v.afficherTest().stream().forEach((p) -> {
-            obsvoiturelist.add(p);
-        });
-
+            obsvoiturelist.add(p);        });
         idMatricule.setCellValueFactory(new PropertyValueFactory<>("matricule"));
         idMarque.setCellValueFactory(new PropertyValueFactory<>("marqueVoiture"));
         idPhoto.setCellValueFactory(new PropertyValueFactory<>("photoVoiture"));
@@ -104,7 +101,6 @@ public class AffichevoitureController implements Initializable {
         idNbrCh.setCellValueFactory(new PropertyValueFactory<>("nbrchevaux"));
         idtarif.setCellValueFactory(new PropertyValueFactory<>("tarif"));
         idNomAgence.setCellValueFactory(new PropertyValueFactory<>("nomAgence"));
-
         tableauvaffiche.setItems(obsvoiturelist);
       
 
