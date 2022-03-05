@@ -72,7 +72,7 @@ public class SinscrireController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    imageSele.getItems().addAll("aucun", "Depuis Camera", "Depuis PC");
+    imageSele.getItems().addAll( "Depuis Camera", "Depuis PC");
     }
 
     @FXML

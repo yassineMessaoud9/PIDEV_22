@@ -13,6 +13,7 @@ import static esprit.com.ImServices.ImUtilisateur.idUser;
 import esprit.com.entity.CommandePlat;
 import esprit.com.entity.CommandeRestau;
 import esprit.com.entity.Plat;
+import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -36,8 +37,14 @@ import javafx.scene.text.Text;
 import javax.swing.text.DateFormatter;
 import java.sql.Date;
 import java.time.LocalDateTime;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -47,10 +54,10 @@ import javafx.scene.control.TextField;
 public class AjouterCommandeController implements Initializable {
 
     private CommandeRestau CommandeRestau;
-    public static Double prix1 ; 
+    public static Double prix1;
     public static Plat Plat;
     @FXML
-    public  TableView<Plat> tablePlat;
+    public TableView<Plat> tablePlat;
     @FXML
     private TableColumn<Plat, String> nomplat;
     @FXML
@@ -70,7 +77,11 @@ public class AjouterCommandeController implements Initializable {
     private TextField adress;
     @FXML
     private TextField longitude;
-
+    @FXML
+    private WebView webmap;
+    private WebEngine webengine;
+    @FXML
+    private Button ButnOpenMap;
     /**
      * Initializes the controller class.
      */
@@ -81,38 +92,25 @@ public class AjouterCommandeController implements Initializable {
 
     @FXML
     private void commander(ActionEvent event) {
-        
-        
-        int nombreAleatoire = 1000 + (int)(Math.random() * ((1000000 - 1000) + 1));
 
+        int nombreAleatoire = 1000 + (int) (Math.random() * ((1000000 - 1000) + 1));
 
-   LocalDate now = LocalDate.now();  
-   System.out.println(now);  
- 
+        LocalDate now = LocalDate.now();
+        System.out.println(now);
 
+        CommandeRestau cm = new CommandeRestau(nombreAleatoire, prix1, Date.valueOf(now), idUser, Double.parseDouble(latitude.getText()), Double.parseDouble(longitude.getText()), adress.getText());
 
-        CommandeRestau cm = new CommandeRestau(nombreAleatoire , prix1,Date.valueOf(now),idUser,Double.parseDouble(latitude.getText()) , Double.parseDouble(longitude.getText()),adress.getText()) ; 
-        
-        
-        ImCommandeRestau Imc = new ImCommandeRestau() ;
+        ImCommandeRestau Imc = new ImCommandeRestau();
         Imc.ajout(cm);
         tablePlat.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         int x = tablePlat.getSelectionModel().getSelectedItems().size();
         for (int i = 0; i < x; i++) {
-            Plat=tablePlat.getSelectionModel().getSelectedItems().get(i);
-    
-           Imc.ajoutPlatCommande(new CommandePlat(cm.getNum_Commande(),Plat.getIdPlat())) ; 
-          
-          
-           
+            Plat = tablePlat.getSelectionModel().getSelectedItems().get(i);
+
+            Imc.ajoutPlatCommande(new CommandePlat(cm.getNum_Commande(), Plat.getIdPlat()));
 
         }
-     
-        
-    
-        
-        
-        
+
     }
 
     private void LoadData() {
@@ -124,35 +122,46 @@ public class AjouterCommandeController implements Initializable {
         prixPlat.setCellValueFactory(new PropertyValueFactory<>("prixPlat"));
         descriptionPlat.setCellValueFactory(new PropertyValueFactory<>("description"));
         tablePlat.setItems(obsPlat);
-idUserr.setText(nameUser);
+        idUserr.setText(nameUser);
     }
 
-
-    
-    
     @FXML
     private void onTableItemsSelect(MouseEvent event) {
-        
-        
-        ImCommandeRestau imCo = new ImCommandeRestau() ; 
-                
-        Double S =0.0;
-        Double P=0.0;
-        
+
+        ImCommandeRestau imCo = new ImCommandeRestau();
+
+        Double S = 0.0;
+        Double P = 0.0;
+
         Prix.setText(String.valueOf(S).toString());
         tablePlat.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         int x = tablePlat.getSelectionModel().getSelectedItems().size();
         for (int i = 0; i < x; i++) {
-            Plat=tablePlat.getSelectionModel().getSelectedItems().get(i);
-    
-            
-           P=Plat.getPrixPlat();
-           S +=P;
-           Prix.setText(String.valueOf(S).toString());
-           prix1 = S ; 
+            Plat = tablePlat.getSelectionModel().getSelectedItems().get(i);
+
+            P = Plat.getPrixPlat();
+            S += P;
+            Prix.setText(String.valueOf(S).toString());
+            prix1 = S;
 
         }
     }
 
-   
+    @FXML
+    private void ButnOpenMap(ActionEvent event) throws IOException {
+   Parent page2 = FXMLLoader.load(getClass().getResource("testMap.fxml"));
+
+        Scene scene2 = new Scene(page2);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show(); 
+  /*
+   webengine=webmap.getEngine();
+
+     URL  url = this.getClass().getResource("MapHtml.html");
+webengine.load(url.toString());
+*/
+    }
+
+
 }
