@@ -24,6 +24,9 @@ import javafx.scene.web.WebView;
  */
 public class TestMapController implements Initializable {
 
+    public static double lon;
+        public static double lat;
+
     @FXML
     private WebView webview;
     private WebEngine webengine;
@@ -44,22 +47,10 @@ public class TestMapController implements Initializable {
 
     @FXML
     private void tt(ActionEvent event) {
-           /*     System.err.println("test");
-
-         webengine.getLoadWorker().stateProperty().addListener(
-     new ChangeListener<State>() {  
-    @Override public void changed(ObservableValue<? extends State> ov, State oldState, State newState) {
-      if (newState == State.SUCCEEDED) {
-        String win;
-          win = String.valueOf( webengine.executeScript("nom")).toString();
-      //  win.setMember("lat", new JavaApp());
-        System.err.println(win);
-      }
-    }
-  });*/
+      
            
-            Double lat = (Double) webview.getEngine().executeScript("lat");
-            Double lon = (Double) webview.getEngine().executeScript("lon");
+             lat = (Double) webview.getEngine().executeScript("lat");
+             lon = (Double) webview.getEngine().executeScript("lon");
 
 
         System.out.println("Lat: " + lat);

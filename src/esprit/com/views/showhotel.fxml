@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="1045.0" styleClass="dark" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ShowhotelController">
+   <children>
+      <TableView fx:id="tableReser" layoutX="14.0" layoutY="50.0" onMouseClicked="#onTableItemSelect" prefHeight="343.0" prefWidth="794.0">
+        <columns>
+          <TableColumn fx:id="typech" prefWidth="115.0" style="-fx-background-color: #F0F8FF;" text="typeChambre" />
+          <TableColumn fx:id="nbrnuit" prefWidth="102.0" style="-fx-background-color: #F0F8FF;" text="nbr nuit" />
+            <TableColumn fx:id="dateres" minWidth="8.0" prefWidth="118.0" style="-fx-background-color: #F0F8FF;" text="dateres" />
+            <TableColumn fx:id="nbrpersonne" prefWidth="110.0" style="-fx-background-color: #F0F8FF;" text="nbrpersonne" />
+            <TableColumn fx:id="datealler" prefWidth="110.0" style="-fx-background-color: #F0F8FF;" text="datealler" />
+            <TableColumn fx:id="dateretour" prefWidth="118.0" style="-fx-background-color: #F0F8FF;" text="dateretour" />
+            <TableColumn fx:id="dateretour1" prefWidth="118.0" style="-fx-background-color: #F0F8FF;" text="dateretour" />
+        </columns>
+      </TableView>
+      <Button layoutX="860.0" layoutY="392.0" mnemonicParsing="false" onAction="#updateReservation" prefHeight="58.0" prefWidth="149.0" style="-fx-background-color: #40E0D0;" text="modifier">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="340.0" layoutY="397.0" mnemonicParsing="false" onAction="#delete" prefHeight="58.0" prefWidth="199.0" style="-fx-background-color: #40E0D0;" text="supprimer">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="typeCh" layoutX="811.0" layoutY="61.0" prefHeight="31.0" prefWidth="199.0" style="-fx-background-color: #FAEBD7;" />
+      <TextField fx:id="nbrnuit1" layoutX="811.0" layoutY="111.0" prefHeight="31.0" prefWidth="199.0" style="-fx-background-color: #FAEBD7;" />
+      <DatePicker fx:id="datereserv1" layoutX="807.0" layoutY="174.0" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #FAEBD7;" />
+      <TextField fx:id="nbpersonne" layoutX="821.0" layoutY="221.0" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #FAEBD7;" />
+      <DatePicker fx:id="datealler1" layoutX="808.0" layoutY="271.0" style="-fx-background-color: #FAEBD7;" />
+      <DatePicker fx:id="dateretour11" layoutX="816.0" layoutY="332.0" style="-fx-background-color: #FAEBD7;" />
+      <FontAwesomeIconView fill="#bc2525" glyphName="PENCIL" layoutX="969.0" layoutY="440.0" size="40" />
+      <FontAwesomeIconView fill="#900d0d" glyphName="SCISSORS" layoutX="493.0" layoutY="437.0" size="30" text="" />
+      <Button layoutX="631.0" layoutY="411.0" mnemonicParsing="false" onAction="#getview" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #40E0D0;" text="reset">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="160.0" layoutY="411.0" mnemonicParsing="false" onAction="#envoyermail" text="mailing" />
+      <AnchorPane fx:id="report" layoutX="978.0" layoutY="14.0" prefHeight="31.0" prefWidth="51.0" />
+      <Button layoutX="63.0" layoutY="14.0" mnemonicParsing="false" onAction="#changevalue" text="Button" />
+      <Button layoutX="755.0" layoutY="414.0" mnemonicParsing="false" onAction="#getViewPdf" prefHeight="25.0" prefWidth="86.0" text="Pdf" />
+   </children>
+   <stylesheets>
+      <URL value="@darkmode.css" />
+      <URL value="@newCascadeStyleSheet.css" />
+   </stylesheets>
+</AnchorPane>

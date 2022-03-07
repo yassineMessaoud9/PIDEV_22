@@ -11,37 +11,46 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="686.0" prefWidth="984.0" style="-fx-background-color: white;" stylesheets="@images/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.SinscrireController">
+<AnchorPane id="AnchorPane" prefHeight="967.0" prefWidth="1242.0" style="-fx-background-color: white;" stylesheets="@images/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.SinscrireClientController">
    <children>
-      <TextField fx:id="nom" layoutX="613.0" layoutY="153.0" prefHeight="38.0" prefWidth="219.0" promptText="nom" />
-      <TextField fx:id="prenom" layoutX="613.0" layoutY="223.0" prefHeight="38.0" prefWidth="219.0" promptText="prenom" />
-      <TextField fx:id="adresse" layoutX="613.0" layoutY="277.0" prefHeight="38.0" prefWidth="219.0" promptText="adresse" />
-      <TextField fx:id="pays" layoutX="613.0" layoutY="450.0" prefHeight="38.0" prefWidth="219.0" promptText="pays" />
-      <TextField fx:id="email" layoutX="613.0" layoutY="333.0" prefHeight="38.0" prefWidth="219.0" promptText="email" />
-      <Button fx:id="submit" layoutX="642.0" layoutY="619.0" mnemonicParsing="false" onAction="#sisncrire" prefHeight="53.0" prefWidth="134.0" style="-fx-background-color: green;" text="S'inscrire" textFill="WHITE">
+      <ImageView fitHeight="967.0" fitWidth="1242.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Untitled-1.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="nom" layoutX="857.0" layoutY="195.0" prefHeight="53.0" prefWidth="334.0" promptText="nom" />
+      <TextField fx:id="prenom" layoutX="857.0" layoutY="276.0" prefHeight="53.0" prefWidth="334.0" promptText="prenom" />
+      <TextField fx:id="adresse" layoutX="857.0" layoutY="351.0" prefHeight="53.0" prefWidth="334.0" promptText="adresse" />
+      <TextField fx:id="pays" layoutX="857.0" layoutY="584.0" prefHeight="53.0" prefWidth="334.0" promptText="pays" />
+      <TextField fx:id="email" layoutX="857.0" layoutY="430.0" prefHeight="53.0" prefWidth="334.0" promptText="email" />
+      <Button fx:id="submit" layoutX="980.0" layoutY="768.0" mnemonicParsing="false" onAction="#sisncrire" prefHeight="53.0" prefWidth="134.0" style="-fx-background-color: #2a6edb;" text="S'inscrire" textFill="WHITE">
          <font>
             <Font name="System Bold" size="23.0" />
          </font></Button>
-      <Text layoutX="564.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S'inscrire au TRIP TO DO">
+      <Text fill="WHITE" layoutX="799.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S'inscrire au TRIP TO DO" wrappingWidth="440.9609375">
          <font>
-            <Font name="Arial Bold Italic" size="28.0" />
+            <Font name="Arial Rounded MT Bold" size="36.0" />
          </font>
       </Text>
-      <PasswordField fx:id="motpasse" layoutX="613.0" layoutY="391.0" prefHeight="38.0" prefWidth="219.0" promptText="motpasse" />
-      <Text fx:id="errorT" layoutX="601.0" layoutY="567.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.13671875" />
-      <Text fx:id="path" layoutX="591.0" layoutY="584.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="248.13671875" />
-      <ImageView fitHeight="706.0" fitWidth="492.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/gufu.gif" />
-         </image>
-      </ImageView>
+      <PasswordField fx:id="motpasse" layoutX="857.0" layoutY="507.0" prefHeight="53.0" prefWidth="334.0" promptText="motpasse" />
+      <Text fx:id="errorT" layoutX="829.0" layoutY="909.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.13671875" />
+      <Text fx:id="path" layoutX="799.0" layoutY="759.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="248.13671875" />
       <FontAwesomeIconView />
-      <ComboBox fx:id="imageSele" layoutX="613.0" layoutY="508.0" onAction="#imageSelect" prefHeight="38.0" prefWidth="219.0" style="-fx-background-color: #4a3837;" styleClass="combo-box" stylesheets="@css/cssTableauuti.css" />
-      <Text fill="WHITE" layoutX="642.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" wrappingWidth="91.923828125">
+      <ComboBox fx:id="imageSele" layoutX="921.0" layoutY="677.0" onAction="#imageSelect" prefHeight="38.0" prefWidth="219.0" style="-fx-background-color: #b33d3d;" styleClass="combo-box" stylesheets="@css/cssTableauuti.css" />
+      <Text fill="WHITE" layoutX="950.0" layoutY="705.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" wrappingWidth="91.923828125">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
       </Text>
-      <FontAwesomeIconView fill="WHITE" glyphName="CAMERA" layoutX="763.0" layoutY="535.0" size="24" />
+      <FontAwesomeIconView fill="WHITE" glyphName="CAMERA" layoutX="1071.0" layoutY="704.0" size="24" />
+      <Text fill="WHITE" layoutX="987.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client">
+         <font>
+            <Font name="System Bold Italic" size="27.0" />
+         </font></Text>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../logo/Blue%20Plane%20Travel%20Agency%20Logo%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

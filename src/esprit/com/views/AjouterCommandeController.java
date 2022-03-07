@@ -13,6 +13,8 @@ import static esprit.com.ImServices.ImUtilisateur.idUser;
 import esprit.com.entity.CommandePlat;
 import esprit.com.entity.CommandeRestau;
 import esprit.com.entity.Plat;
+import static esprit.com.views.TestMapController.lat;
+import static esprit.com.views.TestMapController.lon;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
@@ -41,10 +43,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Modality;
+import javafx.stage.PopupWindow;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -53,9 +61,14 @@ import javafx.stage.Stage;
  */
 public class AjouterCommandeController implements Initializable {
 
+
+    private Stage stage;
     private CommandeRestau CommandeRestau;
     public static Double prix1;
     public static Plat Plat;
+    
+    Double latitude;
+    Double   longitude ;
     @FXML
     public TableView<Plat> tablePlat;
     @FXML
@@ -69,14 +82,7 @@ public class AjouterCommandeController implements Initializable {
     @FXML
     private Text Prix;
     ObservableList<Plat> obsPlat = FXCollections.observableArrayList();
-    @FXML
     private Text idUserr;
-    @FXML
-    private TextField latitude;
-    @FXML
-    private TextField adress;
-    @FXML
-    private TextField longitude;
     @FXML
     private WebView webmap;
     private WebEngine webengine;
@@ -88,17 +94,30 @@ public class AjouterCommandeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         LoadData();
+                webengine = webmap.getEngine();
+
+        url = this.getClass().getResource("map/index.html");
+        webengine.load(url.toString());
+
+
     }
 
     @FXML
     private void commander(ActionEvent event) {
+        int etat=0;
+             latitude = (Double) webmap.getEngine().executeScript("lat");
+            longitude = (Double) webmap.getEngine().executeScript("lon");
+             
+             
+                     System.out.println("Lat AjoutCom: " + latitude);
+                System.out.println("LOn AjoutCom" + longitude);
 
-        int nombreAleatoire = 1000 + (int) (Math.random() * ((1000000 - 1000) + 1));
+       int nombreAleatoire = 1000 + (int) (Math.random() * ((1000000 - 1000) + 1));
 
         LocalDate now = LocalDate.now();
         System.out.println(now);
 
-        CommandeRestau cm = new CommandeRestau(nombreAleatoire, prix1, Date.valueOf(now), idUser, Double.parseDouble(latitude.getText()), Double.parseDouble(longitude.getText()), adress.getText());
+        CommandeRestau cm = new CommandeRestau(nombreAleatoire, prix1, Date.valueOf(now), idUser, latitude, longitude,etat);
 
         ImCommandeRestau Imc = new ImCommandeRestau();
         Imc.ajout(cm);
@@ -122,7 +141,11 @@ public class AjouterCommandeController implements Initializable {
         prixPlat.setCellValueFactory(new PropertyValueFactory<>("prixPlat"));
         descriptionPlat.setCellValueFactory(new PropertyValueFactory<>("description"));
         tablePlat.setItems(obsPlat);
-        idUserr.setText(nameUser);
+      //  idUserr.setText(nameUser);
+        
+        
+        
+
     }
 
     @FXML
@@ -149,18 +172,17 @@ public class AjouterCommandeController implements Initializable {
 
     @FXML
     private void ButnOpenMap(ActionEvent event) throws IOException {
-   Parent page2 = FXMLLoader.load(getClass().getResource("testMap.fxml"));
 
-        Scene scene2 = new Scene(page2);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.setScene(scene2);
-        app_stage.show(); 
-  /*
-   webengine=webmap.getEngine();
+      FXMLLoader fxmlLoader = new FXMLLoader (getClass ().getResource ("testMap.fxml"));
+Parent rootl = (Parent) fxmlLoader.load();
+Stage stage = new Stage();
+stage.initStyle(StageStyle.DECORATED);
+stage.setTitle("Second Window");
+stage.setScene(new Scene(rootl));
+stage.show();
+        stage.setResizable(false);
 
-     URL  url = this.getClass().getResource("MapHtml.html");
-webengine.load(url.toString());
-*/
+
     }
 
 

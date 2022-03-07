@@ -11,15 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="785.0" prefWidth="1030.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="esprit.com.views.ListCommandeClientController">
+<AnchorPane id="AnchorPane" prefHeight="785.0" prefWidth="1030.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ListCommandeClientController">
    <children>
       <Line endX="951.0" endY="-1.52587890625E-5" layoutX="115.0" layoutY="95.0" startX="-116.99996948242188" startY="-3.0517578125E-5" />
-      <ImageView fitHeight="149.0" fitWidth="153.0" layoutX="-2.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: 50;">
-         <image>
-            <Image url="@imges/logo.png" />
-         </image>
-      </ImageView>
       <Button fx:id="Logout" layoutX="1010.0" layoutY="31.0" minWidth="38.0" mnemonicParsing="false" onAction="#Logout" prefHeight="32.0" prefWidth="38.0" style="-fx-background-color: white;">
          <graphic>
             <FontAwesomeIconView glyphName="SIGN_OUT" size="40" wrappingWidth="34.911458015441895" />
@@ -36,23 +30,17 @@
             <Image url="@imges/img_174839.png" />
          </image>
       </ImageView>
-      <Text fill="#b20a0a" layoutX="369.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste de Commande" textAlignment="CENTER" wrappingWidth="276.13671875">
+      <Text fill="#b20a0a" layoutX="369.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste mes commandes" textAlignment="CENTER" wrappingWidth="276.13671875">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Text>
-      <TableView fx:id="TableCOm" layoutY="259.0" prefHeight="525.0" prefWidth="1067.0">
+      <TableView fx:id="TableCOm" layoutX="293.0" layoutY="205.0" prefHeight="423.0" prefWidth="423.0">
         <columns>
           <TableColumn fx:id="ncom" prefWidth="106.00003051757812" text="N°Commande" />
           <TableColumn fx:id="prixcom" prefWidth="120.00006103515625" text="Prix Commande" />
             <TableColumn fx:id="datecom" prefWidth="114.99998474121094" text="Date Commande" />
-            <TableColumn fx:id="lat" prefWidth="82.0" text="Latitude" />
-            <TableColumn fx:id="logit" prefWidth="94.0" text="Longitude" />
             <TableColumn fx:id="nompat" prefWidth="83.99993896484375" text="Nom Plat" />
-            <TableColumn fx:id="nomutili" prefWidth="127.0" text="Nom Utilisateur" />
-            <TableColumn fx:id="prenomUti" prefWidth="73.0" text="Prenom" />
-            <TableColumn fx:id="email" prefWidth="104.0" text="Email" />
-            <TableColumn fx:id="adress" prefWidth="169.00006103515625" text="Adress" />
         </columns>
       </TableView>
    </children>

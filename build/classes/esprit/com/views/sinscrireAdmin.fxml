@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="967.0" prefWidth="1242.0" style="-fx-background-color: white;" stylesheets="@images/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.SinscrireAdminController">
+   <children>
+      <ImageView fitHeight="967.0" fitWidth="1242.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Untitled-1.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="nom" layoutX="837.0" layoutY="202.0" prefHeight="53.0" prefWidth="334.0" promptText="nom" />
+      <TextField fx:id="prenom" layoutX="837.0" layoutY="283.0" prefHeight="53.0" prefWidth="334.0" promptText="prenom" />
+      <TextField fx:id="adresse" layoutX="837.0" layoutY="358.0" prefHeight="53.0" prefWidth="334.0" promptText="adresse" />
+      <TextField fx:id="pays" layoutX="837.0" layoutY="591.0" prefHeight="53.0" prefWidth="334.0" promptText="pays" />
+      <TextField fx:id="email" layoutX="837.0" layoutY="437.0" prefHeight="53.0" prefWidth="334.0" promptText="email" />
+      <Button fx:id="submit" layoutX="954.0" layoutY="773.0" mnemonicParsing="false" onAction="#sisncrire" prefHeight="53.0" prefWidth="134.0" style="-fx-background-color: #2a6edb;" text="S'inscrire" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font></Button>
+      <Text fill="WHITE" layoutX="769.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S'inscrire au TRIP TO DO" wrappingWidth="470.9609375">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="37.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="motpasse" layoutX="837.0" layoutY="514.0" prefHeight="53.0" prefWidth="334.0" promptText="motpasse" />
+      <Text fx:id="errorT" layoutX="829.0" layoutY="909.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.13671875" />
+      <Text fx:id="path" layoutX="799.0" layoutY="759.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="248.13671875" />
+      <FontAwesomeIconView />
+      <ComboBox fx:id="imageSele" layoutX="895.0" layoutY="682.0" onAction="#imageSelect" prefHeight="38.0" prefWidth="219.0" style="-fx-background-color: #b33d3d;" styleClass="combo-box" stylesheets="@css/cssTableauuti.css" />
+      <Text fill="WHITE" layoutX="924.0" layoutY="710.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" wrappingWidth="91.923828125">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView fill="WHITE" glyphName="CAMERA" layoutX="1045.0" layoutY="709.0" size="24" />
+      <Text fill="WHITE" layoutX="954.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin">
+         <font>
+            <Font name="System Bold Italic" size="27.0" />
+         </font></Text>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../logo/Blue%20Plane%20Travel%20Agency%20Logo%20(1).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

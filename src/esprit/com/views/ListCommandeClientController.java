@@ -36,19 +36,7 @@ public class ListCommandeClientController implements Initializable {
     @FXML
     private TableColumn<CommandeRestau, Date> datecom;
     @FXML
-    private TableColumn<CommandeRestau, Double> lat;
-    @FXML
-    private TableColumn<CommandeRestau, Double> logit;
-    @FXML
     private TableColumn<CommandeRestau, String> nompat;
-    @FXML
-    private TableColumn<CommandeRestau, String> nomutili;
-    @FXML
-    private TableColumn<CommandeRestau, String> prenomUti;
-    @FXML
-    private TableColumn<CommandeRestau, String> email;
-    @FXML
-    private TableColumn<CommandeRestau, String> adress;
     ObservableList<CommandeRestau> obslist = FXCollections.observableArrayList();
     @FXML
     private TableView<CommandeRestau> TableCOm;
@@ -64,19 +52,13 @@ public class ListCommandeClientController implements Initializable {
 
     private void Load() {
         ImCommandeRestau imc = new ImCommandeRestau();
-        imc.afficherTest().stream().forEach((p) -> {
+        imc.afficherUtilisateur().stream().forEach((p) -> {
             obslist.add(p);
         });
         ncom.setCellValueFactory(new PropertyValueFactory<>("Num_Commande"));
         prixcom.setCellValueFactory(new PropertyValueFactory<>("prix_commande"));
         datecom.setCellValueFactory(new PropertyValueFactory<>("date_commande"));
-        lat.setCellValueFactory(new PropertyValueFactory<>("latitude"));
-        logit.setCellValueFactory(new PropertyValueFactory<>("longitude"));
-        adress.setCellValueFactory(new PropertyValueFactory<>("Adress"));
         nompat.setCellValueFactory(new PropertyValueFactory<>("nomPlat"));
-        nomutili.setCellValueFactory(new PropertyValueFactory<>("nom"));
-        prenomUti.setCellValueFactory(new PropertyValueFactory<>("prenom"));
-        email.setCellValueFactory(new PropertyValueFactory<>("email"));
         TableCOm.setItems(obslist);
 
     }

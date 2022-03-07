@@ -12,7 +12,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.fxml.FXMLLoader;
+import javafx.fxml.FXMLLoader; 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -32,8 +32,8 @@ public class TripToDoGUI extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         // FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/ListeUtilisateur.fxml"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/AjouterCommande.fxml"));
-        //FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/sinscrire.fxml"));
+       // FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/ListCommandeClient.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/menu.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
 

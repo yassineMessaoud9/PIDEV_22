@@ -11,12 +11,20 @@ import esprit.com.ImServices.ImLivreur;
 import esprit.com.ImServices.ImPlat;
 import esprit.com.ImServices.ImSponsors;
 import esprit.com.ImServices.ImUtilisateur;
+import esprit.com.ImServices.ServiceHotel;
+import esprit.com.ImServices.ServiceReservationHotel;
+import esprit.com.ImServices.ServiceReservationRestaurant;
+import esprit.com.ImServices.ServiceRestaurant;
 import esprit.com.ImServices.imReset;
 import esprit.com.ImServices.imSuivi;
 import esprit.com.entity.CommandeRestau;
+import esprit.com.entity.Hotel;
 import esprit.com.entity.Livreur;
 import esprit.com.entity.Plat;
+import esprit.com.entity.ReservationHotel;
+import esprit.com.entity.ReservationRestaurant;
 import esprit.com.entity.Reset;
+import esprit.com.entity.Restaurant;
 import esprit.com.entity.Role;
 import esprit.com.entity.Sponsors;
 import esprit.com.entity.Suivi;
@@ -46,7 +54,7 @@ public class TripToDo {
  //uti.registre(new Utilisateur("ayass","mess","Ariana Soghra","medyassinee.messaoud@esprit.tn","maha","photo","tunis","Admin"));
      //  uti.modifier(new Utilisateur(6,"yassine.messaoud98@gmail.com","maha"));
           //  uti.modifierMopasst(new Utilisateur("maha.mess@gmail.com","maha"));
-System.out.println(uti.affiche());
+//System.out.println(uti.affiche());
         //uti.Supprimer(new Utilisateur(2));
      //   uti.modifier(new Utilisateur(1,"ayass","mesas","Ariana Soghra","maha.mess@gmail.com","photooo","tunis","utilisateur",1));
         // uti.Search(new Utilisateur(9)); 
@@ -103,17 +111,45 @@ System.out.println(uti.affiche());
 
         
 
+/*
+ ServiceHotel sH = new ServiceHotel();
+     
+         // sH.ajouter(new Hotel("esprit","u",5,3,"k;;kpm"));
+   // sH.modifier(new Hotel(63,"hotelu","u",5,5,"taswira"));
+     //   System.out.println(sH.rechercherHotel("asmakkk")); 
+//System.out.println(sH.TRIHotel());
+//sH.supprimer(new Hotel(63));  
+ //sH.stat();
+System.out.println(sH.TRIHotelNbrchambre());
+
+*/
+
+        //ServiceRestaurant sR = new ServiceRestaurant();
+  //sR.supprimer(new Restaurant(53));
+//sR.ajouter(new Restaurant("planAab","lms",3,"carthage",4,"photo"));
+     // sR.modifier(new Restaurant(53,"4forchettoikp","lmmmmms",10,"carthage",49987,"SOURA"));
+    //  System.out.println(sR.afficher());
 
 
+        ServiceReservationHotel sRH = new ServiceReservationHotel();
+   //  sRH.ajouter(new ReservationHotel("Tour",2,Date.valueOf("2022-2-18"),200,Date.valueOf("2020-12-10"),Date.valueOf("2020-12-10"),1,4));
+ // sRH.modifier(new ReservationHotel(35,"Loool",2,Date.valueOf("2020-12-9"),20,Date.valueOf("2020-12-10"),Date.valueOf("2020-12-10"),1,4));
+ //System.out.println(sRH.afficher());
+  // sRH.supprimer(new ReservationHotel(35));
+     //sRH.supprimer(new ReservationHotel(10,9,26,"DOUBL",Date.valueOf("2021-12-11") ,99,1,10));
+    
+    
+        ServiceReservationRestaurant sRR = new ServiceReservationRestaurant();
 
-
-
-
-
-
-
-
-
+    // sRR.supprimer(new ReservationRestaurant(12,13,Date.valueOf("2019-12-10") ,5,1));
+//sRR.ajouter(new ReservationRestaurant(Date.valueOf("2019-12-11"),Date.valueOf("2017-12-10"),Date.valueOf("2019-12-10"),1,4));
+ //sRR.supprimer(new ReservationRestaurant(17));
+      //  System.out.println(sRR.afficher());
+//sRR.modifier(new ReservationRestaurant(17,Date.valueOf("2019-12-11"),Date.valueOf("2017-12-10"),Date.valueOf("2019-12-10"),1,4));
+   
+    
+    
+    
     }
 
 

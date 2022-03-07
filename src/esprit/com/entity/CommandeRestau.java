@@ -13,40 +13,50 @@ import java.util.List;
  * @author Yassine
  */
 public class CommandeRestau {
-    
+
     private int Num_Commande;
     private double prix_commande;
-    private Date date_commande  ;
-private int idU;
+    private Date date_commande;
+    private int idU;
     private double latitude;
     private double longitude;
-    private String Adress;
     private String nomPlat;
     private String nom;
     private String prenom;
     private String email;
+    private int etat = 0;
 
-    public CommandeRestau(int Num_Commande, double prix_commande, Date date_commande,  double latitude, double longitude, String Adress, String nomPlat, String nom, String prenom, String email) {
+    public CommandeRestau(int Num_Commande, double prix_commande, Date date_commande, double latitude, double longitude, String nomPlat, String nom, String prenom, String email, int etat) {
         this.Num_Commande = Num_Commande;
         this.prix_commande = prix_commande;
         this.date_commande = date_commande;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.Adress = Adress;
         this.nomPlat = nomPlat;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
+        this.etat = etat;
     }
-    
-    public CommandeRestau(int Num_Commande, double prix_commande, Date date_commande, int idU, double latitude, double longitude, String Adress) {
+
+    public CommandeRestau(int Num_Commande, double prix_commande, Date date_commande, String nomPlat, String nom, int etat) {
+        this.Num_Commande = Num_Commande;
+        this.prix_commande = prix_commande;
+        this.nomPlat = nomPlat;
+        this.nom = nom;
+        this.etat = etat;
+        this.date_commande = date_commande;
+
+    }
+
+    public CommandeRestau(int Num_Commande, double prix_commande, Date date_commande, int idU, double latitude, double longitude,int etat) {
         this.Num_Commande = Num_Commande;
         this.prix_commande = prix_commande;
         this.date_commande = date_commande;
         this.idU = idU;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.Adress = Adress;
+        this.etat=etat;
     }
 
     public int getNum_Commande() {
@@ -97,14 +107,6 @@ private int idU;
         this.longitude = longitude;
     }
 
-    public String getAdress() {
-        return Adress;
-    }
-
-    public void setAdress(String Adress) {
-        this.Adress = Adress;
-    }
-
     public String getNomPlat() {
         return nomPlat;
     }
@@ -137,11 +139,17 @@ private int idU;
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "CommandeRestau{" + "Num_Commande=" + Num_Commande + ", prix_commande=" + prix_commande + ", date_commande=" + date_commande + ", idU=" + idU + ", latitude=" + latitude + ", longitude=" + longitude + ", Adress=" + Adress + ", nomPlat=" + nomPlat + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + '}';
+    public int getEtat() {
+        return etat;
     }
 
-    
-    
+    public void setEtat(int etat) {
+        this.etat = etat;
+    }
+
+    @Override
+    public String toString() {
+        return "CommandeRestau{" + "Num_Commande=" + Num_Commande + ", prix_commande=" + prix_commande + ", date_commande=" + date_commande + ", idU=" + idU + ", latitude=" + latitude + ", longitude=" + longitude + ", nomPlat=" + nomPlat + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", etat=" + etat + '}';
+    }
+
 }

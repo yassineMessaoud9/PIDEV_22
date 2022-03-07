@@ -7,6 +7,8 @@
     <title>Leaflet Tutorial</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="index.css" />
+
     <style>
         #map{
             height: 100vh;
@@ -43,12 +45,27 @@
 
 </head>
 <body>
-     <h1>Data Selfie App</h1>
-    <p>
-      latitude: <span id="latitude"></span>&deg;<br />
-      longitude: <span id="longitude"></span>&deg;
-    </p>
-    <div id="map"></div>
+   
+    <div class="loader">
+        <span class="lettre">T</span>
+        <span class="lettre">R</span>
+        <span class="lettre">I</span>
+        <span class="lettre">P</span>
+        <span class="lettre">&nbsp;</span>
+        <span class="lettre">T</span>
+        <span class="lettre">O</span>
+        <span class="lettre">&nbsp;</span>
+        <span class="lettre">D</span>
+        <span class="lettre">O</span>
+        <span class="lettre">&nbsp;</span>
+        <span class="lettre">m</span>
+        <span class="lettre">a</span>
+        <span class="lettre">p</span>
+
+    </div>
+   
+
+    <div id="map"></div>  
 </body>
 </html>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -58,16 +75,22 @@
 <script src="./data/nepaldata.js"></script>
 <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 <script src="./data/usstates.js"></script>
-<a href="about:blank" onclick="app.exit()">Exit the Application</a>
 
 <script>
+    const loader = document.querySelector('.loader');
 
+    window.addEventListener('load', () => {
+    
+        loader.classList.add('fondu-out');
+    
+    })    
     /*===================================================
                       OSM  LAYER               
 ===================================================*/
 let lat;
 let nom;
 var  x;
+let po;
  let lon;
     var map = L.map('map').setView([9.561555499999997,33.892166], 4);
 var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -91,9 +114,9 @@ map.on('click', function (e) {
 
 var singleMarker = L.marker([28.25255,83.97669]);
 singleMarker.addTo(map);
+//console.log(singleMarker.textContent);
 var popup = singleMarker.bindPopup('This is a popup')
 popup.addTo(map);
-
 /*===================================================
                      TILE LAYER               
 ===================================================*/
@@ -286,6 +309,5 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
-
 
 </script>

@@ -384,7 +384,7 @@ public class ListeUtilisateurController implements Initializable {
 
     @FXML
     private void Sponsors(ActionEvent event) throws IOException {
-        Parent page2 = FXMLLoader.load(getClass().getResource("Sponsors.fxml"));
+        Parent page2 = FXMLLoader.load(getClass().getResource("ListCommandeClient.fxml"));
 
         Scene scene2 = new Scene(page2);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

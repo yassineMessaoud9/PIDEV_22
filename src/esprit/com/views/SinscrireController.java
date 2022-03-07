@@ -20,7 +20,11 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
@@ -29,9 +33,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.controlsfx.control.Notifications;
 import org.controlsfx.control.PrefixSelectionComboBox;
 
 /**
@@ -72,17 +78,29 @@ public class SinscrireController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    imageSele.getItems().addAll( "Depuis Camera", "Depuis PC");
+        imageSele.getItems().addAll("Depuis Camera", "Depuis PC");
     }
 
     @FXML
-    private void sisncrire(ActionEvent event) {
+    private void sisncrire(ActionEvent event) throws IOException {
         ImUtilisateur uti = new ImUtilisateur();
         // uti.registre(new Utilisateur("ayass","mess","Ariana Soghra","amaha.messaoud3@gmail.com","yassine","photo","tunis",Role.Admin,"Admin+",100.9));
-        String Role = "Admin";
+        String Role = "Client";
         uti.registre(new Utilisateur(nom.getText(), prenom.getText(), adresse.getText(), email.getText(), motpasse.getText(), pic, pays.getText(), Role));
         JOptionPane.showMessageDialog(null, "Personne ajoutée ! , Un email vous a envoyé");
+          Notifications notifications=Notifications.create();
+        notifications.text("Personne ajoutée ! , Un email vous a envoyé");
+        notifications.title("Success Message");
+     //   notifications.hideAfter(Duration.seconds(4));
+       //notifications.darkStyle();
+     /*   notifications.position(Pos.BOTTOM_CENTER);*/
+        notifications.show();
+        Parent page2 = FXMLLoader.load(getClass().getResource("login.fxml"));
 
+        Scene scene2 = new Scene(page2);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
     }
 
     private void upload() throws IOException {
@@ -125,12 +143,12 @@ public class SinscrireController implements Initializable {
 
     @FXML
     private void imageSelect(ActionEvent event) throws IOException {
-        
+
         if (imageSele.getValue().equals("Depuis Camera")) {
             prendrePho();
-        } else if(imageSele.getValue().equals("Depuis PC")){
+        } else if (imageSele.getValue().equals("Depuis PC")) {
             upload();
-        }else{
+        } else {
             imageSele.setDisable(true);
         }
     }

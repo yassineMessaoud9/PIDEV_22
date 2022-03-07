@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="gstUtil" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="967.0" prefWidth="1242.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.MenuAdminController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="988.0" layoutX="-5.0" layoutY="-14.0" stroke="BLACK" strokeType="INSIDE" width="288.0" />
+      <ImageView fitHeight="130.0" fitWidth="153.0" layoutX="76.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Blue%20Plane%20Travel%20Agency%20Logo.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="1.0" layoutY="198.0" mnemonicParsing="false" onAction="#GoProfil" prefHeight="45.0" prefWidth="281.0" style="-fx-background-color: white;" text="Profile" textFill="#4349a3">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView fill="#4349a3" glyphName="USER" layoutX="15.0" layoutY="229.0" size="30" />
+      <ChoiceBox fx:id="GestioUti" layoutX="1.0" layoutY="269.0" prefHeight="45.0" prefWidth="281.0" style="-fx-background-color: white;" />
+      <FontAwesomeIconView fill="#4349a3" glyphName="USERS" layoutX="11.0" layoutY="302.0" size="30" />
+      <Text fill="#4349a3" layoutX="76.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Utilisateur">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Text fx:id="WelcomeUSer" fill="WHITE" layoutX="4.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom Utilisateur" wrappingWidth="270.4013325572014">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="gestSpons" layoutX="1.0" layoutY="336.0" prefHeight="45.0" prefWidth="281.0" style="-fx-background-color: white;" />
+      <FontAwesomeIconView fill="#4349a3" glyphName="MONEY" layoutX="12.0" layoutY="369.0" size="30" />
+      <Text fill="#4349a3" layoutX="68.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Sponsoring">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="gestComPl" layoutX="1.0" layoutY="401.0" prefHeight="45.0" prefWidth="281.0" style="-fx-background-color: white;" />
+      <FontAwesomeIconView fill="#4349a3" glyphName="CUTLERY" layoutX="11.0" layoutY="434.0" size="30" />
+      <Text fill="#4349a3" layoutX="62.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Command et plat">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="GestHoRes" layoutX="1.0" layoutY="468.0" prefHeight="45.0" prefWidth="281.0" style="-fx-background-color: white;" />
+      <FontAwesomeIconView fill="#4349a3" glyphName="HOTEL" layoutX="11.0" layoutY="501.0" size="30" />
+      <Text fill="#4349a3" layoutX="54.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Hotel et Restaurant">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="GestVol" layoutX="1.0" layoutY="539.0" prefHeight="45.0" prefWidth="281.0" style="-fx-background-color: white;" />
+      <FontAwesomeIconView fill="#4349a3" glyphName="PLANE" layoutX="11.0" layoutY="572.0" size="30" />
+      <Text fill="#4349a3" layoutX="76.0" layoutY="571.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Vol">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="GestLocVoi" layoutX="1.0" layoutY="612.0" prefHeight="45.0" prefWidth="281.0" style="-fx-background-color: white;" />
+      <FontAwesomeIconView fill="#4349a3" glyphName="CAR" layoutX="11.0" layoutY="645.0" size="30" />
+      <Text fill="#4349a3" layoutX="57.0" layoutY="640.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Location Voiture">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="GestEve" layoutX="1.0" layoutY="687.0" prefHeight="45.0" prefWidth="281.0" style="-fx-background-color: white;" />
+      <FontAwesomeIconView fill="#4349a3" glyphName="CALENDAR" layoutX="11.0" layoutY="720.0" size="30" />
+      <Text fill="#4349a3" layoutX="60.0" layoutY="717.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Evenement">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="9.0" layoutY="927.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Time" wrappingWidth="259.13671875">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="GestRec" layoutX="1.0" layoutY="754.0" prefHeight="45.0" prefWidth="281.0" style="-fx-background-color: white;" />
+      <FontAwesomeIconView fill="#4349a3" glyphName="BULLHORN" layoutX="11.0" layoutY="787.0" size="30" />
+      <Text fill="#4349a3" layoutX="60.0" layoutY="784.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Reclamation">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
