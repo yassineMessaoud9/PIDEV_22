@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="967.0" prefWidth="1242.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AvionboardController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="86.0" layoutX="39.0" layoutY="114.0" stroke="#4349a3" strokeType="INSIDE" width="824.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="369.0" layoutX="747.0" layoutY="312.0" stroke="#4349a3" strokeType="INSIDE" width="424.0" />
+      <TableView fx:id="tableauavion" layoutX="39.0" layoutY="226.0" onMouseClicked="#selectavion" prefHeight="631.0" prefWidth="627.0">
+        <columns>
+          <TableColumn fx:id="numserie" prefWidth="208.0" text="Numero de serie" />
+          <TableColumn fx:id="marque" prefWidth="208.0" text="Marque" />
+            <TableColumn fx:id="nbrplace" prefWidth="210.0" text="Nombre de place" />
+        </columns>
+      </TableView>
+      <Text fill="#4349a3" layoutX="727.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter une avion :" wrappingWidth="143.4951171875" />
+      <Button fx:id="ajout" layoutX="884.0" layoutY="230.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #4349a3;" text="Ajouter" textFill="WHITE" />
+      <Text fill="#4349a3" layoutX="790.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero de serie :" wrappingWidth="122.2734375" />
+      <Text fill="#4349a3" layoutX="849.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marque :" wrappingWidth="69.00002202391624" />
+      <Text fill="#4349a3" layoutX="787.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de place :" wrappingWidth="128.55810546875" />
+      <TextField fx:id="nms" layoutX="941.0" layoutY="359.0" />
+      <TextField fx:id="marq" layoutX="941.0" layoutY="430.0" />
+      <TextField fx:id="nbp" layoutX="941.0" layoutY="510.0" />
+      <Button layoutX="970.0" layoutY="601.0" mnemonicParsing="false" onAction="#modif" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #4349a3;" text="Modifier" textFill="WHITE" />
+      <Button layoutX="819.0" layoutY="601.0" mnemonicParsing="false" onAction="#annu" prefHeight="31.0" prefWidth="129.0" style="-fx-background-color: #4349a3;" text="Annuler" textFill="WHITE" />
+      <Button layoutX="544.0" layoutY="872.0" mnemonicParsing="false" onAction="#supprimeravion" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #cc1515;" text="Supprimer" textFill="WHITE" />
+      <Text fill="#4349a3" layoutX="245.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trie :" wrappingWidth="55.94141858816147" />
+      <Text fill="#4349a3" layoutX="560.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chercher :" wrappingWidth="71.9999960064888" />
+      <ComboBox fx:id="combo" layoutX="323.0" layoutY="142.0" onAction="#trie" prefHeight="31.0" prefWidth="221.0" promptText="choisir votre choix de trie" />
+      <TextField fx:id="chercher" layoutX="654.0" layoutY="142.0" />
+      <Button layoutX="1077.0" layoutY="787.0" mnemonicParsing="false" onAction="#retour" text="retour au menu" textFill="WHITE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1242.0" />
+      <FontAwesomeIconView fill="#fcfcfc" glyphName="ARROW_LEFT" layoutX="22.0" layoutY="52.0" size="40" />
+      <Text fill="WHITE" layoutX="441.0" layoutY="56.0" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="40.0" text="Liste des  avions" wrappingWidth="384.857421875">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="44.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" layoutX="1074.0" layoutY="507.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="990.0" layoutY="249.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="627.0" layoutY="621.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="REPEAT" layoutX="923.0" layoutY="508.0" text="" />
+      <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="646.0" layoutY="891.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="96.0" layoutX="79.0" layoutY="84.0" stroke="#4349a3" strokeType="INSIDE" width="107.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="100.0" layoutY="156.0" size="70" />
+   </children>
+</AnchorPane>
