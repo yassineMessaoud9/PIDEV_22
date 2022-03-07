@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="967.0" prefWidth="1242.0" style="-fx-background-color: fFFFFf;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AdresseboardController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="86.0" layoutX="22.0" layoutY="138.0" stroke="#4349a3" strokeType="INSIDE" width="682.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="369.0" layoutX="732.0" layoutY="333.0" stroke="#4349a3" strokeType="INSIDE" width="424.0" />
+      <TableView fx:id="tableadresse" layoutX="37.0" layoutY="247.0" onMouseClicked="#selectadresse" prefHeight="604.0" prefWidth="607.0">
+        <columns>
+          <TableColumn fx:id="pays" prefWidth="154.0" text="Pays" />
+          <TableColumn fx:id="rue" prefWidth="309.0" text="Rue" />
+            <TableColumn fx:id="contact" prefWidth="143.0" text="Conatct" />
+        </columns>
+      </TableView>
+      <Text fill="#4349a3" layoutX="839.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pays :" wrappingWidth="59.18359375" />
+      <TextField fx:id="mpays" layoutX="918.0" layoutY="391.0" />
+      <Button layoutX="520.0" layoutY="870.0" mnemonicParsing="false" onAction="#supprimeradresse" prefHeight="31.0" prefWidth="123.0" style="-fx-background-color: #cc1515;" text="Supprimer" textFill="WHITE" />
+      <TextField fx:id="mrue" layoutX="918.0" layoutY="461.0" />
+      <TextField fx:id="mcontact" layoutX="918.0" layoutY="534.0" />
+      <Text fill="#4349a3" layoutX="845.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rue :" wrappingWidth="48.18359375" />
+      <Text fill="#4349a3" layoutX="823.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact :" wrappingWidth="73.18359375" />
+      <Button layoutX="987.0" layoutY="616.0" mnemonicParsing="false" onAction="#modifier" prefHeight="31.0" prefWidth="123.0" style="-fx-background-color: #4349a3;" text="Modifier" textFill="WHITE" />
+      <Button layoutX="808.0" layoutY="616.0" mnemonicParsing="false" onAction="#annuler" prefHeight="31.0" prefWidth="123.0" style="-fx-background-color: #4349a3;" text="Annuler" textFill="WHITE" />
+      <Text fill="#4349a3" layoutX="686.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter une adresse :" wrappingWidth="150.00000146590173" />
+      <Button fx:id="ajouter" layoutX="851.0" layoutY="247.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="31.0" prefWidth="123.0" style="-fx-background-color: #4349a3;" text="Ajouter" textFill="WHITE" />
+      <RadioButton fx:id="triepays" layoutX="363.0" layoutY="170.0" mnemonicParsing="false" onAction="#triepays" />
+      <Text fill="#4349a3" layoutX="200.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trie a partir du pays :" wrappingWidth="149.99999441206455" />
+      <Text fill="#4349a3" layoutX="415.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chercher :" wrappingWidth="73.18357938528061" />
+      <TextField fx:id="recherchepays" layoutX="499.0" layoutY="165.0" promptText="a partir du pays" />
+      <Button layoutX="1087.0" layoutY="836.0" mnemonicParsing="false" onAction="#retour" text="retour au menu" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1245.0" />
+      <Text fill="WHITE" layoutX="452.0" layoutY="54.0" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="40.0" text="Liste des adresses" wrappingWidth="498.857421875">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="44.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="1002.0" layoutY="179.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="REPEAT" layoutX="912.0" layoutY="636.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" layoutX="1087.0" layoutY="635.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="770.0" layoutY="781.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="14.0" layoutY="52.0" size="40" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="119.0" layoutX="48.0" layoutY="87.0" stroke="#4349a3" strokeType="INSIDE" width="123.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="77.0" layoutY="171.0" size="70" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="955.0" layoutY="267.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="623.0" layoutY="890.0" />
+   </children>
+</AnchorPane>

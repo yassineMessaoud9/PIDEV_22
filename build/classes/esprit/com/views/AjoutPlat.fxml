@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="709.0" prefWidth="989.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="esprit.com.views.AjoutPlatController">
+<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjoutPlatController">
    <children>
-      <ImageView fitHeight="288.0" fitWidth="361.0" layoutX="318.0" layoutY="-31.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@imges/logo.png" />
-         </image>
-      </ImageView>
-      <Text layoutX="382.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Un plat">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Text>
-      <TextField fx:id="nomPlat" layoutX="207.0" layoutY="277.0" prefHeight="39.0" prefWidth="567.0" promptText="Nom Plat" />
-      <TextField fx:id="descP" layoutX="211.0" layoutY="543.0" prefHeight="39.0" prefWidth="567.0" promptText="Description" />
-      <TextField fx:id="phtoPlat" layoutX="207.0" layoutY="464.0" prefHeight="39.0" prefWidth="567.0" promptText="Photo Plat" />
-      <TextField fx:id="PrixPlat" layoutX="207.0" layoutY="377.0" prefHeight="39.0" prefWidth="567.0" promptText="Prix Plat" />
+      <TextField fx:id="nomPlat" layoutX="195.0" layoutY="214.0" prefHeight="39.0" prefWidth="567.0" promptText="Nom Plat" />
+      <TextField fx:id="descP" layoutX="195.0" layoutY="379.0" prefHeight="98.0" prefWidth="567.0" promptText="Description" />
+      <TextField fx:id="PrixPlat" layoutX="195.0" layoutY="297.0" prefHeight="39.0" prefWidth="567.0" promptText="Prix Plat" />
       <Button layoutX="338.0" layoutY="614.0" mnemonicParsing="false" onAction="#AjoutPat" prefHeight="62.0" prefWidth="314.0" style="-fx-background-color: red;" text="Submit" textFill="#fffafa">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="117.0" stroke="TRANSPARENT" strokeType="INSIDE" width="996.0" />
+      <Text fill="WHITE" layoutX="363.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Un plat">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="35.0" />
+         </font>
+      </Text>
+      <Button layoutX="196.0" layoutY="505.0" mnemonicParsing="false" onAction="#photoPlat" prefHeight="39.0" prefWidth="567.0" style="-fx-background-color: #4349a3;" text="Ajouter Photo" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView fill="WHITE" glyphName="CAMERA" layoutX="593.0" layoutY="539.0" size="34" />
    </children>
 </AnchorPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.TicketFController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="120.0" layoutX="-7.0" stroke="#ffffff00" strokeType="INSIDE" width="868.0" />
+      <TableView fx:id="tableT" layoutX="14.0" layoutY="312.0" onMouseClicked="#onTableItemSelect" prefHeight="382.0" prefWidth="353.0">
+        <columns>
+          <TableColumn fx:id="col_prix" prefWidth="75.0" text="prix" />
+          <TableColumn fx:id="col_date" prefWidth="200.0" text="date" />
+            <TableColumn fx:id="col_nom1" prefWidth="75.0" text="NomEvent" />
+        </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="258.0" prefHeight="27.0" prefWidth="69.0" text="Search" textFill="#4349a3">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfSearch" layoutX="96.0" layoutY="252.0" prefHeight="39.0" prefWidth="262.0" />
+      <RadioButton fx:id="RBTrixP" layoutX="505.0" layoutY="647.0" mnemonicParsing="false" onAction="#triwithprix" prefHeight="27.0" prefWidth="105.0" text="Tri avec prix" textFill="#4349a3">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="tribDate" layoutX="383.0" layoutY="651.0" mnemonicParsing="false" onAction="#triDate" text="Tri par date" textFill="#4349a3">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="277.0" layoutY="35.0" prefHeight="50.0" prefWidth="307.0" text="Gestion Ticket" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="39.0" />
+         </font>
+      </Label>
+      <TextField fx:id="prixTicket" layoutX="544.0" layoutY="302.0" prefHeight="27.0" prefWidth="239.0" promptText="prix" />
+      <DatePicker fx:id="dateT" layoutX="544.0" layoutY="360.0" prefHeight="27.0" prefWidth="239.0" promptText="Date" />
+      <Button fx:id="rebtn" layoutX="544.0" layoutY="531.0" mnemonicParsing="false" onAction="#refresh" prefHeight="39.0" prefWidth="69.0" style="-fx-background-color: #4349a3;" text="Refresh" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnadd" layoutX="544.0" layoutY="448.0" mnemonicParsing="false" onAction="#ADDticket" prefHeight="27.0" prefWidth="239.0" style="-fx-background-color: #4349a3;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btndel" layoutX="629.0" layoutY="531.0" mnemonicParsing="false" onAction="#delete" prefHeight="39.0" prefWidth="69.0" style="-fx-background-color: #4349a3;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="398.0" layoutY="305.0" prefHeight="26.0" prefWidth="120.0" text="PrixTicket" textFill="#1140da">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="398.0" layoutY="365.0" prefHeight="26.0" prefWidth="132.0" text="Date Ticket" textFill="#1151d0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="modifyt" layoutX="714.0" layoutY="531.0" mnemonicParsing="false" onAction="#modify" prefHeight="39.0" prefWidth="69.0" style="-fx-background-color: #4349a3;" text="Modifier" textFill="WHITE" />
+      <ChoiceBox fx:id="choixName" layoutX="544.0" layoutY="413.0" prefHeight="25.0" prefWidth="239.0" style="-fx-background-color: #4349a3;" />
+      <Text fill="WHITE" layoutX="611.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom Evenement" wrappingWidth="104.99999687075615" />
+   </children>
+</AnchorPane>

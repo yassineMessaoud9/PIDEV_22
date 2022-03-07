@@ -1,53 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjouterRestaurantController">
+<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjouterRestaurantController">
    <children>
-      <Label layoutX="105.0" layoutY="56.0" text="nomRestau">
+      <Label layoutX="110.0" layoutY="240.0" text="nom Restau">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="21.0" />
          </font></Label>
-      <Label layoutX="105.0" layoutY="110.0" text="TypeRestau">
+      <Label layoutX="109.0" layoutY="297.0" text="Type Restau">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font></Label>
-      <Label layoutX="105.0" layoutY="169.0" text="nombre Table ">
+      <Label layoutX="110.0" layoutY="355.0" text="Nombre Table ">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="105.0" layoutY="223.0" text="localisation">
+      <Label layoutX="110.0" layoutY="407.0" text="localisation">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="23.0" />
          </font></Label>
-      <Label layoutX="105.0" layoutY="279.0" text="telephone">
+      <Label layoutX="109.0" layoutY="466.0" text="Telephone">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="21.0" />
          </font></Label>
-      <Label layoutX="126.0" layoutY="339.0" text="photo">
+      <Label layoutX="120.0" layoutY="528.0" prefHeight="24.0" prefWidth="94.0" text="Photo">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="22.0" />
          </font></Label>
-      <TextField fx:id="idnomrestau" layoutX="227.0" layoutY="51.0" style="-fx-background-color: #FFF5EE;" />
-      <ComboBox fx:id="idtyperestau" layoutX="237.0" layoutY="105.0" prefHeight="31.0" prefWidth="178.0" style="-fx-background-color: #FFF5EE;" />
-      <TextField fx:id="idnbrtable" layoutX="227.0" layoutY="163.0" style="-fx-background-color: #FFF5EE;" />
-      <TextField fx:id="idlocalisation" layoutX="218.0" layoutY="218.0" style="-fx-background-color: #FFF5EE;" />
-      <TextField fx:id="idtelephone" layoutX="218.0" layoutY="274.0" style="-fx-background-color: #FFF5EE;" />
-      <Button layoutX="593.0" layoutY="260.0" mnemonicParsing="false" onAction="#ajouterRestau" style="-fx-background-color: #40E0D0;" text="envoyer">
+      <TextField fx:id="idnomrestau" layoutX="244.0" layoutY="237.0" prefHeight="38.0" prefWidth="186.0" />
+      <ComboBox fx:id="idtyperestau" layoutX="244.0" layoutY="291.0" prefHeight="38.0" prefWidth="186.0" style="-fx-background-color: #4349a3;" />
+      <TextField fx:id="idnbrtable" layoutX="248.0" layoutY="352.0" prefHeight="29.0" prefWidth="186.0" />
+      <TextField fx:id="idlocalisation" layoutX="248.0" layoutY="404.0" prefHeight="29.0" prefWidth="186.0" />
+      <TextField fx:id="idtelephone" layoutX="248.0" layoutY="463.0" prefHeight="29.0" prefWidth="194.0" />
+      <Button layoutX="333.0" layoutY="622.0" mnemonicParsing="false" onAction="#ajouterRestau" prefHeight="39.0" prefWidth="120.0" style="-fx-background-color: #4349a3;" text="envoyer" textFill="WHITE">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
       </Button>
-      <Button layoutX="564.0" layoutY="164.0" mnemonicParsing="false" onAction="#resetmenu2" style="-fx-background-color: #40E0D0;" text="retour menu">
+      <Button layoutX="152.0" layoutY="622.0" mnemonicParsing="false" onAction="#resetmenu2" style="-fx-background-color: #4349a3;" text="retour menu" textFill="#eeeeee">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="227.0" layoutY="336.0" mnemonicParsing="false" onAction="#upload" prefHeight="25.0" prefWidth="149.0" text="Photo" />
+      <Button layoutX="248.0" layoutY="522.0" mnemonicParsing="false" onAction="#upload" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: red;" text="Photo" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#434aa1" height="126.0" stroke="TRANSPARENT" strokeType="INSIDE" width="852.0" />
+      <Text fill="WHITE" layoutX="260.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Restaurant" wrappingWidth="358.13671875">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="33.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView fill="WHITE" glyphName="CAMERA" layoutX="360.0" layoutY="550.0" size="24" wrappingWidth="22.0" />
    </children>
 </AnchorPane>

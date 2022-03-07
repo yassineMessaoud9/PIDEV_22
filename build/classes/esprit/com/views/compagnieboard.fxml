@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="967.0" prefWidth="1242.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.CompagnieboardController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="263.0" layoutX="731.0" layoutY="352.0" stroke="#4349a3" strokeType="INSIDE" width="448.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="86.0" layoutX="27.0" layoutY="105.0" stroke="#4349a3" strokeType="INSIDE" width="635.0" />
+      <TableView fx:id="tablecompagnie" layoutX="47.0" layoutY="209.0" onMouseClicked="#select" prefHeight="663.0" prefWidth="596.0" style="-fx-background-color: #c2c5cd;">
+        <columns>
+          <TableColumn fx:id="nomcompagnie" prefWidth="262.0" text="Nom du compagnie" />
+          <TableColumn fx:id="adressecompagnie" prefWidth="333.0" text="Adresse du compagnie" />
+        </columns>
+      </TableView>
+      <Text fill="#4349a3" layoutX="684.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter une compagnie :" />
+      <Button layoutX="886.0" layoutY="211.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #4349a3;" text="Ajouter" textFill="WHITE" />
+      <Text fill="#4349a3" layoutX="772.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom du compagnie :" wrappingWidth="163.015129879117" />
+      <TextField fx:id="nvcompagnienom" layoutX="950.0" layoutY="429.0" />
+      <Button layoutX="526.0" layoutY="882.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #cc1515;" text="Supprimer" textFill="WHITE" />
+      <Button layoutX="1043.0" layoutY="808.0" mnemonicParsing="false" onAction="#retour" text="retour au menu" />
+      <Text fill="#4349a3" layoutX="239.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chercher  :" wrappingWidth="92.91748046875" />
+      <TextField fx:id="cherchcomp" layoutX="332.0" layoutY="133.0" prefHeight="31.0" prefWidth="205.0" promptText="a partir du nom de pays" />
+      <Button layoutX="983.0" layoutY="525.0" mnemonicParsing="false" onAction="#modifier" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #4349a3;" text="Modifier" textFill="WHITE" />
+      <Button layoutX="835.0" layoutY="525.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #4349a3;" text="Annuler" textFill="WHITE" />
+      <Rectangle arcHeight="70.0" arcWidth="5.0" fill="#4349a3" height="86.0" layoutY="-9.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1242.0" />
+      <Text fill="WHITE" layoutX="415.0" layoutY="54.0" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="40.0" text="Liste des  compagnie" wrappingWidth="466.857421875">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="44.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="96.0" layoutX="57.0" layoutY="85.0" stroke="#4349a3" strokeType="INSIDE" width="107.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="78.0" layoutY="157.0" size="70" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="983.0" layoutY="231.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="REPEAT" layoutX="929.0" layoutY="545.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" layoutX="1080.0" layoutY="545.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="631.0" layoutY="901.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" glyphStyle="70" layoutX="14.0" layoutY="52.0" size="40" />
+   </children>
+</AnchorPane>

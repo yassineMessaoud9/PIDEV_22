@@ -1,71 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjouterReservationHotelController">
+<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjouterReservationHotelController">
    <children>
-      <ComboBox fx:id="comboxoHotel" layoutX="233.0" layoutY="406.0" prefHeight="31.0" prefWidth="177.0" promptText="choisir l'hotel" style="-fx-background-color: #FAEBD7;" />
-      <Label layoutX="149.0" layoutY="411.0" prefHeight="21.0" prefWidth="69.0" text="idhotel">
+      <Label layoutX="66.0" layoutY="554.0" prefHeight="22.0" prefWidth="118.0" text="Nom Hotel">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font></Label>
-      <Button layoutX="499.0" layoutY="106.0" mnemonicParsing="false" onAction="#ajouterReservationHotel" prefHeight="78.0" prefWidth="177.0" style="-fx-background-color: #40E0D0;" text="envoyer">
+      <Button layoutX="498.0" layoutY="251.0" mnemonicParsing="false" onAction="#ajouterReservationHotel" prefHeight="78.0" prefWidth="177.0" style="-fx-background-color: #4349a3;" text="envoyer" textFill="WHITE">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="27.0" />
          </font></Button>
-      <TextField fx:id="typechambre" layoutX="210.0" layoutY="47.0" style="-fx-background-color: #FAEBD7;" />
-      <TextField fx:id="nbrnuit" layoutX="210.0" layoutY="106.0" style="-fx-background-color: #FAEBD7;" />
-      <TextField fx:id="nbrpersonne" layoutX="228.0" layoutY="229.0" style="-fx-background-color: #FAEBD7;" />
-      <Label layoutX="74.0" layoutY="53.0" text="typeChambre">
+      <TextField fx:id="typechambre" layoutX="209.0" layoutY="192.0" prefHeight="25.0" prefWidth="187.0" />
+      <TextField fx:id="nbrnuit" layoutX="209.0" layoutY="251.0" prefHeight="25.0" prefWidth="187.0" />
+      <TextField fx:id="nbrpersonne" layoutX="209.0" layoutY="374.0" prefHeight="25.0" prefWidth="187.0" />
+      <Label layoutX="65.0" layoutY="194.0" text="TypeChambre">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font></Label>
-      <Label layoutX="104.0" layoutY="122.0" prefHeight="21.0" prefWidth="91.0" text="nbrnuit">
+      <Label layoutX="65.0" layoutY="253.0" prefHeight="21.0" prefWidth="118.0" text="Nombre nuit">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font></Label>
-      <Label layoutX="64.0" layoutY="179.0" text="dateReservation">
+      <Label layoutX="63.0" layoutY="324.0" text="DateReservation">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="16.0" />
          </font></Label>
-      <Label layoutX="91.0" layoutY="235.0" text="nberpersonne">
+      <Label layoutX="66.0" layoutY="377.0" text="nberpersonne">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font></Label>
-      <Label layoutX="112.0" layoutY="294.0" text="datealler">
+      <Label layoutX="65.0" layoutY="438.0" text="Date aller">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font></Label>
-      <DatePicker fx:id="dateReservation" layoutX="218.0" layoutY="173.0" prefHeight="31.0" prefWidth="187.0" style="-fx-background-color: #FAEBD7;" />
-      <DatePicker fx:id="datealler" layoutX="233.0" layoutY="288.0" prefHeight="31.0" prefWidth="187.0" style="-fx-background-color: #FAEBD7;" />
-      <DatePicker fx:id="dateretour" layoutX="233.0" layoutY="355.0" prefHeight="31.0" prefWidth="187.0" style="-fx-background-color: #FAEBD7;" />
-      <Label layoutX="119.0" layoutY="361.0" text="dateretour">
+      <DatePicker fx:id="dateReservation" layoutX="208.0" layoutY="319.0" prefHeight="31.0" prefWidth="187.0" />
+      <DatePicker fx:id="datealler" layoutX="208.0" layoutY="434.0" prefHeight="31.0" prefWidth="187.0" />
+      <DatePicker fx:id="dateretour" layoutX="208.0" layoutY="501.0" prefHeight="31.0" prefWidth="187.0" />
+      <Label layoutX="63.0" layoutY="505.0" text="Date retour">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font></Label>
-      <Label layoutX="149.0" layoutY="463.0" text="idu">
+      <Label layoutX="66.0" layoutY="605.0" text="idu">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="18.0" />
          </font></Label>
-      <TextField fx:id="idu" layoutX="228.0" layoutY="457.0" style="-fx-background-color: #FAEBD7;" />
-      <Button layoutX="520.0" layoutY="255.0" mnemonicParsing="false" onAction="#retourmenu" prefHeight="78.0" prefWidth="167.0" style="-fx-background-color: #40E0D0;" text="reset menu">
+      <TextField fx:id="idu" cache="true" layoutX="209.0" layoutY="602.0" prefHeight="25.0" prefWidth="187.0" />
+      <Button layoutX="498.0" layoutY="399.0" mnemonicParsing="false" onAction="#retourmenu" prefHeight="78.0" prefWidth="177.0" style="-fx-background-color: #4349a3;" text="Retour menu" textFill="WHITE">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="22.0" />
          </font>
       </Button>
-      <Text layoutX="544.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text fx:id="idtext" layoutX="604.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text fx:id="idchambre" layoutX="259.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text fx:id="Textnbrnuit" layoutX="266.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="textcs" layoutX="471.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <ChoiceBox fx:id="nomhotell" layoutX="544.0" layoutY="441.0" prefWidth="150.0" />
+      <Text layoutX="543.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="idtext" layoutX="603.0" layoutY="598.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="idchambre" layoutX="258.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="Textnbrnuit" layoutX="265.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="textcs" layoutX="470.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <ChoiceBox fx:id="nomhotell" layoutX="209.0" layoutY="553.0" prefHeight="31.0" prefWidth="187.0" style="-fx-background-color: #4349a3;" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="109.0" layoutX="-5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="862.0" />
+      <Text fill="WHITE" layoutX="232.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Reservation Hotel">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="31.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView fill="WHITE" glyphName="SEND" layoutX="647.0" layoutY="301.0" size="24" text="" wrappingWidth="27.000002801418304" />
    </children>
 </AnchorPane>

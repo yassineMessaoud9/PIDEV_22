@@ -33,7 +33,7 @@ public class TripToDoGUI extends Application {
     public void start(Stage primaryStage) throws IOException {
         // FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/ListeUtilisateur.fxml"));
        // FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/ListCommandeClient.fxml"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/menu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/Login.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
 

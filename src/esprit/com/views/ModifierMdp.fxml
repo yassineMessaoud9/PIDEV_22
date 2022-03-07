@@ -5,38 +5,44 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="741.0" prefWidth="1025.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="esprit.com.views.ModifierMdpController">
+<AnchorPane id="AnchorPane" prefHeight="741.0" prefWidth="1025.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ModifierMdpController">
    <children>
-      <ImageView fitHeight="288.0" fitWidth="328.0" layoutX="348.0" layoutY="-26.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@imges/logo.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="265.0" layoutY="580.0" mnemonicParsing="false" onAction="#SubmitMdp" prefHeight="48.0" prefWidth="560.0" style="-fx-background-color: red;" text="Submit" textFill="WHITE">
+      <Button layoutX="266.0" layoutY="540.0" mnemonicParsing="false" onAction="#SubmitMdp" prefHeight="48.0" prefWidth="560.0" style="-fx-background-color: red;" text="Submit" textFill="WHITE">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Button>
-      <PasswordField fx:id="Nvmdp" layoutX="242.0" layoutY="433.0" prefHeight="49.0" prefWidth="605.0" promptText="Nouveau Mot de passe" />
-      <PasswordField fx:id="cnfMdp" layoutX="242.0" layoutY="501.0" prefHeight="49.0" prefWidth="605.0" promptText="Confirmer Nouveau Mot de passe" />
-      <Text fx:id="txt" fill="#d30808" layoutX="249.0" layoutY="698.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="559.9999852478504">
+      <PasswordField fx:id="Nvmdp" layoutX="243.0" layoutY="371.0" prefHeight="49.0" prefWidth="605.0" promptText="Nouveau Mot de passe" />
+      <PasswordField fx:id="cnfMdp" layoutX="243.0" layoutY="454.0" prefHeight="49.0" prefWidth="605.0" promptText="Confirmer Nouveau Mot de passe" />
+      <Text fx:id="txt" fill="#d30808" layoutX="273.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="559.9999852478504">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <Text fx:id="txt1" fill="#e30e0ebf" layoutX="451.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="559.9999852478504">
+      <Text fx:id="txt1" fill="#e30e0ebf" layoutX="443.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="559.9999852478504">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <Text fill="#dd0f0f" layoutX="257.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Votre Email : " wrappingWidth="128.13671875">
+      <Text fill="#dd0f0f" layoutX="249.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Votre Email : " wrappingWidth="128.13671875">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="145.0" layoutX="-3.0" layoutY="-2.0" stroke="#ffffff00" strokeType="INSIDE" width="1036.0" />
+      <Text fill="WHITE" layoutX="319.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier votre mot de pass" wrappingWidth="420.13671875">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="29.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../logo/Blue%20Plane%20Travel%20Agency%20Logo%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

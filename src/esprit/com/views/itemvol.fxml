@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" onMousePressed="#click" prefHeight="148.0" prefWidth="569.0" style="-fx-border-radius: 30; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 ,10.0); -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ItemvolController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="4.0" prefHeight="147.0" prefWidth="562.0">
+         <children>
+            <HBox prefHeight="57.0" prefWidth="611.0">
+               <children>
+                  <Label fx:id="destination" prefHeight="49.0" prefWidth="246.0" text="destination" textFill="#2a1f57">
+                     <font>
+                        <Font name="Cambria Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="prix" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="48.0" prefWidth="66.0" text="prix" textFill="#2d6ed0">
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="priceLable1" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="47.0" text="DT" textFill="#2d6ed0">
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="priceLable11" alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="61.0" textFill="#2d6ed0">
+                     <font>
+                        <Font name="Cambria Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#reservervol2" prefHeight="42.0" prefWidth="90.0" style="-fx-background-color: #4349a3;" text="Reserver" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="603.0">
+               <children>
+                  <Label fx:id="nameLabel1" prefHeight="30.0" prefWidth="132.0" text="date aller" textFill="#4fa172">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameLabel11" prefHeight="30.0" prefWidth="133.0" text="temps" textFill="#4fa172">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameLabel12" prefHeight="30.0" prefWidth="145.0" text="date retour" textFill="#4fa172">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameLabel13" prefHeight="30.0" prefWidth="145.0" text="temps" textFill="#4fa172">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameLabel131" prefHeight="30.0" prefWidth="112.0" text="Classe" textFill="#4fa172">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="65.0" prefWidth="655.0">
+               <children>
+                  <Label fx:id="datealler" prefHeight="68.0" prefWidth="129.0" text="date aller" textFill="#291f3f">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tempsaller" prefHeight="69.0" prefWidth="131.0" text="temps" textFill="#291f3f">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dateretour" prefHeight="69.0" prefWidth="144.0" text="date retour" textFill="#291f3f">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tempsretour" prefHeight="64.0" prefWidth="144.0" text="temps" textFill="#291f3f">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="classe" prefHeight="65.0" prefWidth="111.0" text="Classe" textFill="#291f3f">
+                     <font>
+                        <Font name="Cambria" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

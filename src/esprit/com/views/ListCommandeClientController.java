@@ -28,8 +28,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class ListCommandeClientController implements Initializable {
 
     @FXML
-    private Button Logout;
-    @FXML
     private TableColumn<CommandeRestau, String> ncom;
     @FXML
     private TableColumn<CommandeRestau, Double> prixcom;
@@ -63,15 +61,4 @@ public class ListCommandeClientController implements Initializable {
 
     }
 
-    @FXML
-    private void Logout(ActionEvent event) {
-    }
-
-    @FXML
-    private void Sponsors(ActionEvent event) {
-    }
-
-    @FXML
-    private void Plat(ActionEvent event) {
-    }
 }

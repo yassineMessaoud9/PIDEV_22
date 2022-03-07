@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ShowController">
+   <children>
+      <TableView fx:id="tableEve" layoutX="46.0" layoutY="220.0" prefHeight="296.0" prefWidth="751.0">
+        <columns>
+          <TableColumn fx:id="col_titre" prefWidth="75.0" text="titre" />
+          <TableColumn fx:id="col_pays" prefWidth="75.0" text="pays" />
+            <TableColumn fx:id="col_prix" prefWidth="75.0" text="prix" />
+            <TableColumn fx:id="col_dated" prefWidth="75.0" text="dated" />
+            <TableColumn fx:id="col_datef" prefWidth="75.0" text="datef" />
+            <TableColumn fx:id="col_adr" prefWidth="75.0" text="adr" />
+            <TableColumn fx:id="col_type" prefWidth="75.0" text="type" />
+            <TableColumn fx:id="col_photo" prefWidth="75.0" text="photo" />
+            <TableColumn fx:id="col_nbr" prefWidth="75.0" text="nbrplace" />
+            <TableColumn fx:id="col_desc" prefWidth="75.0" text="description" />
+        </columns>
+      </TableView>
+      <Button layoutX="356.0" layoutY="564.0" mnemonicParsing="false" onAction="#show" prefHeight="63.0" prefWidth="81.0" style="-fx-background-color: #4349a3;" text="refresh" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnback" layoutX="695.0" layoutY="564.0" mnemonicParsing="false" onAction="#backtoadd" prefHeight="63.0" prefWidth="81.0" style="-fx-background-color: #4349a3;" text="Ajouter" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnDel" layoutX="472.0" layoutY="564.0" mnemonicParsing="false" onAction="#Delete" prefHeight="63.0" prefWidth="81.0" style="-fx-background-color: #4349a3;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="mod" layoutX="583.0" layoutY="564.0" mnemonicParsing="false" onAction="#modd" prefHeight="63.0" prefWidth="81.0" style="-fx-background-color: #4349a3;" text="Modify" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="46.0" layoutY="175.0" prefHeight="21.0" prefWidth="61.0" text="Search" textFill="#4349a3">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <TextField fx:id="tfsearch" layoutX="127.0" layoutY="173.0" prefHeight="31.0" prefWidth="211.0" />
+      <RadioButton fx:id="Trip" layoutX="66.0" layoutY="564.0" mnemonicParsing="false" onAction="#triprix" text="TriparPrix" textFill="#4349a3">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="68.0" layoutY="605.0" mnemonicParsing="false" text="Tripartitre" textFill="#4349a3">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </RadioButton>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="94.0" stroke="TRANSPARENT" strokeType="INSIDE" width="858.0" />
+      <Text fill="WHITE" layoutX="251.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Affichage Evenements" wrappingWidth="372.13671875">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="29.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

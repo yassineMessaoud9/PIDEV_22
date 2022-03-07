@@ -8,11 +8,13 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="1045.0" styleClass="dark" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ShowhotelController">
+<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="1045.0" style="-fx-background-color: white;" styleClass="dark" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ShowhotelController">
    <children>
-      <TableView fx:id="tableReser" layoutX="14.0" layoutY="50.0" onMouseClicked="#onTableItemSelect" prefHeight="343.0" prefWidth="794.0">
+      <TableView fx:id="tableReser" layoutX="15.0" layoutY="277.0" onMouseClicked="#onTableItemSelect" prefHeight="343.0" prefWidth="794.0">
         <columns>
           <TableColumn fx:id="typech" prefWidth="115.0" style="-fx-background-color: #F0F8FF;" text="typeChambre" />
           <TableColumn fx:id="nbrnuit" prefWidth="102.0" style="-fx-background-color: #F0F8FF;" text="nbr nuit" />
@@ -23,33 +25,44 @@
             <TableColumn fx:id="dateretour1" prefWidth="118.0" style="-fx-background-color: #F0F8FF;" text="dateretour" />
         </columns>
       </TableView>
-      <Button layoutX="860.0" layoutY="392.0" mnemonicParsing="false" onAction="#updateReservation" prefHeight="58.0" prefWidth="149.0" style="-fx-background-color: #40E0D0;" text="modifier">
+      <Button layoutX="817.0" layoutY="637.0" mnemonicParsing="false" onAction="#updateReservation" prefHeight="58.0" prefWidth="149.0" style="-fx-background-color: #4349a3;" text="modifier" textFill="WHITE">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Button>
-      <Button layoutX="340.0" layoutY="397.0" mnemonicParsing="false" onAction="#delete" prefHeight="58.0" prefWidth="199.0" style="-fx-background-color: #40E0D0;" text="supprimer">
+      <Button layoutX="259.0" layoutY="642.0" mnemonicParsing="false" onAction="#delete" prefHeight="48.0" prefWidth="199.0" style="-fx-background-color: red;" text="supprimer" textFill="WHITE">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="22.0" />
          </font>
       </Button>
-      <TextField fx:id="typeCh" layoutX="811.0" layoutY="61.0" prefHeight="31.0" prefWidth="199.0" style="-fx-background-color: #FAEBD7;" />
-      <TextField fx:id="nbrnuit1" layoutX="811.0" layoutY="111.0" prefHeight="31.0" prefWidth="199.0" style="-fx-background-color: #FAEBD7;" />
-      <DatePicker fx:id="datereserv1" layoutX="807.0" layoutY="174.0" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #FAEBD7;" />
-      <TextField fx:id="nbpersonne" layoutX="821.0" layoutY="221.0" prefHeight="31.0" prefWidth="208.0" style="-fx-background-color: #FAEBD7;" />
-      <DatePicker fx:id="datealler1" layoutX="808.0" layoutY="271.0" style="-fx-background-color: #FAEBD7;" />
-      <DatePicker fx:id="dateretour11" layoutX="816.0" layoutY="332.0" style="-fx-background-color: #FAEBD7;" />
-      <FontAwesomeIconView fill="#bc2525" glyphName="PENCIL" layoutX="969.0" layoutY="440.0" size="40" />
-      <FontAwesomeIconView fill="#900d0d" glyphName="SCISSORS" layoutX="493.0" layoutY="437.0" size="30" text="" />
-      <Button layoutX="631.0" layoutY="411.0" mnemonicParsing="false" onAction="#getview" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: #40E0D0;" text="reset">
+      <TextField fx:id="typeCh" layoutX="812.0" layoutY="288.0" prefHeight="31.0" prefWidth="208.0" />
+      <TextField fx:id="nbrnuit1" layoutX="812.0" layoutY="338.0" prefHeight="31.0" prefWidth="208.0" />
+      <DatePicker fx:id="datereserv1" layoutX="812.0" layoutY="381.0" prefHeight="31.0" prefWidth="208.0" />
+      <TextField fx:id="nbpersonne" layoutX="812.0" layoutY="426.0" prefHeight="31.0" prefWidth="208.0" />
+      <DatePicker fx:id="datealler1" layoutX="812.0" layoutY="473.0" prefHeight="31.0" prefWidth="208.0" />
+      <DatePicker fx:id="dateretour11" layoutX="817.0" layoutY="518.0" prefHeight="31.0" prefWidth="208.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" layoutX="931.0" layoutY="680.0" size="40" />
+      <FontAwesomeIconView fill="WHITE" glyphName="SCISSORS" layoutX="419.0" layoutY="677.0" size="30" text="" />
+      <Button layoutX="489.0" layoutY="643.0" mnemonicParsing="false" onAction="#getview" prefHeight="48.0" prefWidth="113.0" style="-fx-background-color: #4349a3;" text="Retour" textFill="#f2eded">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="21.0" />
          </font>
       </Button>
-      <Button layoutX="160.0" layoutY="411.0" mnemonicParsing="false" onAction="#envoyermail" text="mailing" />
-      <AnchorPane fx:id="report" layoutX="978.0" layoutY="14.0" prefHeight="31.0" prefWidth="51.0" />
-      <Button layoutX="63.0" layoutY="14.0" mnemonicParsing="false" onAction="#changevalue" text="Button" />
-      <Button layoutX="755.0" layoutY="414.0" mnemonicParsing="false" onAction="#getViewPdf" prefHeight="25.0" prefWidth="86.0" text="Pdf" />
+      <Button layoutX="15.0" layoutY="642.0" mnemonicParsing="false" onAction="#envoyermail" prefHeight="48.0" prefWidth="216.0" style="-fx-background-color: #4349a3;" text="Envoyer Email" textFill="#fffefe">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Button>
+      <Button layoutX="625.0" layoutY="645.0" mnemonicParsing="false" onAction="#getViewPdf" prefHeight="48.0" prefWidth="149.0" style="-fx-background-color: red;" text="Generer PDF" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font></Button>
+      <FontAwesomeIconView fill="WHITE" glyphName="SEND" layoutX="198.0" layoutY="674.0" size="24" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="125.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1045.0" />
+      <Text fill="#fffafa" layoutX="308.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Afficher Reservation Hotel" wrappingWidth="391.13671875">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="26.0" />
+         </font>
+      </Text>
    </children>
    <stylesheets>
       <URL value="@darkmode.css" />

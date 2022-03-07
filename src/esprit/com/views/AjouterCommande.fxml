@@ -4,45 +4,46 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane id="AnchorPane" prefHeight="967.0" prefWidth="1242.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjouterCommandeController">
+<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjouterCommandeController">
    <children>
-      <Text layoutX="499.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passer Une Commande">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="124.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1241.0" />
+      <Text fill="#fcfcfc" layoutX="435.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passer Une Commande">
          <font>
-            <Font size="31.0" />
+            <Font name="Arial Rounded MT Bold" size="34.0" />
          </font>
       </Text>
-      <TableView fx:id="tablePlat" layoutX="14.0" layoutY="432.0" onMouseClicked="#onTableItemsSelect" prefHeight="361.0" prefWidth="380.0" style="-fx-background-color: white;">
+      <TableView fx:id="tablePlat" layoutX="12.0" layoutY="167.0" onMouseClicked="#onTableItemsSelect" prefHeight="361.0" prefWidth="380.0" style="-fx-background-color: white;">
         <columns>
           <TableColumn fx:id="nomplat" prefWidth="105.0" text="Nom Plat" />
             <TableColumn fx:id="descriptionPlat" prefWidth="169.0" text="Description" />
           <TableColumn fx:id="prixPlat" prefWidth="116.0" text="Prix Plat" />
         </columns>
       </TableView>
-      <Text fill="#e81111" layoutX="22.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectionner des plats">
+      <Text fill="#4349a3" layoutX="12.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectionner des plats">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold Italic" size="20.0" />
          </font>
       </Text>
-      <Text fill="#403333" layoutX="249.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix :" wrappingWidth="92.1953125">
+      <Text fill="#4349a3" layoutX="21.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix :" wrappingWidth="92.1953125">
          <font>
             <Font size="29.0" />
          </font>
       </Text>
-      <Text fx:id="Prix" fill="#860707" layoutX="202.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="278.1875">
+      <Text fx:id="Prix" fill="#4349a3" layoutX="96.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="278.1875">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Text>
-      <Button fx:id="commander" layoutX="215.0" layoutY="851.0" mnemonicParsing="false" onAction="#commander" prefHeight="69.0" prefWidth="179.0" style="-fx-background-color: green;" text="Commander" textFill="#fcfcfc">
+      <Button fx:id="commander" layoutX="80.0" layoutY="671.0" mnemonicParsing="false" onAction="#commander" prefHeight="69.0" prefWidth="179.0" style="-fx-background-color: #4349a3;" text="Commander" textFill="#fcfcfc">
          <font>
             <Font size="26.0" />
          </font>
       </Button>
-      <Button fx:id="ButnOpenMap" layoutX="1042.0" layoutY="154.0" mnemonicParsing="false" onAction="#ButnOpenMap" text="OpenMap" />
-      <WebView fx:id="webmap" layoutX="419.0" layoutY="203.0" prefHeight="762.0" prefWidth="822.0" />
+      <WebView fx:id="webmap" layoutX="502.0" layoutY="125.0" prefHeight="712.0" prefWidth="739.0" />
    </children>
 </AnchorPane>

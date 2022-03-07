@@ -9,11 +9,13 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" onMouseClicked="#getview" prefHeight="645.0" prefWidth="1266.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AfficherHotelsController">
+<AnchorPane id="AnchorPane" onMouseClicked="#getview" prefHeight="852.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AfficherHotelsController">
    <children>
-      <TableView fx:id="tablehotel" layoutX="23.0" layoutY="25.0" onMouseClicked="#onTableItemSelect" prefHeight="413.0" prefWidth="585.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="109.0" stroke="#ffffff00" strokeType="INSIDE" width="1266.0" />
+      <TableView fx:id="tablehotel" layoutX="24.0" layoutY="258.0" onMouseClicked="#onTableItemSelect" prefHeight="413.0" prefWidth="585.0" style="-fx-border-color: #4349a3;">
         <columns>
           <TableColumn fx:id="idhotel" minWidth="1.0" prefWidth="2.0" style="-fx-background-color: #a7c2f8;" text="idhotel" />
           <TableColumn fx:id="idnomhotel" prefWidth="133.99996948242188" style="-fx-background-color: #F0FFFF;" text="nomhotel" />
@@ -23,58 +25,54 @@
             <TableColumn fx:id="idphoto" prefWidth="125.0" style="-fx-background-color: #F0FFFF;" text="photo" />
         </columns>
       </TableView>
-      <Button layoutX="419.0" layoutY="452.0" mnemonicParsing="false" onAction="#delete" prefHeight="69.0" prefWidth="210.0" style="-fx-background-color: #40E0D0;" text="supprimer" textFill="#102a43">
+      <Button layoutX="363.0" layoutY="787.0" mnemonicParsing="false" onAction="#delete" prefHeight="53.0" prefWidth="162.0" style="-fx-background-color: #4349a3;" text="supprimer" textFill="#f7f9fc">
          <font>
             <Font name="Broadway" size="15.0" />
          </font></Button>
-      <Button fx:id="btedit" layoutX="741.0" layoutY="395.0" mnemonicParsing="false" onAction="#onUpdateAgence" prefHeight="69.0" prefWidth="230.0" style="-fx-background-color: #40E0D0;" text="modifier" textFill="#37215c">
+      <Button fx:id="btedit" layoutX="727.0" layoutY="613.0" mnemonicParsing="false" onAction="#onUpdateAgence" prefHeight="69.0" prefWidth="230.0" style="-fx-background-color: #4349a3;" text="modifier" textFill="WHITE">
          <font>
             <Font name="Broadway" size="15.0" />
          </font></Button>
-      <TextField fx:id="mNomhotel" layoutX="747.0" layoutY="78.0" prefHeight="47.0" prefWidth="210.0" promptText="nomhotel" style="-fx-background-color: #F0FFFF;" />
-      <TextField fx:id="madresse" layoutX="752.0" layoutY="146.0" prefHeight="47.0" prefWidth="210.0" promptText="adresse" style="-fx-background-color: #F0FFFF;" />
-      <TextField fx:id="metoile" layoutX="752.0" layoutY="208.0" prefHeight="47.0" prefWidth="210.0" promptText="etoile" style="-fx-background-color: #F0FFFF;" />
-      <TextField fx:id="mnbrchambre" layoutX="752.0" layoutY="271.0" prefHeight="47.0" prefWidth="210.0" promptText="nbrchambre" style="-fx-background-color: #F0FFFF;" />
-      <TextField fx:id="mphoto" layoutX="752.0" layoutY="335.0" prefHeight="47.0" prefWidth="210.0" promptText="photo" style="-fx-background-color: #F0FFFF;" />
-      <RadioButton fx:id="triNomhotel" layoutX="23.0" layoutY="574.0" mnemonicParsing="false" onAction="#trierNomhotel" text="NomHotel" textFill="#3c1061">
+      <TextField fx:id="mNomhotel" layoutX="739.0" layoutY="274.0" prefHeight="47.0" prefWidth="210.0" promptText="nomhotel" />
+      <TextField fx:id="madresse" layoutX="740.0" layoutY="342.0" prefHeight="47.0" prefWidth="210.0" promptText="adresse" />
+      <TextField fx:id="metoile" layoutX="740.0" layoutY="404.0" prefHeight="47.0" prefWidth="210.0" promptText="etoile" />
+      <TextField fx:id="mnbrchambre" layoutX="740.0" layoutY="467.0" prefHeight="47.0" prefWidth="210.0" promptText="nbrchambre" />
+      <TextField fx:id="mphoto" layoutX="740.0" layoutY="531.0" prefHeight="47.0" prefWidth="210.0" promptText="photo" />
+      <RadioButton fx:id="triNomhotel" layoutX="41.0" layoutY="805.0" mnemonicParsing="false" onAction="#trierNomhotel" text="NomHotel" textFill="#3c1061">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="15.0" />
          </font></RadioButton>
-      <Label layoutX="49.0" layoutY="541.0" prefHeight="21.0" prefWidth="88.0" text="trier Hotel" textFill="#243791">
+      <Label layoutX="50.0" layoutY="771.0" prefHeight="21.0" prefWidth="88.0" text="Trier par:" textFill="#243791">
          <font>
             <Font name="Broadway" size="15.0" />
          </font></Label>
-      <RadioButton fx:id="Idnbrc" layoutX="175.0" layoutY="574.0" mnemonicParsing="false" onAction="#triNbrchambre" text="nombre chambre" textFill="#080e5e">
+      <RadioButton fx:id="Idnbrc" layoutX="161.0" layoutY="806.0" mnemonicParsing="false" onAction="#triNbrchambre" text="nombre chambre" textFill="#080e5e">
          <font>
-            <Font name="Broadway" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="14.0" />
          </font></RadioButton>
-      <TextField fx:id="txtsearch" layoutX="663.0" layoutY="528.0" prefHeight="47.0" prefWidth="416.0" promptText="search hotel" style="-fx-background-color: #F0FFFF;" />
-      <Label layoutX="739.0" layoutY="499.0" prefHeight="21.0" prefWidth="297.0" text="rechercher hotel" textFill="#1c115c">
+      <TextField fx:id="txtsearch" layoutX="24.0" layoutY="208.0" prefHeight="47.0" prefWidth="416.0" promptText="search hotel" />
+      <Label layoutX="100.0" layoutY="179.0" prefHeight="21.0" prefWidth="297.0" text="rechercher hotel" textFill="#1c115c">
          <font>
             <Font name="Broadway" size="15.0" />
          </font></Label>
-      <Label layoutX="696.0" prefHeight="53.0" prefWidth="351.0" text="Gestion des Hotels" textFill="#34328f">
+      <Label layoutX="440.0" layoutY="28.0" prefHeight="53.0" prefWidth="351.0" text="Gestion des Hotels" textFill="WHITE">
          <font>
             <Font name="Broadway" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="idajout" layoutX="1064.0" layoutY="595.0" mnemonicParsing="false" onMouseClicked="#getview" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: #40E0D0;" text="ajouterhotel" textFill="#071639">
+      <Button fx:id="idajout" layoutX="690.0" layoutY="790.0" mnemonicParsing="false" onMouseClicked="#getview" prefHeight="53.0" prefWidth="162.0" style="-fx-background-color: #4349a3;" text="ajouterhotel" textFill="#f5f5f5">
          <font>
             <Font name="Broadway" size="15.0" />
          </font></Button>
-      <FontAwesomeIconView fill="#bc2525" glyphName="PENCIL" layoutX="573.0" layoutY="500.0" size="40" />
-      <FontAwesomeIconView fill="#bc2525" glyphName="PENCIL" layoutX="922.0" layoutY="451.0" size="40" />
-      <FontAwesomeIconView fill="#0a0e63" layoutX="1079.0" layoutY="40.0" size="40" />
-      <ButtonBar layoutX="524.0" layoutY="584.0" prefHeight="40.0" prefWidth="200.0">
-         <buttons>
-            <Button mnemonicParsing="false" onAction="#retourmenu" style="-fx-background-color: #40E0D0;" text="retour menu">
-               <font>
-                  <Font name="Broadway" size="15.0" />
-               </font>
-            </Button>
-         </buttons>
-      </ButtonBar>
-      <Button layoutX="434.0" layoutY="579.0" mnemonicParsing="false" onAction="#uploadPic" text="Button" />
-      <Label fx:id="img" layoutX="499.0" layoutY="541.0" text="Label" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" layoutX="904.0" layoutY="661.0" size="40" />
+      <FontAwesomeIconView fill="#fcfcfc" glyphName="HOTEL" layoutX="805.0" layoutY="68.0" size="40" />
+      <ButtonBar layoutX="524.0" layoutY="584.0" prefHeight="40.0" prefWidth="200.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="TRASH" layoutX="499.0" layoutY="819.0" size="24" />
+      <Button layoutX="546.0" layoutY="787.0" mnemonicParsing="false" onAction="#retourmenu" prefHeight="53.0" prefWidth="125.0" style="-fx-background-color: #4349a3;" text="retour menu" textFill="#fcfcfc">
+         <font>
+            <Font name="Broadway" size="15.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="827.0" layoutY="827.0" size="24" />
    </children>
 </AnchorPane>

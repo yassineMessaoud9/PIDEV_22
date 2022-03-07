@@ -10,36 +10,31 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="707.0" prefWidth="942.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="828.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.LoginController">
    <children>
-      <ImageView fitHeight="264.0" fitWidth="345.0" layoutX="329.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="828.0" fitWidth="900.0" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="@imges/logo.png" />
+            <Image url="@images/Loign.png" />
          </image>
       </ImageView>
-      <TextField fx:id="email" layoutX="282.0" layoutY="304.0" prefHeight="40.0" prefWidth="390.0" promptText="Email" />
-      <PasswordField fx:id="motpasse" layoutX="282.0" layoutY="396.0" prefHeight="40.0" prefWidth="390.0" promptText="Mot de passe" />
-      <Text layoutX="324.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S'authentifier Au TripToDo">
+      <TextField fx:id="email" layoutX="255.0" layoutY="244.0" prefHeight="40.0" prefWidth="390.0" promptText="Email" />
+      <PasswordField fx:id="motpasse" layoutX="259.0" layoutY="334.0" prefHeight="40.0" prefWidth="390.0" promptText="Mot de passe" />
+      <Text fill="WHITE" layoutX="257.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S'authentifier Au TripToDo">
          <font>
-            <Font size="23.0" />
+            <Font name="Arial Rounded MT Bold" size="30.0" />
          </font>
       </Text>
-      <Button fx:id="Login" layoutX="365.0" layoutY="547.0" mnemonicParsing="false" onAction="#Login" prefHeight="75.0" prefWidth="269.0" style="-fx-background-color: red;" text="S'authentifier" textFill="WHITE">
+      <Button fx:id="Login" layoutX="320.0" layoutY="436.0" mnemonicParsing="false" onAction="#Login" prefHeight="75.0" prefWidth="269.0" style="-fx-background-color: #2f79e0;" text="S'authentifier" textFill="WHITE">
          <font>
             <Font name="System Bold" size="26.0" />
          </font></Button>
-      <Text fx:id="obli" fill="#830606" layoutX="293.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="356.13671875">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Text>
-      <Button fx:id="reset" layoutX="365.0" layoutY="635.0" mnemonicParsing="false" onAction="#reset" prefHeight="31.0" prefWidth="137.0" style="-fx-background-color: #5b6ff5;" text="Reset Mot de passe" textFill="WHITE">
+      <Button fx:id="reset" layoutX="329.0" layoutY="560.0" mnemonicParsing="false" onAction="#reset" prefHeight="31.0" prefWidth="137.0" style="-fx-background-color: #2f79e0;" text="Reset Mot de passe" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <FontAwesomeIconView fill="#f5f5f5" glyphName="SIGN_IN" layoutX="588.0" layoutY="598.0" size="40" wrappingWidth="45.714284896850586" />
-      <Button layoutX="520.0" layoutY="635.0" mnemonicParsing="false" onAction="#sinscrire" prefHeight="31.0" prefWidth="115.0" style="-fx-background-color: green;" text="S'inscrire" textFill="WHITE">
+      <FontAwesomeIconView fill="#f5f5f5" glyphName="SIGN_IN" layoutX="543.0" layoutY="487.0" size="40" wrappingWidth="45.714284896850586" />
+      <Button layoutX="474.0" layoutY="560.0" mnemonicParsing="false" onAction="#sinscrire" prefHeight="31.0" prefWidth="115.0" style="-fx-background-color: red;" text="S'inscrire" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

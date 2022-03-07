@@ -5,6 +5,7 @@
  */
 package esprit.com.views;
 
+import esprit.com.ImServices.ImUtilisateur;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -12,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 /**
@@ -41,17 +43,20 @@ public class MenuAdminController implements Initializable {
     private ChoiceBox<String> GestEve;
     @FXML
     private ChoiceBox<String> GestRec;
+    @FXML
+    private Pane MainPane;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        WelcomeUSer.setText(ImUtilisateur.nameUser);
     }    
 
     @FXML
     private void GoProfil(ActionEvent event) {
+        
     }
     
 }

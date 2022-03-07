@@ -72,7 +72,7 @@ public class ImUtilisateur implements IServicesUtilisateur<Utilisateur> {
                 while (rs.next()) {
 
                     if (rs.getString("email").equals(t.getEmail()) && BCrypt.checkpw(t.getMotpasse(), rs.getString("motpasse")) == true) {
-                        if (rs.getInt("activated") == 1) {
+                        if (rs.getString("activated").equals("Active")) {
                             idUser = rs.getInt("idU");
                             nameUser = rs.getString("nom");
                             role = rs.getString("role");
@@ -103,7 +103,7 @@ public class ImUtilisateur implements IServicesUtilisateur<Utilisateur> {
             ResultSet rs = st.executeQuery(req);
             while (rs.next() && (rs.getInt("idU")!=idUser)) {
                 list.add(new Utilisateur(rs.getInt("idU"), rs.getString("nom"), rs.getString("prenom"), rs.getString("adresse"), rs.getString("email"), rs.getString("motpasse"),
-                        rs.getString("photo"), rs.getString("pays"), rs.getString("role"), rs.getInt("activated")));
+                        rs.getString("photo"), rs.getString("pays"), rs.getString("role"), rs.getString("activated")));
             }
 
         } catch (SQLException e) {
@@ -145,7 +145,7 @@ public class ImUtilisateur implements IServicesUtilisateur<Utilisateur> {
             pst.setString(6, t.getPhoto());
             pst.setString(7, t.getPays());
             pst.setString(8, t.getRole());
-            pst.setInt(9, t.isActive());
+            pst.setString(9, t.isActive());
             pst.executeUpdate();
             System.out.println("Utilisateur Modifiée !");
 
@@ -212,7 +212,7 @@ return list1;
         List<Utilisateur> list1 = new ArrayList<>();
         List<Utilisateur> list2 = affiche();
 
-        list1 = list2.stream().sorted((o1, o2) -> o1.isActive()-(o2.isActive())).collect(Collectors.toList());
+        list1 = list2.stream().sorted((o1, o2) -> o1.isActive().compareTo(o2.isActive())).collect(Collectors.toList());
         return list1;
 
     }

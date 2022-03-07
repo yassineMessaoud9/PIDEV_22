@@ -20,7 +20,7 @@ public class Utilisateur {
     private String photo;
     private String pays;
     private String role;
-    private int Active = 1;
+    private String Active = "Active";
 
     public Utilisateur() {
     }
@@ -31,7 +31,7 @@ public class Utilisateur {
         this.motpasse = motpasse;
     }
 
-    public Utilisateur(int idU, String nom, String prenom, String adresse, String email, String motpasse, String photo, String pays, String role, int Active) {
+    public Utilisateur(int idU, String nom, String prenom, String adresse, String email, String motpasse, String photo, String pays, String role, String Active) {
         this.idU = idU;
         this.nom = nom;
         this.prenom = prenom;
@@ -43,7 +43,7 @@ public class Utilisateur {
         this.role = role;
         this.Active = Active;
     }
-    public Utilisateur(int idU, String nom, String prenom, String adresse, String email,  String photo, String pays, String role, int Active) {
+    public Utilisateur(int idU, String nom, String prenom, String adresse, String email,  String photo, String pays, String role, String Active) {
         this.idU = idU;
         this.nom = nom;
         this.prenom = prenom;
@@ -159,11 +159,11 @@ public class Utilisateur {
         this.role = role;
     }
 
-    public int isActive() {
+    public String isActive() {
         return Active;
     }
 
-    public void setActive(int Active) {
+    public void setActive(String Active) {
         this.Active = Active;
     }
 

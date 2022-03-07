@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="967.0" prefWidth="1242.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.VolboardController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="598.0" layoutX="990.0" layoutY="225.0" stroke="#4349a3" strokeType="INSIDE" width="246.0" />
+      <TableView fx:id="tablevol" layoutX="14.0" layoutY="128.0" onMouseClicked="#onselect" prefHeight="797.0" prefWidth="965.0">
+        <columns>
+          <TableColumn fx:id="datealler" prefWidth="123.0" text="Date aller" />
+          <TableColumn fx:id="tempaller" prefWidth="88.99996948242188" text="Temp aller" />
+            <TableColumn fx:id="dateretour" prefWidth="105.0" text="Date retour" />
+            <TableColumn fx:id="tempretour" prefWidth="110.0" text="Temp retour" />
+            <TableColumn fx:id="destination" prefWidth="117.0" text="Destination" />
+            <TableColumn fx:id="classvol" prefWidth="81.0" text="Class vol" />
+            <TableColumn fx:id="prixvol" prefWidth="98.0" text="Prix vol" />
+            <TableColumn fx:id="typevol" prefWidth="99.0" text="type vol" />
+            <TableColumn fx:id="matricule" prefWidth="141.0" text="Matricule avion" />
+        </columns>
+      </TableView>
+      <Button layoutX="869.0" layoutY="931.0" mnemonicParsing="false" onAction="#supp" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #cc1515;" text="Supprimer" textFill="WHITE" />
+      <TextField fx:id="nvtempaller" layoutX="1010.0" layoutY="309.0" prefHeight="31.0" prefWidth="110.0" promptText="temps aller" />
+      <TextField fx:id="nvtempsretour" layoutX="1010.0" layoutY="417.0" prefHeight="31.0" prefWidth="110.0" promptText="Temps retour" />
+      <TextField fx:id="nvdestination" layoutX="1010.0" layoutY="474.0" promptText="Destination" />
+      <TextField fx:id="nvclassvol" layoutX="1010.0" layoutY="527.0" promptText="Class vol" />
+      <TextField fx:id="nvprix" layoutX="1013.0" layoutY="581.0" prefHeight="31.0" prefWidth="90.0" promptText="Prix vol" />
+      <TextField fx:id="nvtype" layoutX="1013.0" layoutY="638.0" promptText="Type vol" />
+      <Button layoutX="1120.0" layoutY="707.0" mnemonicParsing="false" onAction="#modif" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #4349a3;" text="Modifier" textFill="WHITE" />
+      <Button layoutX="996.0" layoutY="707.0" mnemonicParsing="false" onAction="#annuler" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #4349a3;" text="Annuler" textFill="WHITE" />
+      <Text fill="#4349a3" layoutX="1015.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un vol :" wrappingWidth="110.0000149011612" />
+      <Button layoutX="1133.0" layoutY="166.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #4349a3;" text="Ajouter" textFill="WHITE" />
+      <DatePicker fx:id="nvdatealler" layoutX="1010.0" layoutY="255.0" promptText="Date aller" />
+      <DatePicker fx:id="nvdateretour" layoutX="1010.0" layoutY="363.0" promptText="date retour" />
+      <Button layoutX="1103.0" layoutY="861.0" mnemonicParsing="false" onAction="#retour" text="retour au menu " />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1255.0" />
+      <Text fill="WHITE" layoutX="462.0" layoutY="54.0" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="40.0" text="Liste des voles" wrappingWidth="384.857421875">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="44.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="1222.0" layoutY="186.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="REPEAT" layoutX="1084.0" layoutY="727.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" layoutX="1210.0" layoutY="727.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="961.0" layoutY="950.0" />
+   </children>
+</AnchorPane>

@@ -33,19 +33,24 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -56,7 +61,7 @@ public class ListeUtilisateurController implements Initializable {
 
     private Utilisateur Utilisateur;
     private ImUtilisateur uti;
-
+    private String acuser;
     private String path;
     private int id = idUser;
     @FXML
@@ -74,26 +79,18 @@ public class ListeUtilisateurController implements Initializable {
     @FXML
     private TableColumn<Utilisateur, String> role;
     @FXML
-    private TableColumn<Utilisateur, Integer> isActive;
+    private TableColumn<Utilisateur, String> isActive;
     @FXML
     private TableColumn<Utilisateur, ImageView> photo;
 
     ObservableList<Utilisateur> obsUtilisateurlist = FXCollections.observableArrayList();
-    @FXML
     private TextField mprenom;
-    @FXML
     private TextField madresse;
-    @FXML
     private TextField memail;
-    @FXML
     private TextField mpays;
-    @FXML
     private TextField mrole;
-    @FXML
     private TextField mActive;
-    @FXML
     private TextField mpohto;
-    @FXML
     private TextField mnom;
     @FXML
     private ComboBox<String> TriChoice;
@@ -102,19 +99,25 @@ public class ListeUtilisateurController implements Initializable {
     @FXML
     private Text textMOd;
     @FXML
-    private Button Logout;
-    @FXML
     private Text idUserr;
     @FXML
     private ImageView image;
     private Image image1;
+    @FXML
+    private ComboBox<String> banUser;
+    Stage primaryStage;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/MenuAdmin.fxml"));
+
         LoadData();
+        banUser.getItems().addAll("Active", "Desactive");
+
     }
 
     private void LoadData() {
@@ -129,9 +132,9 @@ public class ListeUtilisateurController implements Initializable {
             @Override
             public void handle(CellEditEvent<Utilisateur, String> event) {
                 Utilisateur uti = event.getRowValue();
-               uti.setNom(event.getNewValue());
-               ImUtilisateur utIm = new ImUtilisateur();
-               utIm.modifier(uti);
+                uti.setNom(event.getNewValue());
+                ImUtilisateur utIm = new ImUtilisateur();
+                utIm.modifier(uti);
 //uti.modifier(new Utilisateur(Utilisateur.getIdU(), nom.getText(), prenom.getText(), adresse.getText(), email.getText(), photo.getText(), pays.getText(), role.getText(), Integer.parseInt(isActive.getText())));
 
             }
@@ -144,8 +147,8 @@ public class ListeUtilisateurController implements Initializable {
             public void handle(CellEditEvent<Utilisateur, String> event) {
                 Utilisateur uti = event.getRowValue();
                 uti.setPrenom(event.getNewValue());
-               ImUtilisateur utIm = new ImUtilisateur();
-               utIm.modifier(uti);
+                ImUtilisateur utIm = new ImUtilisateur();
+                utIm.modifier(uti);
 
             }
 
@@ -157,8 +160,8 @@ public class ListeUtilisateurController implements Initializable {
             public void handle(CellEditEvent<Utilisateur, String> event) {
                 Utilisateur uti = event.getRowValue();
                 uti.setAdresse(event.getNewValue());
-                               ImUtilisateur utIm = new ImUtilisateur();
-               utIm.modifier(uti);
+                ImUtilisateur utIm = new ImUtilisateur();
+                utIm.modifier(uti);
 
             }
 
@@ -170,8 +173,8 @@ public class ListeUtilisateurController implements Initializable {
             public void handle(CellEditEvent<Utilisateur, String> event) {
                 Utilisateur uti = event.getRowValue();
                 uti.setEmail(event.getNewValue());
-                               ImUtilisateur utIm = new ImUtilisateur();
-               utIm.modifier(uti);
+                ImUtilisateur utIm = new ImUtilisateur();
+                utIm.modifier(uti);
 
             }
 
@@ -183,8 +186,8 @@ public class ListeUtilisateurController implements Initializable {
             public void handle(CellEditEvent<Utilisateur, String> event) {
                 Utilisateur uti = event.getRowValue();
                 uti.setPays(event.getNewValue());
-                               ImUtilisateur utIm = new ImUtilisateur();
-               utIm.modifier(uti);
+                ImUtilisateur utIm = new ImUtilisateur();
+                utIm.modifier(uti);
 
             }
 
@@ -196,34 +199,22 @@ public class ListeUtilisateurController implements Initializable {
             public void handle(CellEditEvent<Utilisateur, String> event) {
                 Utilisateur uti = event.getRowValue();
                 uti.setRole(event.getNewValue());
-                               ImUtilisateur utIm = new ImUtilisateur();
-               utIm.modifier(uti);
+                ImUtilisateur utIm = new ImUtilisateur();
+                utIm.modifier(uti);
 
             }
 
         });
+        PropertyValueFactory p = new PropertyValueFactory<>("Active");
 
-        isActive.setCellValueFactory(new PropertyValueFactory<>("Active"));
-       isActive.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        isActive.setOnEditCommit(new EventHandler<CellEditEvent<Utilisateur, Integer>>() {
-            @Override
-            public void handle(CellEditEvent<Utilisateur, Integer> event) {
-                Utilisateur uti = event.getRowValue();
-                uti.setActive(event.getNewValue());
-                               ImUtilisateur utIm = new ImUtilisateur();
-               utIm.modifier(uti);
-
-            }
-
-        });
+        isActive.setCellValueFactory(p);
 
         photo.setCellValueFactory(new PropertyValueFactory<>("photo"));
-      //  photo.setCellFactory(TextFieldTableCell.forTableColumn());
+        //  photo.setCellFactory(TextFieldTableCell.forTableColumn());
 
         TableUtilisateur.setItems(obsUtilisateurlist);
 
         TriChoice.getItems().addAll("aucun", "Trier Selon Nom", "Trier Selon Pays", "Trier Selon Compte Activé");
-
         Rechercher.textProperty().addListener((obs, oldText, newText) -> {
             List<Utilisateur> ae = im.Search(newText);
             TableUtilisateur.getItems().setAll(ae);
@@ -260,18 +251,9 @@ public class ListeUtilisateurController implements Initializable {
     @FXML
     private void onTableItemSelect(MouseEvent event) {
 
-        mnom.opacityProperty();
         Utilisateur = TableUtilisateur.getSelectionModel().getSelectedItem();
 
-        mnom.setText(Utilisateur.getNom());
-        mprenom.setText(Utilisateur.getPrenom());
-        madresse.setText(Utilisateur.getAdresse());
-        memail.setText(Utilisateur.getEmail());
-        mpays.setText(Utilisateur.getPays());
-        mrole.setText(Utilisateur.getRole());
-        mActive.setText(String.valueOf(Utilisateur.isActive()));
-        mpohto.setText(Utilisateur.getPhoto());
-        textMOd.setText(Utilisateur.getNom());
+        acuser = Utilisateur.isActive();
 
     }
 
@@ -286,7 +268,6 @@ public class ListeUtilisateurController implements Initializable {
         mpohto.clear();
     }
 
-    @FXML
     private void EditUtili(ActionEvent event) throws IOException {
         ImUtilisateur uti = new ImUtilisateur();
 
@@ -296,14 +277,29 @@ public class ListeUtilisateurController implements Initializable {
         Utilisateur.setEmail(email.getText());
         Utilisateur.setPays(pays.getText());
         Utilisateur.setRole(role.getText());
-        Utilisateur.setActive(Integer.parseInt(isActive.getText()));
+        Utilisateur.setActive(isActive.getText());
         Utilisateur.setPhoto(photo.getText());
         //   uti.modifier(new Utilisateur(1,"ayass","mess","Ariana Soghra","maha.mess@gmail.com","yassine","photo","tunis","utilisateur",1));
-        uti.modifier(new Utilisateur(Utilisateur.getIdU(), nom.getText(), prenom.getText(), adresse.getText(), email.getText(), photo.getText(), pays.getText(), role.getText(), Integer.parseInt(isActive.getText())));
+        uti.modifier(new Utilisateur(Utilisateur.getIdU(), nom.getText(), prenom.getText(), adresse.getText(), email.getText(), photo.getText(), pays.getText(), role.getText(), isActive.getText()));
 
         new Alert(Alert.AlertType.INFORMATION, Utilisateur.getNom() + " Modifier !!", ButtonType.APPLY.CLOSE).show();
         clearFields();
         obsUtilisateurlist.set(TableUtilisateur.getSelectionModel().getFocusedIndex(), Utilisateur);
+
+    }
+
+    private void DesactUser(String acuser) {
+        try {
+            Connection cnx = ConnectionBd.getInstance().getCnx();
+            String reqs = "UPDATE utilisateur SET activated=? WHERE idU=?";
+            PreparedStatement pst = cnx.prepareStatement(reqs);
+            pst.setString(1, acuser);
+            pst.setInt(2, Utilisateur.getIdU());
+            pst.executeUpdate();
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
 
     }
 
@@ -372,7 +368,6 @@ public class ListeUtilisateurController implements Initializable {
         }
     }
 
-    @FXML
     private void Logout(ActionEvent event) throws IOException {
         Parent page2 = FXMLLoader.load(getClass().getResource("Login.fxml"));
 
@@ -382,7 +377,6 @@ public class ListeUtilisateurController implements Initializable {
         app_stage.show();
     }
 
-    @FXML
     private void Sponsors(ActionEvent event) throws IOException {
         Parent page2 = FXMLLoader.load(getClass().getResource("ListCommandeClient.fxml"));
 
@@ -392,7 +386,6 @@ public class ListeUtilisateurController implements Initializable {
         app_stage.show();
     }
 
-    @FXML
     private void Plat(ActionEvent event) throws IOException {
         Parent page2 = FXMLLoader.load(getClass().getResource("AjouterCommande.fxml"));
 
@@ -400,6 +393,26 @@ public class ListeUtilisateurController implements Initializable {
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         app_stage.setScene(scene2);
         app_stage.show();
+    }
+
+    @FXML
+    private void ChangeRole(ActionEvent event) {
+        ImUtilisateur uti = new ImUtilisateur();
+        Utilisateur Utilisateur = new Utilisateur();
+
+        if (banUser.getValue().equals("Active")) {
+            String ac = "Active";
+            DesactUser(ac);
+            JOptionPane.showMessageDialog(null, "Utilisateur Active ! ");
+            LoadData();
+        } else if (banUser.getValue().equals("Desactive")) {
+            String ac = "Desactive";
+
+            DesactUser(ac);
+            JOptionPane.showMessageDialog(null, "Utilisateur Desactive ! ");
+            LoadData();
+        }
+
     }
 
 }

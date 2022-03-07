@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 <?import javafx.scene.web.WebView?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="921.0" prefWidth="1339.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="esprit.com.views.AfficheCommandAdminController">
+<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AfficheCommandAdminController">
    <children>
-      <WebView fx:id="webview" layoutX="240.0" layoutY="-1.0" prefHeight="921.0" prefWidth="1103.0" />
-      <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="63.0" text="Longitude" />
-      <Label layoutX="14.0" layoutY="93.0" prefHeight="17.0" prefWidth="63.0" text="Latitude" />
-      <Label layoutX="22.0" layoutY="43.0" prefHeight="17.0" prefWidth="63.0" text="Label" />
-      <Label layoutX="14.0" layoutY="134.0" prefHeight="17.0" prefWidth="63.0" text="Label" />
+      <WebView fx:id="webview" layoutX="540.0" layoutY="116.0" prefHeight="641.0" prefWidth="591.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="118.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1131.0" />
+      <Text fill="WHITE" layoutX="378.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Commandes" wrappingWidth="420.13671875">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="34.0" />
+         </font>
+      </Text>
+      <TableView fx:id="TabComAdm" layoutX="2.0" layoutY="156.0" prefHeight="419.0" prefWidth="531.0">
+        <columns>
+          <TableColumn fx:id="ncom" prefWidth="84.0" text="N°Commande" />
+            <TableColumn fx:id="nplat" prefWidth="63.0" text="Nom Plat" />
+            <TableColumn fx:id="nomU" prefWidth="63.0" text="Nom" />
+          <TableColumn fx:id="Prix" prefWidth="98.0" text="Prix commande" />
+            <TableColumn fx:id="dateCom" prefWidth="98.0" text="Date commande" />
+            <TableColumn fx:id="latitude" prefWidth="63.0" text="Latitude" />
+            <TableColumn fx:id="longitude" prefWidth="63.0" text="longitude" />
+        </columns>
+      </TableView>
+      <Button layoutX="137.0" layoutY="616.0" mnemonicParsing="false" onAction="#ConfirmePlat" prefHeight="57.0" prefWidth="197.0" style="-fx-background-color: #4349a3;" text="Confirmer " textFill="#f8f8f8">
+         <font>
+            <Font name="System Bold Italic" size="27.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

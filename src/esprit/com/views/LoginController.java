@@ -74,14 +74,26 @@ public class LoginController implements Initializable {
                 stage.close();
                 //  etatlogin.setText("Bienvenue admin");
                 //etatlogin.setStyle("-fx-text-fill: #16ff61;");
-                Parent page2 = FXMLLoader.load(getClass().getResource("ListeUtilisateur.fxml"));
+                Parent page2 = FXMLLoader.load(getClass().getResource("MenuAdmin2.fxml"));
 
                 Scene scene2 = new Scene(page2);
                 Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 app_stage.setScene(scene2);
                 app_stage.show();
 
-            }
+            }else
+                    if (uti.login(new Utilisateur(email.getText(), motpasse.getText())).equals("Client")) {
+
+                Stage stage = (Stage) Login.getScene().getWindow();
+                stage.close();
+                //  etatlogin.setText("Bienvenue admin");
+                //etatlogin.setStyle("-fx-text-fill: #16ff61;");
+                Parent page2 = FXMLLoader.load(getClass().getResource(""));
+
+                Scene scene2 = new Scene(page2);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(scene2);
+                app_stage.show();}
                 else{
                           obli.setText("Verifier vos donneés !");
             obli.setStyle("-fx-text-fill: #ff0000;");

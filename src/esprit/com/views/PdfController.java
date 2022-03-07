@@ -66,8 +66,6 @@ public class PdfController implements Initializable {
     private AnchorPane report11;
     @FXML
     private AnchorPane report88;
-    @FXML
-    private AnchorPane idpane1;
 
   
     /**

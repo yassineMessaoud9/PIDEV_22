@@ -9,27 +9,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="report88" prefHeight="485.0" prefWidth="937.0" style="-fx-background-color: hite;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.PdfController">
+<AnchorPane id="AnchorPane" fx:id="report88" prefHeight="400.0" prefWidth="703.0" style="-fx-background-color: hite;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.PdfController">
    <children>
-      <Button fx:id="export2" layoutX="680.0" layoutY="257.0" mnemonicParsing="false" onAction="#savepdf" prefHeight="37.0" prefWidth="257.0" style="-fx-background-color: #4349a3;" text="Imprimeé" textFill="WHITE">
+      <Button fx:id="export2" layoutX="576.0" layoutY="257.0" mnemonicParsing="false" onAction="#savepdf" prefHeight="37.0" prefWidth="257.0" style="-fx-background-color: #4349a3;" text="imprimer" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font></Button>
-      <TableView fx:id="tableReser" layoutX="14.0" layoutY="93.0" onMouseClicked="#onTableItemSelect" prefHeight="327.0" prefWidth="473.0">
+      <TableView fx:id="tableReser" layoutX="9.0" layoutY="102.0" onMouseClicked="#onTableItemSelect" prefHeight="323.0" prefWidth="407.0">
          <columns>
-            <TableColumn fx:id="typech" prefWidth="59.0" style="-fx-background-color: #F0F8FF;" text="typeChambre" />
-            <TableColumn fx:id="nbrnuit" prefWidth="81.0" style="-fx-background-color: #F0F8FF;" text="nbr nuit" />
-            <TableColumn fx:id="dateres" minWidth="8.0" prefWidth="63.0" style="-fx-background-color: #F0F8FF;" text="dateres" />
-            <TableColumn fx:id="nbrpersonne" prefWidth="88.0" style="-fx-background-color: #F0F8FF;" text="nbrpersonne" />
-            <TableColumn fx:id="datealler" prefWidth="91.0" style="-fx-background-color: #F0F8FF;" text="datealler" />
-            <TableColumn fx:id="dateretour" prefWidth="105.0" style="-fx-background-color: #F0F8FF;" text="dateretour" />
+            <TableColumn fx:id="typech" prefWidth="88.0" style="-fx-background-color: #F0F8FF;" text="typeChambre" />
+            <TableColumn fx:id="nbrnuit" prefWidth="52.0" style="-fx-background-color: #F0F8FF;" text="nbr nuit" />
+            <TableColumn fx:id="dateres" minWidth="8.0" prefWidth="53.0" style="-fx-background-color: #F0F8FF;" text="dateres" />
+            <TableColumn fx:id="nbrpersonne" prefWidth="58.0" style="-fx-background-color: #F0F8FF;" text="nbrpersonne" />
+            <TableColumn fx:id="datealler" prefWidth="56.0" style="-fx-background-color: #F0F8FF;" text="datealler" />
+            <TableColumn fx:id="dateretour" prefWidth="97.0" style="-fx-background-color: #F0F8FF;" text="dateretour" />
          </columns>
       </TableView>
-      <ImageView fitHeight="128.0" fitWidth="157.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="128.0" fitWidth="157.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../logo/274306311_1124797951671984_4616904785678738551_n.png" />
          </image>
       </ImageView>
       <FontAwesomeIconView fill="WHITE" glyphName="PRINT" layoutX="149.0" layoutY="461.0" size="30" />
+      <FontAwesomeIconView fill="#fffdfd" glyphName="PRINT" layoutX="788.0" layoutY="284.0" size="24" text="" />
    </children>
 </AnchorPane>

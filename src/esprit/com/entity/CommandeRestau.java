@@ -39,6 +39,9 @@ public class CommandeRestau {
         this.etat = etat;
     }
 
+    public CommandeRestau() {
+    }
+
     public CommandeRestau(int Num_Commande, double prix_commande, Date date_commande, String nomPlat, String nom, int etat) {
         this.Num_Commande = Num_Commande;
         this.prix_commande = prix_commande;

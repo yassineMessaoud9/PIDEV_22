@@ -7,7 +7,7 @@ package esprit.com.views;
 
 import esprit.com.ImServices.ServiceHotel;
 import esprit.com.entity.Hotel;
-import esprit.com.entity.upload;
+import com.esprit.upload.Upload;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -91,7 +91,6 @@ public class AfficherHotelsController implements Initializable {
     private TextField txtsearch;
     @FXML
     private Button idajout;
-    @FXML
     private Label img;
 
 
@@ -258,7 +257,6 @@ public class AfficherHotelsController implements Initializable {
                 app_stage.show();
     }
 
-    @FXML
     private void uploadPic(ActionEvent event) throws IOException {
        File file;
        String pic;
@@ -271,7 +269,7 @@ public class AfficherHotelsController implements Initializable {
 
             img.setText("File:"+file);
             //pic=(file.toURI().toString());
-            pic=new upload().upload(file,"\\esma");
+            pic=new Upload().upload(file,"\\esma");
             System.out.println(pic);
        
             

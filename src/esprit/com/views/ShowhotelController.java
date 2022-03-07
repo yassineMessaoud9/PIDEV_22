@@ -79,8 +79,6 @@ public class ShowhotelController implements Initializable {
     @FXML
     private DatePicker dateretour11;
     @FXML
-    private AnchorPane report;
-    @FXML
     private TableColumn<ReservationHotel,String > dateretour1;
 
     /**
@@ -228,9 +226,6 @@ dateretour11.getEditor().clear();
     }
    }
 
-    @FXML
-    private void changevalue(ActionEvent event) {
-    }
 
     @FXML
     private void getViewPdf(ActionEvent event) throws IOException {
