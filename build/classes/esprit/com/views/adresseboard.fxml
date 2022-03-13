@@ -37,9 +37,8 @@
       <Text fill="#4349a3" layoutX="200.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trie a partir du pays :" wrappingWidth="149.99999441206455" />
       <Text fill="#4349a3" layoutX="415.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chercher :" wrappingWidth="73.18357938528061" />
       <TextField fx:id="recherchepays" layoutX="499.0" layoutY="165.0" promptText="a partir du pays" />
-      <Button layoutX="1087.0" layoutY="836.0" mnemonicParsing="false" onAction="#retour" text="retour au menu" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1245.0" />
-      <Text fill="WHITE" layoutX="452.0" layoutY="54.0" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="40.0" text="Liste des adresses" wrappingWidth="498.857421875">
+      <Text fill="WHITE" layoutX="406.0" layoutY="54.0" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="40.0" text="Liste des adresses" wrappingWidth="475.857421875">
          <font>
             <Font name="Arial Rounded MT Bold" size="44.0" />
          </font>
@@ -48,7 +47,7 @@
       <FontAwesomeIconView fill="WHITE" glyphName="REPEAT" layoutX="912.0" layoutY="636.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" layoutX="1087.0" layoutY="635.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="770.0" layoutY="781.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="14.0" layoutY="52.0" size="40" />
+      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="14.0" layoutY="52.0" onMouseClicked="#retour" size="40" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="119.0" layoutX="48.0" layoutY="87.0" stroke="#4349a3" strokeType="INSIDE" width="123.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="77.0" layoutY="171.0" size="70" />
       <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="955.0" layoutY="267.0" />

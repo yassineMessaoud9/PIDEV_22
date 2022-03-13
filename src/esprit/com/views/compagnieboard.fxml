@@ -25,7 +25,6 @@
       <Text fill="#4349a3" layoutX="772.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom du compagnie :" wrappingWidth="163.015129879117" />
       <TextField fx:id="nvcompagnienom" layoutX="950.0" layoutY="429.0" />
       <Button layoutX="526.0" layoutY="882.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #cc1515;" text="Supprimer" textFill="WHITE" />
-      <Button layoutX="1043.0" layoutY="808.0" mnemonicParsing="false" onAction="#retour" text="retour au menu" />
       <Text fill="#4349a3" layoutX="239.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chercher  :" wrappingWidth="92.91748046875" />
       <TextField fx:id="cherchcomp" layoutX="332.0" layoutY="133.0" prefHeight="31.0" prefWidth="205.0" promptText="a partir du nom de pays" />
       <Button layoutX="983.0" layoutY="525.0" mnemonicParsing="false" onAction="#modifier" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #4349a3;" text="Modifier" textFill="WHITE" />
@@ -42,6 +41,6 @@
       <FontAwesomeIconView fill="WHITE" glyphName="REPEAT" layoutX="929.0" layoutY="545.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="PENCIL" layoutX="1080.0" layoutY="545.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="631.0" layoutY="901.0" />
-      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" glyphStyle="70" layoutX="14.0" layoutY="52.0" size="40" />
+      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" glyphStyle="70" layoutX="14.0" layoutY="52.0" onMouseClicked="#retour" size="40" />
    </children>
 </AnchorPane>

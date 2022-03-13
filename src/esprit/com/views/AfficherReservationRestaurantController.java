@@ -149,7 +149,7 @@ ReservationRestaurant rr;
 
     @FXML
     private void getviewreset(ActionEvent event) throws IOException {
-            Parent page2 = FXMLLoader.load(getClass().getResource("menu.fxml"));
+            Parent page2 = FXMLLoader.load(getClass().getResource("MenuAdmin2.fxml"));
 
                 Scene scene2 = new Scene(page2);
                 Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

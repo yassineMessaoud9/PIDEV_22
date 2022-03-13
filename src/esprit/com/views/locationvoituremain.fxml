@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="850.0" prefWidth="1085.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.LocationvoituremainController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="741.0" layoutX="38.0" layoutY="55.0" stroke="#61a85c" strokeType="INSIDE" width="1002.0" />
+      <Text fx:id="ag" fill="#293561" layoutX="99.0" layoutY="451.0" onMouseClicked="#goToAgence" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des agences de voitures" textAlignment="CENTER" wrappingWidth="367.6708984375">
+         <font>
+            <Font name="Bell MT" size="37.0" />
+         </font>
+      </Text>
+      <Text fill="#1d315e" layoutX="99.0" layoutY="701.0" onMouseClicked="#goToVoiture" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des voitures" wrappingWidth="329.6708984375">
+         <font>
+            <Font name="Bell MT" size="39.0" />
+         </font>
+      </Text>
+      <Text fx:id="sais" fill="#1d315e" layoutX="642.0" layoutY="454.0" onMouseClicked="#goToSaison" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des saisons" wrappingWidth="315.6708984375">
+         <font>
+            <Font name="Bell MT" size="38.0" />
+         </font>
+      </Text>
+      <Text fill="#1d315e" layoutX="634.0" layoutY="699.0" onMouseClicked="#goToLocation" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des locations" wrappingWidth="344.6708984375">
+         <font>
+            <Font name="Bell MT" size="39.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView fill="#45adad" glyphName="BUILDING_ALT" layoutX="239.0" layoutY="368.0" size="60" />
+      <FontAwesomeIconView fill="#61c96d" glyphName="PAGELINES" layoutX="803.0" layoutY="368.0" size="60" />
+      <FontAwesomeIconView fill="#b2c644" glyphName="CAR" layoutX="228.0" layoutY="634.0" size="60" />
+      <FontAwesomeIconView fill="#a866c9" glyphName="KEY" layoutX="806.0" layoutY="634.0" size="60" />
+      <Button layoutX="481.0" layoutY="215.0" mnemonicParsing="false" onAction="#gointerface" text="user main" />
+   </children>
+</AnchorPane>

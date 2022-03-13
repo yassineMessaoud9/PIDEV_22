@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1057.0" prefWidth="1265.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.UsermainController">
+   <children>
+      <ScrollPane fx:id="scroll" layoutX="110.0" layoutY="210.0" prefHeight="832.0" prefWidth="1046.0" style="-fx-background-color: rgba(0,0,0,0);">
+         <content>
+            <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+      <Text fill="#70beff" layoutX="388.0" layoutY="169.0" lineSpacing="60.0" strokeType="OUTSIDE" strokeWidth="40.0" text="Liste des voitures">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="57.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

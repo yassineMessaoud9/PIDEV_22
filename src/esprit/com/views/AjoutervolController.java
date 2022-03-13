@@ -76,51 +76,36 @@ public class AjoutervolController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        LoadData2();
+       // pour le num serieavion affichage combobox
+        getnumavion();
+       // pour le nom du compagnie affichage combobox
         comp.afficher().forEach((p)->{
-             choicecompagnie.getItems().add(new jointure(p.getIdcompagnie(),p.getNomcompagnie())); 
-             
-             choicecompagnie.setOnAction(event -> {
-              idcompagnie=choicecompagnie.getValue().getIdcompagnie();
-              
-     });
-             
-             
+        choicecompagnie.getItems().add(new jointure(p.getIdcompagnie(),p.getNomcompagnie())); 
+        choicecompagnie.setOnAction(event -> {
+        idcompagnie=choicecompagnie.getValue().getIdcompagnie();       
+     });  
         });
-        // TODO
     }    
 
     
     @FXML
     private void Ajouter(ActionEvent event) {
         Notifications notifications=Notifications.create();
-          if(tempsaller.getText().equals("")|| Float.parseFloat(prixvol.getText())==0||destination.getText().equals("")||classvol.getText().equals("")||numserieav.equals("")||controledate()==false){
+        // controle des saisie date et champs vide
+        if(tempsaller.getText().equals("")|| Float.parseFloat(prixvol.getText())==0||destination.getText().equals("")||classvol.getText().equals("")||numserieav.equals("")||controledate()==false){
             notifications.text("champs vide ou date erroné");
             notifications.title("Message d'erreur");
-            
             notifications.show();
-        
            }
-           else{
-        
-      
-           
-        Imvol Imvol= new Imvol();
-               
-        
-         
-         
-        Imvol.ajouter(new vol(Date.valueOf(datealler.getValue()),tempsaller.getText(),Date.valueOf(dateretour.getValue()),tempsretour.getText(),destination.getText(),classvol.getText(),Float.parseFloat(prixvol.getText()),typevol.getText(),idcompagnie,numserie));
-        
-              
-            notifications.text("compagnie ajoutéé");
+        // ajouter vole 
+        else{
+            Imvol Imvol= new Imvol();
+            Imvol.ajouter(new vol(Date.valueOf(datealler.getValue()),tempsaller.getText(),Date.valueOf(dateretour.getValue()),tempsretour.getText(),destination.getText(),classvol.getText(),Float.parseFloat(prixvol.getText()),typevol.getText(),idcompagnie,numserie));      
+            notifications.text("vol ajoutéé");
             notifications.title("Success Message");
-            //notifications.darkStyle();
-              notifications.show();
-                 }
-    }
-    
-    
+            notifications.show();
+            }
+    } 
     public boolean controledate (){
     String datea=datealler.getValue().toString();
     String dater=dateretour.getValue().toString();
@@ -140,26 +125,24 @@ public class AjoutervolController implements Initializable {
     @FXML
     private void terminer(ActionEvent event) throws IOException {
         Parent page2 = FXMLLoader.load(getClass().getResource("volboard.fxml"));
-
-         Scene scene2 = new Scene(page2);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                app_stage.setScene(scene2);
-                app_stage.show();
-        
-        
-        
-        
-        
+        Scene scene2 = new Scene(page2);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
     }
+    
+    
+    
+    
+    
+    
+    
     vol vol =new vol ();
     int x ;
     int v ;
     int numserie ;
     
-   
-         
-    
-    
+// fonction ne marche pas correctement
     private void LoadData(){
         Connection cnx = ConnectionBd.getInstance().getCnx();
        try {
@@ -173,28 +156,21 @@ public class AjoutervolController implements Initializable {
             
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
-              
+        }         
    }
-    private void LoadData2(){
+// recupere les numero de serie des avion    
+    private void getnumavion(){
         Connection cnx = ConnectionBd.getInstance().getCnx();
-       
               try {
             String req1 = "select numserieavion from avion";
             PreparedStatement pst1 = cnx.prepareStatement(req1);
             ResultSet rs1 = pst1.executeQuery();
             while(rs1.next()) {
             numserieav.getItems().addAll(rs1.getInt("numserieavion"));
-        
-                        }
-              numserieav.setOnAction(event -> {
-              numserie=numserieav.getValue();
-              System.out.println( "hedhy numserie"+numserie);
-              
-             
-              
-          });
-            
+            }
+            numserieav.setOnAction(event -> {
+            numserie=numserieav.getValue();     
+          });     
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }

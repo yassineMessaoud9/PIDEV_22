@@ -32,5 +32,6 @@
       </ImageView>
       <FontAwesomeIconView fill="WHITE" glyphName="PRINT" layoutX="149.0" layoutY="461.0" size="30" />
       <FontAwesomeIconView fill="#fffdfd" glyphName="PRINT" layoutX="788.0" layoutY="284.0" size="24" text="" />
+      <Button layoutX="705.0" layoutY="325.0" mnemonicParsing="false" onAction="#Back" style="-fx-background-color: #4349a3;" text="Retour au menu" textFill="WHITE" />
    </children>
 </AnchorPane>

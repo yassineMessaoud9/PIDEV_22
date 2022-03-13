@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="737.0" prefWidth="954.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="esprit.com.views.AsmaClientController">
+   <children>
+      <ImageView fitHeight="315.0" fitWidth="344.0" layoutX="14.0" layoutY="309.0" onMouseClicked="#GoHotel" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/batiment-hotel-isole-bande-dessinee-ville-rue-vector-illustration-plat_101884-680.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="315.0" fitWidth="344.0" layoutX="530.0" layoutY="323.0" onMouseClicked="#GoRestau" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/restresrvbild2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

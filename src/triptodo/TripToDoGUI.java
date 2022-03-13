@@ -32,8 +32,8 @@ public class TripToDoGUI extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         // FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/ListeUtilisateur.fxml"));
-       // FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/ListCommandeClient.fxml"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/Login.fxml"));
+     // FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/sinscrireAdmin.fxml"));
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("../esprit/com/views/Login.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
 
@@ -43,7 +43,6 @@ public class TripToDoGUI extends Application {
         primaryStage.setResizable(false);
 
     }
-
     /**
      * @param args the command line arguments
      */

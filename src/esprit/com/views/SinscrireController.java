@@ -25,7 +25,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -84,16 +86,23 @@ public class SinscrireController implements Initializable {
     @FXML
     private void sisncrire(ActionEvent event) throws IOException {
         ImUtilisateur uti = new ImUtilisateur();
-        // uti.registre(new Utilisateur("ayass","mess","Ariana Soghra","amaha.messaoud3@gmail.com","yassine","photo","tunis",Role.Admin,"Admin+",100.9));
         String Role = "Client";
+      /*  if(nom.getText().equals("")|| prenom.getText().equals("")|| adresse.getText().equals("") || pays.getText().equals("") || email.getText().equals("") || motpasse.getText().equals("") || pic.equals(""))){ 
+       //  textcs.setText("saisir  tous les champs!");
+                                   new Alert(Alert.AlertType.ERROR,"Tous les champs sont oligatoire",ButtonType.CLOSE).show();
+
+         }*/
+       if (nom.getText().equals("")|| !email.getText().contains("@")) {
+            new Alert(Alert.AlertType.ERROR,"verifier vos donne!!",ButtonType.CLOSE).show();
+
+        } else {
+           
+      
         uti.registre(new Utilisateur(nom.getText(), prenom.getText(), adresse.getText(), email.getText(), motpasse.getText(), pic, pays.getText(), Role));
         JOptionPane.showMessageDialog(null, "Personne ajoutée ! , Un email vous a envoyé");
           Notifications notifications=Notifications.create();
         notifications.text("Personne ajoutée ! , Un email vous a envoyé");
         notifications.title("Success Message");
-     //   notifications.hideAfter(Duration.seconds(4));
-       //notifications.darkStyle();
-     /*   notifications.position(Pos.BOTTOM_CENTER);*/
         notifications.show();
         Parent page2 = FXMLLoader.load(getClass().getResource("login.fxml"));
 
@@ -102,7 +111,7 @@ public class SinscrireController implements Initializable {
         app_stage.setScene(scene2);
         app_stage.show();
     }
-
+ }
     private void upload() throws IOException {
 
         FileChooser fileChooser = new FileChooser();

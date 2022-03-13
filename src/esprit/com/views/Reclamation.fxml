@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ReclamationController">
+<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="930.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ReclamationController">
    <children>
       <TextField fx:id="prixTicket" layoutX="123.0" layoutY="230.0" prefHeight="31.0" prefWidth="198.0" promptText="titre" />
       <TableView fx:id="tableT" layoutX="356.0" layoutY="257.0" onMouseClicked="#onTableItemSelect" prefHeight="291.0" prefWidth="484.0">
@@ -71,8 +71,8 @@
             <Font size="21.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="104.0" layoutX="-5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="859.0" />
-      <Label layoutX="305.0" layoutY="27.0" prefHeight="50.0" prefWidth="309.0" text="Envoyer Reclamation" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="104.0" layoutX="-5.0" stroke="TRANSPARENT" strokeType="INSIDE" width="941.0" />
+      <Label layoutX="355.0" layoutY="27.0" prefHeight="50.0" prefWidth="309.0" text="Envoyer Reclamation" textFill="WHITE">
          <font>
             <Font name="Haettenschweiler" size="32.0" />
          </font>

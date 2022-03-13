@@ -87,5 +87,10 @@
          </font></Button>
       <Label fx:id="path1" layoutX="749.0" layoutY="426.0" prefHeight="25.0" prefWidth="165.0" />
       <FontAwesomeIconView fill="WHITE" glyphName="SEND" layoutX="539.0" layoutY="671.0" size="24" />
+      <Button layoutX="56.0" layoutY="45.0" mnemonicParsing="false" onAction="#ack" prefHeight="50.0" prefWidth="103.0" style="-fx-background-color: #4349a3;" text="Retour" textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

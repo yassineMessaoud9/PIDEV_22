@@ -29,9 +29,9 @@
             <Font size="34.0" />
          </font>
       </Button>
-      <Button layoutX="23.0" layoutY="125.0" mnemonicParsing="false" onAction="#Retour" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: white;" text="Retour" textFill="#250075">
+      <Button layoutX="20.0" layoutY="33.0" mnemonicParsing="false" onAction="#Retour" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #4349a3;" text="Retour" textFill="WHITE">
          <graphic>
-            <FontAwesomeIconView fill="#1d0086" glyphName="REPLY" size="20" />
+            <FontAwesomeIconView fill="WHITE" glyphName="REPLY" size="20" />
          </graphic>
          <font>
             <Font size="20.0" />

@@ -5,6 +5,7 @@
  */
 package esprit.com.views;
 
+import esprit.com.ImServices.ImUtilisateur;
 import esprit.com.Imservices.Imreservationvol;
 import esprit.com.entity.reservationvol;
 import esprit.com.entity.vol;
@@ -66,11 +67,10 @@ public class ItemvolController  {
        @FXML
     private void click(MouseEvent mouseEvent) throws IOException {
        Parent page2 = FXMLLoader.load(getClass().getResource("ajoutlocation.fxml"));
-
-        Scene scene2 = new Scene(page2);
-        Stage app_stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        app_stage.setScene(scene2);
-        app_stage.show();
+       Scene scene2 = new Scene(page2);
+       Stage app_stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+       app_stage.setScene(scene2);
+       app_stage.show();
     }
     
    
@@ -80,25 +80,18 @@ public class ItemvolController  {
         destination.setText(vol.getDestination());
         prix.setText(String.valueOf(vol.getPrixvol()));
         datealler.setText(String.valueOf(vol.getDateallervol()));
-       
         tempsaller.setText(vol.getTempsallervol());
-         dateretour.setText(String.valueOf(vol.getDateretourvol()));
+        dateretour.setText(String.valueOf(vol.getDateretourvol()));
         tempsretour.setText(vol.getTempsretourrvol());
-        classe.setText(vol.getClassvol());
-       
+        classe.setText(vol.getClassvol());   
     }
 
     @FXML
     private void reservervol2(ActionEvent event) {
         Imreservationvol Imreservationvol= new Imreservationvol();
-        
-        Imreservationvol.ajouter(new reservationvol(1,vol.getNumvol()));
-        JOptionPane.showMessageDialog(null,"reservation ajoutée");
-        
-        
-        
+        Imreservationvol.ajouter(new reservationvol(ImUtilisateur.idUser,vol.getNumvol()));
+        JOptionPane.showMessageDialog(null,"reservation ajoutée");      
     }
-    
     
     public interface MyListener {
     public void onClickListener(vol vol);

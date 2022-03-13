@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 public class Imcompagnieaerienne implements Igestionvol<compagnieaerienne> {
      Connection cnx = ConnectionBd.getInstance().getCnx();
 
-// ajouter compagnie
+//ajouter compagnie
     @Override
     public void ajouter(compagnieaerienne t) {
         try {
@@ -40,8 +40,8 @@ public class Imcompagnieaerienne implements Igestionvol<compagnieaerienne> {
             System.out.println(ex.getMessage());
         }
     }
-    // modifier compagnie 3 champs
-
+    
+ // modifier compagnie 3 champs
     @Override
     public void modifier(compagnieaerienne t) {
          try{
@@ -56,7 +56,8 @@ public class Imcompagnieaerienne implements Igestionvol<compagnieaerienne> {
             System.out.println(ex.getMessage());
         }
     }
-    //modifier compagnie 2 champs
+    
+//modifier compagnie 2 champs
     public void modifier2(compagnieaerienne t) {
          try{
             String req = "UPDATE compagnieaerienne SET nomcompagnie=? WHERE idcompagnie=?";
@@ -69,6 +70,7 @@ public class Imcompagnieaerienne implements Igestionvol<compagnieaerienne> {
             System.out.println(ex.getMessage());
         }
     }
+    
 //supprimer compagnie
     @Override
     public void supprimer(compagnieaerienne t) {
@@ -83,12 +85,10 @@ public class Imcompagnieaerienne implements Igestionvol<compagnieaerienne> {
         }
     }
     
-    
-    //afficher liste des compagnie 
-   
+//afficher liste des compagnie 
     @Override
     public List<compagnieaerienne> afficher() {
-List<compagnieaerienne> list = new ArrayList<>();
+        List<compagnieaerienne> list = new ArrayList<>();
         
         try {
             String req = "SELECT * from compagnieaerienne";
@@ -107,22 +107,20 @@ List<compagnieaerienne> list = new ArrayList<>();
     
     public void recherche(int id) {
         List<compagnieaerienne> list1= new ArrayList<>();
-         List<compagnieaerienne> list2= afficher();
-         
-         list1= list2.stream().filter(c -> c.getIdcompagnie()==id).collect(Collectors.toList());
-         System.out.println(list1); 
+        List<compagnieaerienne> list2= afficher();
+        list1= list2.stream().filter(c -> c.getIdcompagnie()==id).collect(Collectors.toList());
+        System.out.println(list1); 
     }
 
-    //tri compagnie selon nom compagnie 
+//tri compagnie selon nom compagnie 
     public void tri() {
          List<compagnieaerienne> list1= new ArrayList<>();
          List<compagnieaerienne> list2= afficher();
-         
          list1= list2.stream().sorted((o1,o2)->o1.getNomcompagnie().compareTo(o2.getNomcompagnie())).collect(Collectors.toList());
          System.out.println(list1);
     }
     
-    //chercher compagnie jointure ne marche pas correctement 
+//jointure ne marche pas correctement 
        public void rechercher(int id , String nom , String pays) {
            
            try {
@@ -136,26 +134,21 @@ List<compagnieaerienne> list = new ArrayList<>();
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
-        
-         
+        }    
     }
-       //chercher compagnie a partir du nom compagnie
        
-       public List<compagnieaerienne> cherchercompagnie (String val){
-        
-      List<compagnieaerienne> list1= new ArrayList<>();
+//chercher compagnie a partir du nom compagnie
+    public List<compagnieaerienne> cherchercompagnie (String val){
+         List<compagnieaerienne> list1= new ArrayList<>();
          List<compagnieaerienne> list2= afficher();
-         
          list1= list2.stream().filter(c -> c.getNomcompagnie().startsWith(val)).collect(Collectors.toList());
          System.out.println(list1);
          return list1;
     }
-       // jointure pour que le combo box a les adresse du compagnie 
-       
-       public List<compagnieaerienne> jointure() {
-           List<compagnieaerienne> list = new ArrayList<compagnieaerienne>();
-        
+    
+// jointure pour que le combo box a les adresse du compagnie    
+    public List<compagnieaerienne> jointure() {
+        List<compagnieaerienne> list = new ArrayList<compagnieaerienne>();
         try {
             String req = "select nomcompagnie , paysadresse from compagnieaerienne join adresse using (idadresse);";
             PreparedStatement pst = cnx.prepareStatement(req);

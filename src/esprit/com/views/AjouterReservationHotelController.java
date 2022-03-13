@@ -5,6 +5,7 @@
  */
 package esprit.com.views;
 
+import esprit.com.ImServices.ImUtilisateur;
 import esprit.com.ImServices.ServiceHotel;
 import esprit.com.ImServices.ServiceReservationHotel;
 import esprit.com.entity.Hotel;
@@ -49,8 +50,6 @@ import javafx.scene.control.ChoiceBox;
 public class AjouterReservationHotelController implements Initializable {
 
     @FXML
-    private ComboBox<Integer> comboxoHotel;
-    @FXML
     private TextField typechambre;
     @FXML
     private TextField nbrnuit;
@@ -62,8 +61,6 @@ public class AjouterReservationHotelController implements Initializable {
     private DatePicker datealler;
     @FXML
     private DatePicker dateretour;
-    @FXML
-    private TextField idu;
     @FXML
     private Text idtext;
     @FXML
@@ -113,7 +110,7 @@ int idhotel;
     @FXML
     private void ajouterReservationHotel(ActionEvent event) {
         ServiceReservationHotel sR = new ServiceReservationHotel();
-         if(typechambre.getText().equals("")|| Integer.parseInt(nbrnuit.getText())==0||Integer.parseInt(idu.getText())==0||(nomhotell.getSelectionModel().getSelectedItem().toString().equals("")||dateReservation.getValue().equals(""))){ 
+         if(typechambre.getText().equals("")|| Integer.parseInt(nbrnuit.getText())==0||(nomhotell.getSelectionModel().getSelectedItem().toString().equals("")||dateReservation.getValue().equals(""))){ 
          textcs.setText("saisir  tous les champs!");
        
          }
@@ -130,7 +127,7 @@ int idhotel;
              }
          else{
         sR.ajouter(new ReservationHotel(typechambre.getText(),
-                Integer.parseInt(nbrnuit.getText()),Date.valueOf(dateReservation.getValue()),Integer.parseInt(nbrpersonne.getText()),Date.valueOf(datealler.getValue()),Date.valueOf(dateretour.getValue()),Integer.parseInt(idu.getText()),idhotel));
+                Integer.parseInt(nbrnuit.getText()),Date.valueOf(dateReservation.getValue()),Integer.parseInt(nbrpersonne.getText()),Date.valueOf(datealler.getValue()),Date.valueOf(dateretour.getValue()),ImUtilisateur.idUser,idhotel));
 
 
 
@@ -142,7 +139,7 @@ int idhotel;
     @FXML
     private void retourmenu(ActionEvent event) throws IOException {
            
-           Parent page2 = FXMLLoader.load(getClass().getResource("menu.fxml"));
+           Parent page2 = FXMLLoader.load(getClass().getResource("MenuClient.fxml"));
 
                 Scene scene2 = new Scene(page2);
                 Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

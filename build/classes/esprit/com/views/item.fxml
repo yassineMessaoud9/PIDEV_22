@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" onMouseClicked="#click" prefHeight="346.0" prefWidth="316.0" style="-fx-border-radius: 30;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ItemController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutY="2.0" onMousePressed="#click" prefHeight="343.0" prefWidth="316.0" style="-fx-border-radius: 30; -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 ,10.0); -fx-background-color: white;">
+         <children>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="136.0" prefWidth="312.0">
+               <children>
+                  <ImageView fx:id="img" fitHeight="167.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../Downloads/Copie%20de%20Travel%20Flyer%20Template%20-%20Fait%20avec%20PosterMyWall.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="30.0" layoutY="199.0" prefHeight="32.0" prefWidth="390.0">
+               <children>
+                  <Label fx:id="marque" alignment="CENTER" prefHeight="32.0" prefWidth="368.0" text="bmw" textFill="#271951">
+                     <font>
+                        <Font name="Georgia Pro Cond Semibold" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="45.0" prefWidth="292.0">
+               <children>
+                  <FontAwesomeIconView fill="#cdcdcd" glyphName="MALE" size="35" text="" wrappingWidth="45.7142858505249" />
+                  <Label fx:id="nbrplace" alignment="CENTER" contentDisplay="TOP" prefHeight="49.0" prefWidth="38.0" text="4" textFill="#271951">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nbrplace1" alignment="CENTER" contentDisplay="TOP" prefHeight="49.0" prefWidth="109.0" text="Chevaux" textFill="#271951">
+                     <font>
+                        <Font name="Cambria" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nbrplace11" alignment="CENTER" contentDisplay="TOP" prefHeight="49.0" prefWidth="75.0" textFill="#271951">
+                     <font>
+                        <Font name="Cambria" size="15.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="#bcbcbc" glyphName="MALE" size="40" wrappingWidth="27.0" />
+                  <Label fx:id="nbrchau" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="64.0" text="5chv" textFill="#271951">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nbrchau1" prefHeight="49.0" prefWidth="122.0" text="places" textFill="#271951">
+                     <font>
+                        <Font name="Cambria" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="43.0" prefWidth="312.0">
+               <children>
+                  <Label fx:id="tarif2" alignment="CENTER" prefHeight="49.0" prefWidth="79.0" textFill="#271951">
+                     <font>
+                        <Font name="Cambria" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tarif" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="49.0" prefWidth="60.0" text="40" textFill="#55bc55">
+                     <font>
+                        <Font name="Georgia Pro Cond Semibold Italic" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tarif1" alignment="TOP_LEFT" contentDisplay="RIGHT" prefHeight="49.0" prefWidth="28.0" text="DT" textFill="#55bc55">
+                     <font>
+                        <Font name="Arial Nova Cond Light" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tarif11" contentDisplay="RIGHT" prefHeight="49.0" prefWidth="117.0" text="/Jour" textFill="#55bc55">
+                     <font>
+                        <Font name="Georgia Pro Black" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Button alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onMouseClicked="#click" prefHeight="49.0" prefWidth="325.0" style="-fx-background-color: #4b77b5;" text="Reserver" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

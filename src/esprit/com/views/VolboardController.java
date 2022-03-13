@@ -31,6 +31,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -57,10 +58,10 @@ public class VolboardController implements Initializable {
     private TableColumn<vol, Float> prixvol;
     @FXML
     private TableColumn<vol, String> typevol;
-    
+
     @FXML
     private TableColumn<vol, Integer> matricule;
-    ObservableList<vol> vl=FXCollections.observableArrayList();
+    ObservableList<vol> vl = FXCollections.observableArrayList();
     @FXML
     private DatePicker nvdatealler;
     @FXML
@@ -85,143 +86,99 @@ public class VolboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Imvol sa = new Imvol();
-            List<vol> s =sa.afficher();
-        
-      sa.afficher().stream().forEach((p) -> {vl.add(p);});
+        List<vol> s = sa.afficher();
+        sa.afficher().stream().forEach((p) -> {
+            vl.add(p);
+        });
         System.out.println(sa.afficher());
-      datealler.setCellValueFactory(new PropertyValueFactory<>("dateallervol"));  
-      tempaller.setCellValueFactory(new PropertyValueFactory<>("tempsallervol"));
-      dateretour.setCellValueFactory(new PropertyValueFactory<>("dateretourvol"));
-      tempretour.setCellValueFactory(new PropertyValueFactory<>("tempsretourrvol"));
-      destination.setCellValueFactory(new PropertyValueFactory<>("destination"));
-      classvol.setCellValueFactory(new PropertyValueFactory<>("classvol"));
-      prixvol.setCellValueFactory(new PropertyValueFactory<>("prixvol"));
-      typevol.setCellValueFactory(new PropertyValueFactory<>("typevol"));
-      
-      matricule.setCellValueFactory(new PropertyValueFactory<>("numserieavion"));
- 
-       tablevol.setItems(vl);
-    }    
+        datealler.setCellValueFactory(new PropertyValueFactory<>("dateallervol"));
+        tempaller.setCellValueFactory(new PropertyValueFactory<>("tempsallervol"));
+        dateretour.setCellValueFactory(new PropertyValueFactory<>("dateretourvol"));
+        tempretour.setCellValueFactory(new PropertyValueFactory<>("tempsretourrvol"));
+        destination.setCellValueFactory(new PropertyValueFactory<>("destination"));
+        classvol.setCellValueFactory(new PropertyValueFactory<>("classvol"));
+        prixvol.setCellValueFactory(new PropertyValueFactory<>("prixvol"));
+        typevol.setCellValueFactory(new PropertyValueFactory<>("typevol"));
+        matricule.setCellValueFactory(new PropertyValueFactory<>("numserieavion"));
+        tablevol.setItems(vl);
+    }
 
     @FXML
     private void supp(ActionEvent event) {
-                Imvol st = new Imvol ();
-        vol t=new vol();
+        Imvol st = new Imvol();
+        vol t = new vol();
+        ObservableList adr, adres;
+        adr = tablevol.getItems();
+        adres = tablevol.getSelectionModel().getSelectedItems();
+        t = tablevol.getSelectionModel().getSelectedItems().get(0);
+        st.supprimer(new vol(t.getNumvol()));
+        adres.forEach(adr::remove);
+        Notifications notifications = Notifications.create();
+        notifications.text("vol supprimer");
+        notifications.title("Success Message");
+        notifications.show();
 
-        
-      ObservableList adr,adres;
-      adr=tablevol.getItems();
-      adres=tablevol.getSelectionModel().getSelectedItems();
-      t=tablevol.getSelectionModel().getSelectedItems().get(0);
-
-      st.supprimer(new vol(t.getNumvol()));
-
-        System.out.println(t);
-                System.out.println(adr);
-
-        
-      adres.forEach(adr::remove);
-     // clearFields();
-        
-        
     }
-    void refresh(){
-       Imvol sa = new Imvol();
-            List<vol> s =sa.afficher();
-        
-      //sa.afficher().stream().forEach((p) -> {vl.add(p);});
-        //System.out.println(sa.afficher());
-      datealler.setCellValueFactory(new PropertyValueFactory<>("dateallervol"));  
-      tempaller.setCellValueFactory(new PropertyValueFactory<>("tempsallervol"));
-      dateretour.setCellValueFactory(new PropertyValueFactory<>("dateretourvol"));
-      tempretour.setCellValueFactory(new PropertyValueFactory<>("tempsretourrvol"));
-      destination.setCellValueFactory(new PropertyValueFactory<>("destination"));
-      classvol.setCellValueFactory(new PropertyValueFactory<>("classvol"));
-      prixvol.setCellValueFactory(new PropertyValueFactory<>("prixvol"));
-      typevol.setCellValueFactory(new PropertyValueFactory<>("typevol"));
-   
-      matricule.setCellValueFactory(new PropertyValueFactory<>("numserieavion"));
+
+    void refresh() {
+        Imvol sa = new Imvol();
+        List<vol> s = sa.afficher();
+        datealler.setCellValueFactory(new PropertyValueFactory<>("dateallervol"));
+        tempaller.setCellValueFactory(new PropertyValueFactory<>("tempsallervol"));
+        dateretour.setCellValueFactory(new PropertyValueFactory<>("dateretourvol"));
+        tempretour.setCellValueFactory(new PropertyValueFactory<>("tempsretourrvol"));
+        destination.setCellValueFactory(new PropertyValueFactory<>("destination"));
+        classvol.setCellValueFactory(new PropertyValueFactory<>("classvol"));
+        prixvol.setCellValueFactory(new PropertyValueFactory<>("prixvol"));
+        typevol.setCellValueFactory(new PropertyValueFactory<>("typevol"));
+        matricule.setCellValueFactory(new PropertyValueFactory<>("numserieavion"));
         tablevol.getItems().setAll(s);
     }
-    /* public void clearFields(){
-        
-      
-       
-    }*/
-     /* private void selectvol() {
-        
-        
-       
-    }*/
-    
+
     @FXML
     private void modif(ActionEvent event) {
-         Imvol d= new Imvol();
-      
-       
-       /*vol.setDateallervol(mpays.getText());
-       vol.setTempsallervol(mrue.getText());
-       vol.setDateretourvol(mpays.getText());
-       vol.setTempsretourrvol(mrue.getText());
-       vol.setDestination(mpays.getText());
-       vol.setClassvol(mrue.getText());
-       vol.setPrixvol(mpays.getText());
-       vol.setTypevol(mrue.getText());
-       
-       
-       vol.setContactadresse(Integer.parseInt(mcontact.getText()));*/
+        Imvol d = new Imvol();
+        d.modifier2(new vol(vol.getNumvol(),
+                Date.valueOf(nvdatealler.getValue()),
+                nvtempaller.getText(),
+                Date.valueOf(nvdateretour.getValue()),
+                nvtempsretour.getText(),
+                nvdestination.getText(),
+                nvclassvol.getText(),
+                Float.parseFloat(nvprix.getText()),
+                nvtype.getText()
+        ));
+        Notifications notifications = Notifications.create();
+        notifications.text("vole modifier");
+        notifications.title("Success Message");
+        notifications.show();
+        refresh();
+        vl.set(tablevol.getSelectionModel().getFocusedIndex(), vol);
+        clearFields();
 
-       
-
-      
-      d.modifier2(new vol(vol.getNumvol(),
-                        Date.valueOf(nvdatealler.getValue()),
-                        nvtempaller.getText(),
-                        Date.valueOf(nvdateretour.getValue()),
-                        nvtempsretour.getText(),
-                        nvdestination.getText(),
-                        nvclassvol.getText(),
-                        Float.parseFloat(nvprix.getText()),
-                        nvtype.getText()
-                        
-      
-                ));
-      refresh();
-     
-     
-     vl.set(tablevol.getSelectionModel().getFocusedIndex(),vol);
-        clearFields(); 
     }
 
     @FXML
     private void annuler(ActionEvent event) {
         clearFields();
     }
-     public void clearFields(){
-      
-    
-    nvtempaller.clear();
-   
-    nvtempsretour.clear();
-    nvdestination.clear();
-     nvclassvol.clear();
-     nvprix.clear();
-     nvtype.clear();
-       
+
+    public void clearFields() {
+        nvtempaller.clear();
+        nvtempsretour.clear();
+        nvdestination.clear();
+        nvclassvol.clear();
+        nvprix.clear();
+        nvtype.clear();
     }
 
     @FXML
     private void onselect(MouseEvent event) {
         vol = tablevol.getSelectionModel().getSelectedItem();
-  
- 
         nvdatealler.setValue(vol.getDateallervol().toLocalDate());
         nvtempaller.setText(vol.getTempsallervol());
-        //mcontact.setText(vol.valueOf(adresse.getContactadresse()));
         nvdateretour.setValue(vol.getDateretourvol().toLocalDate());
-        
         nvtempsretour.setText(vol.getTempsretourrvol());
-        
         nvdestination.setText(vol.getDestination());
         nvclassvol.setText(vol.getClassvol());
         nvprix.setText(String.valueOf(vol.getPrixvol()));
@@ -230,24 +187,20 @@ public class VolboardController implements Initializable {
 
     @FXML
     private void ajouter(ActionEvent event) throws IOException {
-           Parent page2 = FXMLLoader.load(getClass().getResource("ajoutervol.fxml"));
+        Parent page2 = FXMLLoader.load(getClass().getResource("ajoutervol.fxml"));
         Scene scene2 = new Scene(page2);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                app_stage.setScene(scene2);
-                app_stage.show();
-        
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
+
     }
 
     @FXML
     private void retour(ActionEvent event) throws IOException {
-        Parent page2 = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+        Parent page2 = FXMLLoader.load(getClass().getResource("MenuAdmin2.fxml"));
         Scene scene2 = new Scene(page2);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                app_stage.setScene(scene2);
-                app_stage.show();
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
     }
-    
-    
-    
-    
 }

@@ -52,42 +52,29 @@ public class AjouteradresseController implements Initializable {
 
     @FXML
     private void ajouteradresse(ActionEvent event) {
-  
+        //controle de saisie 
            if(paysadresse.getText().equals("")|| rueadresse.getText().equals("")||contactadresse.getText().equals("")){
-          
-            Notifications notifications=Notifications.create();
-           
-            notifications.text("champs vide");
-            notifications.title("Message d'erreur");
-            
-            notifications.show();
+           Notifications notifications=Notifications.create();
+           notifications.text("champs vide");
+           notifications.title("Message d'erreur"); 
+           notifications.show();
             
         }
         else{
-             
+        //ajouter adresse      
            Imadresse Imadresse= new Imadresse();
-       
-            Imadresse.ajouter(new adresse(paysadresse.getText(),rueadresse.getText(),Integer.parseInt(contactadresse.getText())));
-            
-            Notifications notifications=Notifications.create();
-              
-            notifications.text("adresse ajoutéé");
-            notifications.title("Success Message");
-            //notifications.darkStyle();
-              notifications.show();
-        }
-        
-        
-        
-        
-        
-        //FXMLLoader loader= new FXMLLoader(getClass().getResource("../views/Ajouteradresse.fxml"));
+           Imadresse.ajouter(new adresse(paysadresse.getText(),rueadresse.getText(),Integer.parseInt(contactadresse.getText())));
+           Notifications notifications=Notifications.create();   
+           notifications.text("adresse ajoutéé");
+           notifications.title("Success Message");  
+           notifications.show();
+        }    
     }
-       public void clearFields(){
+    
+    public void clearFields(){
         paysadresse.clear();
         rueadresse.clear();
-        contactadresse.clear();
-       
+        contactadresse.clear();       
     }
 
     @FXML
@@ -98,11 +85,9 @@ public class AjouteradresseController implements Initializable {
     @FXML
     private void terminer(ActionEvent event) throws IOException {
         Parent page2 = FXMLLoader.load(getClass().getResource("adresseboard.fxml"));
-
-         Scene scene2 = new Scene(page2);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                app_stage.setScene(scene2);
-                app_stage.show();
+        Scene scene2 = new Scene(page2);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
     }
-    
 }

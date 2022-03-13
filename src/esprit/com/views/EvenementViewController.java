@@ -24,8 +24,11 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import com.esprit.upload.Upload;
 import java.io.File;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import org.controlsfx.control.Notifications;
 
 public class EvenementViewController implements Initializable {
@@ -147,6 +150,16 @@ public class EvenementViewController implements Initializable {
          return false;
 
         }
+
+    @FXML
+    private void ack(ActionEvent event) throws IOException {
+         Parent page2 = FXMLLoader.load(getClass().getResource("MenuAdmin2.fxml"));
+
+        Scene scene2 = new Scene(page2);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
+    }
     
     
 }

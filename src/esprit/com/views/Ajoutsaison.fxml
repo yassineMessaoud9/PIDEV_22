@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="851.0" prefWidth="1079.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjoutsaisonController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fff6200" height="473.0" layoutX="248.0" layoutY="120.0" stroke="#58b541" strokeType="INSIDE" width="583.0" />
+      <Text fill="#58b541" layoutX="376.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter Saison">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="46.0" />
+         </font>
+      </Text>
+      <TextField fx:id="idNom" layoutX="552.0" layoutY="349.0" prefHeight="46.0" prefWidth="198.0" />
+      <Text fill="#434551" layoutX="291.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de saison :">
+         <font>
+            <Font name="Baskerville Old Face" size="32.0" />
+         </font>
+      </Text>
+      <Button alignment="TOP_RIGHT" layoutX="595.0" layoutY="479.0" mnemonicParsing="false" onAction="#ajouterSaison" prefHeight="54.0" prefWidth="134.0" style="-fx-background-color: #58b541;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView fill="WHITE" glyphName="CHECK" layoutX="606.0" layoutY="518.0" size="35.0" text="" wrappingWidth="22.0" />
+      <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="356.0" layoutY="477.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#Return" prefHeight="58.0" prefWidth="142.0" style="-fx-background-color: #678cc9;" text="Retourner" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="362.0" layoutY="518.0" size="35.0" wrappingWidth="22.0" />
+      <ImageView fx:id="imgbg" fitHeight="150.0" fitWidth="662.0" layoutX="232.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/4913873-cercle-icones-avec-arbre-pour-quatre-saisons-concept-vector-graphic-design-illustration-of-change-time-through-the-year-wild-nature-environment-for-camping-ski-vectoriel.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="104.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="1087.0" />
+   </children>
+</AnchorPane>

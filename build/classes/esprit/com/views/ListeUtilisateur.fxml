@@ -29,18 +29,18 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button layoutX="649.0" layoutY="360.0" mnemonicParsing="false" onAction="#Delete" prefHeight="43.0" prefWidth="62.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 16;">
+      <Button layoutX="642.0" layoutY="604.0" mnemonicParsing="false" onAction="#Delete" prefHeight="43.0" prefWidth="62.0" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 16;">
          <graphic>
             <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="30" />
          </graphic></Button>
       <Separator layoutX="639.0" layoutY="212.0" orientation="VERTICAL" prefHeight="547.0" prefWidth="5.0" />
-      <Text fill="#231d6b" layoutX="657.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Filtrer Par :" wrappingWidth="90.00000214576721" />
-      <ComboBox fx:id="TriChoice" layoutX="779.0" layoutY="220.0" onAction="#TriChoice" prefHeight="26.0" prefWidth="201.0" promptText="Aucun" style="-fx-background-color: #4349a3;" />
+      <Text fill="#231d6b" layoutX="650.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Filtrer Par :" wrappingWidth="90.00000214576721" />
+      <ComboBox fx:id="TriChoice" layoutX="772.0" layoutY="464.0" onAction="#TriChoice" prefHeight="26.0" prefWidth="201.0" promptText="Aucun" style="-fx-background-color: #4349a3;" />
       <TextField fx:id="Rechercher" layoutX="23.0" layoutY="169.0" prefHeight="26.0" prefWidth="259.0" promptText="Rechecher" />
       <Text fx:id="textMOd" layoutX="893.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: red;" wrappingWidth="145.974609375" />
-      <ImageView fx:id="image" fitHeight="174.0" fitWidth="181.0" layoutX="747.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" />
-      <Text fill="#4349a3" layoutX="657.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desactiver Utilisateur" wrappingWidth="102.00001588463783" />
-      <ComboBox fx:id="banUser" layoutX="782.0" layoutY="272.0" onAction="#ChangeRole" prefHeight="26.0" prefWidth="201.0" promptText="Aucun" style="-fx-background-color: #4349a3;" />
+      <ImageView fx:id="image" fitHeight="174.0" fitWidth="181.0" layoutX="711.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" />
+      <Text fill="#4349a3" layoutX="650.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desactiver Utilisateur" wrappingWidth="102.00001588463783" />
+      <ComboBox fx:id="banUser" layoutX="775.0" layoutY="516.0" onAction="#ChangeRole" prefHeight="26.0" prefWidth="201.0" promptText="Aucun" style="-fx-background-color: #4349a3;" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="119.0" layoutX="-2.0" layoutY="-6.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1054.0" />
       <Text fill="#fcfcfc" layoutX="368.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" text="Liste des utilisateurs" wrappingWidth="342.9830722808838" />
    </children>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="967.0" prefWidth="1242.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjoutvoitureController">
+   <children>
+      <ImageView fx:id="imgbg" fitHeight="744.0" fitWidth="1286.0" layoutX="1.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Downloads/ajoutervoiture.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#66666602" height="592.0" layoutX="39.0" layoutY="137.0" stroke="#57bc86" strokeType="INSIDE" width="592.0" />
+      <Label layoutX="64.0" layoutY="149.0" prefHeight="58.0" prefWidth="219.0" text="Matricule:" textFill="#57bc86">
+         <font>
+            <Font name="Baskerville Old Face" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="amatricule" layoutX="319.0" layoutY="155.0" prefHeight="46.0" prefWidth="253.0" promptText="matricule" style="-fx-background-color: rgba(0,0,0,0);" />
+      <Label layoutX="823.0" layoutY="137.0" prefHeight="70.0" prefWidth="341.0" text="Ajouter  voiture" textFill="#57bc86">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="44.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="718.0" layoutY="826.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ajouterVoiture" prefHeight="58.0" prefWidth="142.0" style="-fx-background-color: #2e895c;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="428.0" layoutY="826.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#Return" prefHeight="58.0" prefWidth="142.0" style="-fx-background-color: #678cc9;" text="Retourner" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Label layoutX="64.0" layoutY="218.0" prefHeight="58.0" prefWidth="219.0" text="Marque:" textFill="#57bc86">
+         <font>
+            <Font name="Baskerville Old Face" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="amarque" layoutX="319.0" layoutY="224.0" prefHeight="46.0" prefWidth="253.0" promptText="marque" style="-fx-background-color: rgba(0,0,0,0);" />
+      <Label layoutX="64.0" layoutY="293.0" prefHeight="58.0" prefWidth="219.0" text="Lien du photo:" textFill="#57bc86">
+         <font>
+            <Font name="Baskerville Old Face" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="aphoto" layoutX="319.0" layoutY="299.0" prefHeight="46.0" prefWidth="253.0" promptText="lien url" style="-fx-background-color: rgba(0,0,0,0);" />
+      <Label layoutX="64.0" layoutY="361.0" prefHeight="58.0" prefWidth="243.0" text="Nombre de places:" textFill="#57bc86">
+         <font>
+            <Font name="Baskerville Old Face" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="aplaces" layoutX="319.0" layoutY="367.0" prefHeight="46.0" prefWidth="253.0" promptText="places" style="-fx-background-color: rgba(0,0,0,0);" />
+      <Label layoutX="50.0" layoutY="435.0" prefHeight="58.0" prefWidth="271.0" text="Nombre de chevaux:" textFill="#57bc86">
+         <font>
+            <Font name="Baskerville Old Face" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="achevaux" layoutX="319.0" layoutY="435.0" prefHeight="46.0" prefWidth="253.0" promptText="chevaux" style="-fx-background-color: rgba(0,0,0,0);" />
+      <Label layoutX="64.0" layoutY="590.0" prefHeight="58.0" prefWidth="271.0" text="Nom de l'agence:" textFill="#57bc86">
+         <font>
+            <Font name="Baskerville Old Face" size="30.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="435.0" layoutY="869.0" size="35.0" text="" wrappingWidth="22.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="CHECK" layoutX="730.0" layoutY="867.0" size="35.0" text="" wrappingWidth="22.0" />
+      <TextField fx:id="atarif" layoutX="319.0" layoutY="512.0" prefHeight="46.0" prefWidth="253.0" promptText="tarif" style="-fx-background-color: rgba(0,0,0,0);" />
+      <Label layoutX="64.0" layoutY="506.0" prefHeight="58.0" prefWidth="271.0" text="Tarif par jour:" textFill="#57bc86">
+         <font>
+            <Font name="Baskerville Old Face" size="30.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="selectagence" layoutX="319.0" layoutY="596.0" prefHeight="46.0" prefWidth="253.0" style="-fx-background-color: rgba(0,0,0,0);" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="87.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1287.0" />
+   </children>
+</AnchorPane>

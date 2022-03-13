@@ -5,6 +5,7 @@
  */
 package esprit.com.views;
 
+import esprit.com.ImServices.ImUtilisateur;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,9 +13,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -34,46 +39,68 @@ public class MenuAdmin2Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         borderPaneid.setBottom(null);
+        WelcomeUSer.setText(ImUtilisateur.nameUser);
     }    
 
-    @FXML
-    private void GoProfil(ActionEvent event) throws IOException {
-        AnchorPane view = FXMLLoader.load(getClass().getResource("pdf.fxml"));
-        borderPaneid.setCenter(view);
-    }
 
     @FXML
     private void GoUtilisateur(ActionEvent event) throws IOException {
-         AnchorPane view = FXMLLoader.load(getClass().getResource("show.fxml"));
+         AnchorPane view = FXMLLoader.load(getClass().getResource("ListeUtilisateur.fxml"));
         borderPaneid.setCenter(view);
     }
 
     @FXML
-    private void GoSponsoring(ActionEvent event) {
+    private void GoSponsoring(ActionEvent event) throws IOException {
+        AnchorPane view = FXMLLoader.load(getClass().getResource("Sponsors.fxml"));
+        borderPaneid.setCenter(view);
+    }
+    
+
+    @FXML
+    private void GoCommandPlat(ActionEvent event) throws  IOException{
+         AnchorPane view = FXMLLoader.load(getClass().getResource("ComPlatChoix.fxml"));
+        borderPaneid.setCenter(view);
     }
 
     @FXML
-    private void GoCommandPlat(ActionEvent event) {
+    private void GoHotelRestau(ActionEvent event) throws  IOException{
+         AnchorPane view = FXMLLoader.load(getClass().getResource("HotResChoix.fxml"));
+        borderPaneid.setCenter(view);
     }
 
     @FXML
-    private void GoHotelRestau(ActionEvent event) {
+    private void GoVol(ActionEvent event) throws  IOException {
+          AnchorPane view = FXMLLoader.load(getClass().getResource("GvAOmar.fxml"));
+        borderPaneid.setCenter(view);
+    }
+   
+
+    @FXML
+    private void GoLocation(ActionEvent event) throws  IOException  {
+          AnchorPane view = FXMLLoader.load(getClass().getResource("OnsAdmin.fxml"));
+        borderPaneid.setCenter(view);
     }
 
     @FXML
-    private void GoVol(ActionEvent event) {
+    private void GoEvenement(ActionEvent event) throws IOException {
+         AnchorPane view = FXMLLoader.load(getClass().getResource("AyediEvent.fxml"));
+        borderPaneid.setCenter(view);
     }
 
     @FXML
-    private void GoLocation(ActionEvent event) {
+    private void GoReclamation(ActionEvent event) throws IOException {
+        AnchorPane view = FXMLLoader.load(getClass().getResource("AyediReclaAdmin.fxml"));
+        borderPaneid.setCenter(view);
     }
 
     @FXML
-    private void GoEvenement(ActionEvent event) {
-    }
-
-    @FXML
-    private void GoReclamation(ActionEvent event) {
+    private void Logout(ActionEvent event)  throws IOException{
+             Parent page2 = FXMLLoader.load(getClass().getResource("Login.fxml"));
+                Scene scene2 = new Scene(page2);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(scene2);
+                app_stage.show();
+               
     }
     
 }

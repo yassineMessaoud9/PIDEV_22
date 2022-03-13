@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -18,20 +19,27 @@
             <Font name="Arial Rounded MT Bold" size="34.0" />
          </font>
       </Text>
-      <TableView fx:id="TabComAdm" layoutX="2.0" layoutY="156.0" prefHeight="419.0" prefWidth="531.0">
+      <TableView fx:id="TabComAdm" layoutX="2.0" layoutY="156.0" prefHeight="419.0" prefWidth="410.0">
         <columns>
           <TableColumn fx:id="ncom" prefWidth="84.0" text="N°Commande" />
             <TableColumn fx:id="nplat" prefWidth="63.0" text="Nom Plat" />
             <TableColumn fx:id="nomU" prefWidth="63.0" text="Nom" />
           <TableColumn fx:id="Prix" prefWidth="98.0" text="Prix commande" />
             <TableColumn fx:id="dateCom" prefWidth="98.0" text="Date commande" />
-            <TableColumn fx:id="latitude" prefWidth="63.0" text="Latitude" />
-            <TableColumn fx:id="longitude" prefWidth="63.0" text="longitude" />
         </columns>
       </TableView>
       <Button layoutX="137.0" layoutY="616.0" mnemonicParsing="false" onAction="#ConfirmePlat" prefHeight="57.0" prefWidth="197.0" style="-fx-background-color: #4349a3;" text="Confirmer " textFill="#f8f8f8">
          <font>
             <Font name="System Bold Italic" size="27.0" />
+         </font>
+      </Button>
+      <Button layoutX="33.0" layoutY="47.0" mnemonicParsing="false" onAction="#Retour" prefHeight="32.0" prefWidth="74.0" style="-fx-background-color: #4349a3;" textFill="WHITE" />
+      <Button layoutX="30.0" layoutY="43.0" mnemonicParsing="false" onAction="#Retour" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #4349a3;" text="Retour" textFill="WHITE">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="REPLY" size="20" />
+         </graphic>
+         <font>
+            <Font size="20.0" />
          </font>
       </Button>
    </children>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="967.0" prefWidth="1242.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AffichelocationController">
+   <children>
+      <TableView fx:id="tableaulocaffiche" layoutX="83.0" layoutY="236.0" prefHeight="612.0" prefWidth="1049.0">
+         <columns>
+            <TableColumn fx:id="idDateDebutLocation" prefWidth="155.0" text="datedebutLocation" />
+            <TableColumn fx:id="idDateFinLocation" prefWidth="151.0" text="datefinLocation" />
+            <TableColumn fx:id="idDateLocation" prefWidth="175.0" text="dateLocation" />
+            <TableColumn fx:id="idNomUser" prefWidth="139.0" text="Nom user" />
+            <TableColumn fx:id="idMarqueVoiture" prefWidth="152.0" text="Marque voiture" />
+            <TableColumn fx:id="idSaisonLocation" prefWidth="127.0" text="Saison" />
+            <TableColumn fx:id="idMontant" prefWidth="149.0" text="Montant" />
+         </columns>
+      </TableView>
+      <Text fill="#f87833" layoutX="355.0" layoutY="157.0" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="40.0" text="Liste des  locations">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="44.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView fill="WHITE" glyphName="TRASH_ALT" layoutX="590.0" layoutY="736.0" size="35.0" wrappingWidth="34.28572753071785" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1242.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="27.0" layoutY="52.0" onMouseClicked="#back" size="40" />
+   </children>
+</AnchorPane>

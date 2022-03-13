@@ -33,7 +33,7 @@ public class ImUtilisateur implements IServicesUtilisateur<Utilisateur> {
     public static int idUser;
     public static String EmailRes;
     public static String PHOTO;
-
+    public static String ROLEU;
     Connection cnx = ConnectionBd.getInstance().getCnx();
 
     @Override
@@ -77,6 +77,7 @@ public class ImUtilisateur implements IServicesUtilisateur<Utilisateur> {
                             nameUser = rs.getString("nom");
                             role = rs.getString("role");
                             PHOTO=rs.getString("photo");
+                            ROLEU=rs.getString("role");
                             System.out.println(" Salut :" + nameUser);
 
                         } else {

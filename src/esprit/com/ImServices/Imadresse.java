@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
  *
  * @author Gamer
  */
+
 // Ajouter adresse dans la base de donnee
 public class Imadresse implements Igestionvol<adresse> {
     Connection cnx = ConnectionBd.getInstance().getCnx();
@@ -38,8 +39,7 @@ public class Imadresse implements Igestionvol<adresse> {
             System.out.println(ex.getMessage());
         }
     }       
-        
-    
+         
 // Modifier adresse dans la base de donnee
     @Override
     public void modifier(adresse t) {
@@ -50,18 +50,14 @@ public class Imadresse implements Igestionvol<adresse> {
             pst.setString(1,t.getPaysadresse());
             pst.setString(2,t.getRueadresse());
             pst.setInt(3,t.getContactadresse());
-
-            
             pst.executeUpdate();
             System.out.println("adresse modifiée !");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
-        
+        }      
     }
     
-    // Supprimer adresse dans la base de donnee
-
+// Supprimer adresse dans la base de donnee
     @Override
     public void supprimer(adresse t) {
         try {
@@ -72,15 +68,13 @@ public class Imadresse implements Igestionvol<adresse> {
             System.out.println("adresse suprimée !");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
-        
-        
+        }    
     }
+    
 // Afiicher les adresse de la base de donnee
     @Override
     public List<adresse> afficher() {
         List<adresse> list = new ArrayList<>();
-        
         try {
             String req = "SELECT * from adresse";
             PreparedStatement pst = cnx.prepareStatement(req);
@@ -98,29 +92,22 @@ public class Imadresse implements Igestionvol<adresse> {
     public void recherche(int id) {
         List<adresse> list1= new ArrayList<>();
          List<adresse> list2= afficher();
-         
          list1= list2.stream().filter(c -> c.getIdadresse()==id).collect(Collectors.toList());
-         System.out.println(list1);
-               
-       
+         System.out.println(list1);   
     }
 
 // trier les adresse de le nom du pays    
     public List<adresse> tri() {
-         
-   
          List<adresse> list1= new ArrayList<>();
          List<adresse> list2= afficher();
-         
          list1= list2.stream().sorted((o1,o2)->o1.getPaysadresse().compareTo(o2.getPaysadresse())).collect(Collectors.toList());
          System.out.println(list1);
-               return list1;
-     
+               return list1; 
     }
+    
  // chercher adresse depuis pays   
-     public adresse afficheravancer(String Pays) {
+    public adresse afficheravancer(String Pays) {
         List<adresse> list = new ArrayList<>();
-        
         try {
             String req = "SELECT * FROM adresse where paysadresse='" + Pays + "'";
             PreparedStatement pst = cnx.prepareStatement(req);
@@ -133,13 +120,12 @@ public class Imadresse implements Igestionvol<adresse> {
         }
         return list.get(0);
     }
-     public List<adresse> chercherPays (String val){
-        
-      List<adresse> list1= new ArrayList<>();
-         List<adresse> list2= afficher();
-         
-         list1= list2.stream().filter(c -> c.getPaysadresse().startsWith(val)).collect(Collectors.toList());
-         System.out.println(list1);
-         return list1;
+    
+    public List<adresse> chercherPays (String val){
+        List<adresse> list1= new ArrayList<>();
+        List<adresse> list2= afficher();
+        list1= list2.stream().filter(c -> c.getPaysadresse().startsWith(val)).collect(Collectors.toList());
+        System.out.println(list1);
+        return list1;
     }
 }

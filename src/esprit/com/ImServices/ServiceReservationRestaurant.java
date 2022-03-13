@@ -43,7 +43,7 @@ public class ServiceReservationRestaurant implements Iservice<ReservationRestaur
             pst.setDate(1, t.getDatereservationrestau());
             pst.setDate(2, t.getDatedebutres());
             pst.setDate(3, t.getDatefinres());
-            pst.setInt(4, t.getIdU());
+            pst.setInt(4,ImUtilisateur.idUser);
             pst.setInt(5, t.getIdtourisme());
             pst.executeUpdate();
             System.out.println("resetrvation restau ajoutée !");
@@ -75,7 +75,7 @@ public class ServiceReservationRestaurant implements Iservice<ReservationRestaur
             pst.setDate(1, t.getDatereservationrestau());
             pst.setDate(2, t.getDatedebutres());
             pst.setDate(3, t.getDatefinres());
-            pst.setInt(4, t.getIdU());
+            pst.setInt(4,ImUtilisateur.idUser);
             pst.setInt(5, t.getIdtourisme());
             pst.setInt(6, t.getIdReservationRestaurant());
             pst.executeUpdate();

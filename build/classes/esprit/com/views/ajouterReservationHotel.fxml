@@ -51,11 +51,6 @@
          <font>
             <Font name="Arial Rounded MT Bold" size="19.0" />
          </font></Label>
-      <Label layoutX="66.0" layoutY="605.0" text="idu">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font></Label>
-      <TextField fx:id="idu" cache="true" layoutX="209.0" layoutY="602.0" prefHeight="25.0" prefWidth="187.0" />
       <Button layoutX="498.0" layoutY="399.0" mnemonicParsing="false" onAction="#retourmenu" prefHeight="78.0" prefWidth="177.0" style="-fx-background-color: #4349a3;" text="Retour menu" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="22.0" />

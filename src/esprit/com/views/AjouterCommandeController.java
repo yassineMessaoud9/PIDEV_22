@@ -53,6 +53,7 @@ import javafx.stage.Modality;
 import javafx.stage.PopupWindow;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -86,8 +87,6 @@ public class AjouterCommandeController implements Initializable {
     @FXML
     private WebView webmap;
     private WebEngine webengine;
-    @FXML
-    private Button ButnOpenMap;
     /**
      * Initializes the controller class.
      */
@@ -105,8 +104,9 @@ public class AjouterCommandeController implements Initializable {
     @FXML
     private void commander(ActionEvent event) {
         int etat=0;
-             latitude = (Double) webmap.getEngine().executeScript("lat");
-            longitude = (Double) webmap.getEngine().executeScript("lon");
+             latitude =  Double.parseDouble(webmap.getEngine().executeScript("lat").toString());
+             
+            longitude =  Double.parseDouble(webmap.getEngine().executeScript("lon").toString());
              
              
                      System.out.println("Lat AjoutCom: " + latitude);
@@ -127,7 +127,10 @@ public class AjouterCommandeController implements Initializable {
             Plat = tablePlat.getSelectionModel().getSelectedItems().get(i);
 
             Imc.ajoutPlatCommande(new CommandePlat(cm.getNum_Commande(), Plat.getIdPlat()));
-
+            Notifications notifications = Notifications.create();
+            notifications.text("Commande ajoutée");
+            notifications.title("Sucess Message");
+            notifications.show();
         }
 
     }
@@ -170,7 +173,6 @@ public class AjouterCommandeController implements Initializable {
         }
     }
 
-    @FXML
     private void ButnOpenMap(ActionEvent event) throws IOException {
 
       FXMLLoader fxmlLoader = new FXMLLoader (getClass ().getResource ("testMap.fxml"));
@@ -183,6 +185,16 @@ stage.show();
         stage.setResizable(false);
 
 
+    }
+
+    @FXML
+    private void back(MouseEvent event)throws IOException {
+         Parent page2 = FXMLLoader.load(getClass().getResource("MenuClient.fxml"));
+
+                Scene scene2 = new Scene(page2);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(scene2);
+                app_stage.show();
     }
 
 

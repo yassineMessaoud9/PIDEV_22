@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="967.0" prefWidth="1242.0" style="-fx-background-color: #eae7e7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.AjoutlocationController">
+   <children>
+      <ImageView fx:id="imgbg" fitHeight="734.0" fitWidth="1311.0" layoutX="-1.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Downloads/ajoutlocation.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="77.0" layoutY="129.0" prefHeight="71.0" prefWidth="492.0" text="Location voiture" textFill="#5956b8">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="60.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="1023.0" layoutY="566.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#ajouterLocation" prefHeight="58.0" prefWidth="142.0" style="-fx-background-color: #2e895c;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="846.0" layoutY="566.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#Return" onMouseClicked="#Return" prefHeight="58.0" prefWidth="142.0" style="-fx-background-color: #678cc9;" text="Retourner" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <FontAwesomeIconView fill="WHITE" glyphName="CHECK" layoutX="1032.0" layoutY="607.0" size="35.0" text="" wrappingWidth="22.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="852.0" layoutY="607.0" size="35.0" wrappingWidth="22.0" />
+      <Text fill="#554bae" layoutX="836.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date debut Location">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font></Text>
+      <DatePicker fx:id="adatedebut" layoutX="983.0" layoutY="353.0" prefHeight="31.0" prefWidth="205.0" />
+      <DatePicker fx:id="adatefin" layoutX="981.0" layoutY="417.0" prefHeight="31.0" prefWidth="205.0" />
+      <Text fill="#554bae" layoutX="836.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin location">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font></Text>
+      <Text fill="#554bae" layoutX="837.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marque voiture">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font></Text>
+      <ChoiceBox fx:id="select_field" layoutX="977.0" layoutY="483.0" prefHeight="31.0" prefWidth="178.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="122.0" layoutX="734.0" layoutY="227.0" stroke="TRANSPARENT" strokeType="INSIDE" width="92.0" />
+      <Text fill="#e86937" layoutX="671.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplir ce formulaire pour louer votre voiture préferé" textAlignment="CENTER" wrappingWidth="516.19140625">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="102.0" layoutX="-4.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1311.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="26.0" layoutY="64.0" onMouseClicked="#Return" size="40" />
+   </children>
+</AnchorPane>

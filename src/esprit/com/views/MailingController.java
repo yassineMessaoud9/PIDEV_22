@@ -6,6 +6,7 @@
 package esprit.com.views;
 
 import esprit.com.entity.mailingSend;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -20,6 +21,11 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 
 /**
@@ -56,6 +62,17 @@ public class MailingController implements Initializable {
         
  
 }
+
+    @FXML
+    private void Back(ActionEvent event) throws IOException {
+        
+          Parent page2 = FXMLLoader.load(getClass().getResource("MenuAdmin2.fxml"));
+
+                Scene scene2 = new Scene(page2);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(scene2);
+                app_stage.show();
+    }
 
     
     

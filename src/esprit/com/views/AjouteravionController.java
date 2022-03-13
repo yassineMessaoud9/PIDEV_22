@@ -55,28 +55,24 @@ public class AjouteravionController implements Initializable {
 
     @FXML
     private void ajouter(ActionEvent event) {
-                   if(numserie.getText().equals("")|| marque.getText().equals("")||nbrplace.getText().equals("")){
-          
+        // controle de saisie
+            if(numserie.getText().equals("")|| marque.getText().equals("")||nbrplace.getText().equals("")){
             Notifications notifications=Notifications.create();
-           
             notifications.text("champs vide");
             notifications.title("Message d'erreur");
-            
             notifications.show();
              }
+        // ajoute avion    
         else{
             Imavion Imavion= new Imavion();
-        
             Imavion.ajouter(new avion(Integer.parseInt(numserie.getText()),marque.getText(),Integer.parseInt(nbrplace.getText())));
             Notifications notifications=Notifications.create();
             notifications.text("adresse ajoutéé");
             notifications.title("Success Message");
-            //notifications.darkStyle();
-              notifications.show();
-                       
+            notifications.show();   
                    }
-      
     }
+    
     public void clearFields(){
         numserie.clear();
         marque.clear();
@@ -90,12 +86,9 @@ public class AjouteravionController implements Initializable {
     @FXML
     private void terminer(ActionEvent event) throws IOException {
         Parent page2 = FXMLLoader.load(getClass().getResource("Avionboard.fxml"));
-
-         Scene scene2 = new Scene(page2);
-                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                app_stage.setScene(scene2);
-                app_stage.show();
-        
+        Scene scene2 = new Scene(page2);
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        app_stage.setScene(scene2);
+        app_stage.show();
     }
-    
 }

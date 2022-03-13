@@ -26,13 +26,12 @@ public class Imavion implements Igestionvol<avion> {
     Connection cnx = ConnectionBd.getInstance().getCnx();
 
     @Override
- // Ajouter avion dans la base de donnee   
+// Ajouter avion dans la base de donnee   
     public void ajouter(avion t) {
         try {
             String req = "INSERT INTO avion (marque,nbrplace) VALUES (?,?)";
             PreparedStatement pst = cnx.prepareCall(req);
             pst.setString(1,t.getMarque());
-          
             pst.setInt(2,t.getNbrplace());
             pst.executeUpdate(); 
             System.out.println("avion ajoutée !");
@@ -40,8 +39,8 @@ public class Imavion implements Igestionvol<avion> {
             System.out.println(ex.getMessage());
         }
     }
+    
   // Modifier avion dans la base de donnee
-
     @Override
     public void modifier(avion t) {
          try{
@@ -58,9 +57,9 @@ public class Imavion implements Igestionvol<avion> {
             System.out.println(ex.getMessage());
         }
     }
+    
 // Supprimer avion dans la base de donnee
     @Override
-    
     public void supprimer(avion t) {
          try {
             String req = "DELETE FROM avion WHERE numserieavion=?";
@@ -72,6 +71,7 @@ public class Imavion implements Igestionvol<avion> {
             System.out.println(ex.getMessage());
         }
     }
+    
 // Afficher lise des avion
     @Override
     public List<avion> afficher() {
@@ -92,7 +92,7 @@ public class Imavion implements Igestionvol<avion> {
 
     }
 
-    // Chercher avion depuis id
+// Chercher avion depuis id
     public List<avion> recherche(int id) {
          List<avion> list1= new ArrayList<>();
          List<avion> list2= afficher();
@@ -101,38 +101,37 @@ public class Imavion implements Igestionvol<avion> {
          System.out.println(list1);
          return list1;
     }
-// trie avion selon marque
     
+// trie avion selon marque
     public List<avion> trimarq() {
          List<avion> list1= new ArrayList<>();
          List<avion> list2= afficher();
-         
          list1= list2.stream().sorted((o1,o2)->o1.getMarque().compareTo(o2.getMarque())).collect(Collectors.toList());
          System.out.println(list1);
          return list1;
     }
+    
 // trie avion selon matricule
     public List<avion> trimat() {
          List<avion> list1= new ArrayList<>();
          List<avion> list2= afficher();
-         
          list1= list2.stream().sorted((o1,o2)->o1.getNumserieavion()-(o2.getNumserieavion())).collect(Collectors.toList());
          System.out.println(list1);
          return list1;
     }
+    
  // trie avion selon nombre de place 
     public List<avion> trinbrp() {
          List<avion> list1= new ArrayList<>();
          List<avion> list2= afficher();
-         
          list1= list2.stream().sorted((o1,o2)->o1.getNbrplace()-(o2.getNbrplace())).collect(Collectors.toList());
          System.out.println(list1);
          return list1;
     }
-    // chercher avion selon numserie 
+    
+ // chercher avion selon numserie 
    public avion afficheravancerrecherchenumserieavion(int num) {
-        List<avion> list = new ArrayList<>();
-        
+        List<avion> list = new ArrayList<>(); 
         try {
             String req = "SELECT * FROM avion where numserieavion='" + num + "'";
             PreparedStatement pst = cnx.prepareStatement(req);
@@ -144,8 +143,5 @@ public class Imavion implements Igestionvol<avion> {
             System.out.println(ex.getMessage());
         }
         return list.get(0);
-    }
-
-   
-    
+    }   
 }

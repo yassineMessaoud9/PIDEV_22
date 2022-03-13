@@ -36,7 +36,7 @@ public class ServiceReservationHotel  implements Iservice<ReservationHotel> {
              pst.setInt(4, t.getNbrPersonne());
               pst.setDate(5, t.getDateallerReser());
                  pst.setDate(6, t.getDateretourReser());
-               pst.setInt(7, t.getIdU());
+               pst.setInt(7, ImUtilisateur.idUser);
                pst.setInt(8, t.getIdTourisme());
               pst.executeUpdate();
             System.out.println("resetrvation HOTEL ajoutée !");
@@ -55,7 +55,7 @@ public class ServiceReservationHotel  implements Iservice<ReservationHotel> {
              pst.setInt(4, t.getNbrPersonne());
               pst.setDate(5, t.getDateallerReser());
                  pst.setDate(6, t.getDateretourReser());
-               pst.setInt(7, t.getIdU());
+               pst.setInt(7, ImUtilisateur.idUser);
                pst.setInt(8, t.getIdTourisme());
                  pst.setInt(9, t.getIdReservationHotel());
               pst.executeUpdate();

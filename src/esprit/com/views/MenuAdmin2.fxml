@@ -30,17 +30,6 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Text>
-            <Button mnemonicParsing="false" onAction="#GoProfil" prefHeight="45.0" prefWidth="281.0" style="-fx-background-color: white;" text="Profile" textFill="#4349a3">
-               <font>
-                  <Font name="System Bold" size="21.0" />
-               </font>
-               <VBox.margin>
-                  <Insets bottom="20.0" top="10.0" />
-               </VBox.margin>
-               <graphic>
-                  <FontAwesomeIconView fill="#4349a3" glyphName="USER" size="30" text="" />
-               </graphic>
-            </Button>
             <Button mnemonicParsing="false" onAction="#GoUtilisateur" prefHeight="45.0" prefWidth="281.0" style="-fx-background-color: white;" text="Gestion Utilisateur" textFill="#4349a3">
                <font>
                   <Font name="System Bold" size="21.0" />
@@ -125,6 +114,17 @@
                <graphic>
                   <FontAwesomeIconView fill="#4349a3" glyphName="BULLHORN" size="30" text="" />
                </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#Logout" prefHeight="54.0" prefWidth="276.0" style="-fx-background-color: white;" text="Déconnection" textFill="#4349a3">
+               <VBox.margin>
+                  <Insets bottom="50.0" top="50.0" />
+               </VBox.margin>
+               <graphic>
+                  <FontAwesomeIconView fill="#4349a3" glyphName="SIGN_OUT" size="35" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
             </Button>
          </children>
          <BorderPane.margin>

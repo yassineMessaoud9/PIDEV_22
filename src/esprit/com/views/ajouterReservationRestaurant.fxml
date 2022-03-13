@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -26,10 +25,6 @@
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font></Label>
       <Label layoutX="244.0" layoutY="455.0" />
-      <Label layoutX="39.0" layoutY="399.0" text="idU">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="22.0" />
-         </font></Label>
       <Label layoutX="36.0" layoutY="342.0" text="N° Restau">
          <font>
             <Font name="Arial Rounded MT Bold" size="19.0" />
@@ -38,7 +33,6 @@
       <DatePicker fx:id="date2" layoutX="177.0" layoutY="240.0" prefHeight="31.0" prefWidth="203.0" promptText="date" />
       <DatePicker fx:id="date3" layoutX="177.0" layoutY="285.0" prefHeight="31.0" prefWidth="203.0" promptText="Date" />
       <ComboBox fx:id="comboxid" layoutX="177.0" layoutY="337.0" prefHeight="31.0" prefWidth="203.0" />
-      <TextField fx:id="idu" layoutX="177.0" layoutY="393.0" prefHeight="31.0" prefWidth="203.0" />
       <Button layoutX="398.0" layoutY="560.0" mnemonicParsing="false" onAction="#ajouterReserResrau" prefHeight="66.0" prefWidth="187.0" style="-fx-background-color: #4349a3;" text="envoyer" textFill="#f5f5f5">
          <font>
             <Font name="Broadway" size="15.0" />

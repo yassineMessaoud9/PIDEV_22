@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="678.0" prefWidth="910.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="esprit.com.views.AyediEventController">
+   <children>
+      <ImageView fitHeight="309.0" fitWidth="384.0" layoutX="56.0" layoutY="239.0" onMouseClicked="#GoEvent" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Event.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="384.0" fitWidth="384.0" layoutX="512.0" layoutY="270.0" onMouseClicked="#GoTicket" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/image.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

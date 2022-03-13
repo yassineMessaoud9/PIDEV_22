@@ -30,7 +30,11 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -47,6 +51,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javax.swing.JOptionPane;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import javafx.util.converter.FloatStringConverter;
 import org.controlsfx.control.Notifications;
@@ -320,6 +325,16 @@ public class TicketFController implements Initializable {
          ObservableList<Ticket> data=FXCollections.observableArrayList(s);
          tableT.getItems().setAll(a);            
          System.out.println(t);
+    }
+
+    @FXML
+    private void back(MouseEvent event) throws IOException   {
+           Parent page2 = FXMLLoader.load(getClass().getResource("MenuAdmin2.fxml"));
+
+                Scene scene2 = new Scene(page2);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(scene2);
+                app_stage.show();
     }
 
   

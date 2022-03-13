@@ -10,6 +10,7 @@ import static esprit.com.ImServices.ImUtilisateur.EmailRes;
 import esprit.com.entity.CommandeRestau;
 import esprit.com.mail.Sendmail;
 import esprit.com.utils.ConnectionBd;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.Date;
@@ -24,13 +25,18 @@ import javafx.collections.ObservableList;
 import javafx.concurrent.Worker.State;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import netscape.javascript.JSObject;
 
@@ -51,6 +57,7 @@ public class AfficheCommandAdminController implements Initializable {
     private JSObject javascriptConnector;
     private JSObject javascriptConnector2;
     int com;
+    String mail;
     private JavaConnector javaConnector = new JavaConnector();
     
     @FXML
@@ -79,20 +86,7 @@ public class AfficheCommandAdminController implements Initializable {
         
         url = this.getClass().getResource("map/recupMap.html");
         
-        webengine.getLoadWorker().stateProperty().addListener(
-                new ChangeListener<State>() {
-            public void changed(ObservableValue ov, State oldState, State newState) {
-                if (newState == State.SUCCEEDED) {
-                    JSObject window = (JSObject) webengine.executeScript("window");
-                    window.setMember("javaConnector", javaConnector);
-                    
-                    JSObject javascriptConnector = (JSObject) webengine.executeScript("longitude");
-                    JSObject javascriptConnector2 = (JSObject) webengine.executeScript("latitude");
-                    
-                }
-            }
-        }
-        );
+        
         
         webengine.load(url.toString());
         
@@ -100,18 +94,21 @@ public class AfficheCommandAdminController implements Initializable {
     
     @FXML
     private void ConfirmePlat(ActionEvent event) {
-        
+         CommandeRestau = TabComAdm.getSelectionModel().getSelectedItem();
+
+     com = CommandeRestau.getNum_Commande();
         Connection cnx = ConnectionBd.getInstance().getCnx();
         CommandeRestau ct = new CommandeRestau();
         String sub="Restau Trip To DO";
                 String Obj="Commande confirmer";
+        System.out.println(com);        System.out.println(mail);
 
-        try {
+       try {
             String req = "UPDATE commandrestau SET etat=1 WHERE num_commande=?";
             PreparedStatement pst = cnx.prepareStatement(req);
             pst.setInt(1, com);
-            sn.envoyer(EmailRes, sub, req);
-                    JOptionPane.showMessageDialog(null, "Commande Accepter !");
+           sn.envoyer(mail, sub, req);
+                   JOptionPane.showMessageDialog(null, "Commande Accepter !");
 
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -122,6 +119,7 @@ public class AfficheCommandAdminController implements Initializable {
         ImCommandeRestau imc = new ImCommandeRestau();
         imc.afficherAdmin().stream().forEach((p) -> {
             obslist.add(p);
+            mail=p.getEmail();
         });
         ncom.setCellValueFactory(new PropertyValueFactory<>("Num_Commande"));
         Prix.setCellValueFactory(new PropertyValueFactory<>("prix_commande"));
@@ -133,10 +131,18 @@ public class AfficheCommandAdminController implements Initializable {
     }
     private void onTableItemSelect(MouseEvent event) {
 
-        CommandeRestau = TabComAdm.getSelectionModel().getSelectedItem();
+       
 
-     com = CommandeRestau.getNum_Commande();
+    }
 
+    @FXML
+    private void Retour(ActionEvent event) throws IOException {
+        Parent page2 = FXMLLoader.load(getClass().getResource("MenuAdmin2.fxml"));
+
+                Scene scene2 = new Scene(page2);
+                Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                app_stage.setScene(scene2);
+                app_stage.show();
     }
  
     public class JavaConnector {

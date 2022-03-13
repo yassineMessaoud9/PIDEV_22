@@ -98,7 +98,6 @@ public class ListeUtilisateurController implements Initializable {
     private TextField Rechercher;
     @FXML
     private Text textMOd;
-    @FXML
     private Text idUserr;
     @FXML
     private ImageView image;
@@ -221,7 +220,7 @@ public class ListeUtilisateurController implements Initializable {
 
         });
 
-        idUserr.setText(nameUser);
+//        idUserr.setText(nameUser);
         System.out.println(PHOTO);
 
         image1 = new Image("/esprit/com/logo/" + PHOTO);
@@ -349,8 +348,7 @@ public class ListeUtilisateurController implements Initializable {
         email.setCellValueFactory(new PropertyValueFactory<>("email"));
         pays.setCellValueFactory(new PropertyValueFactory<>("pays"));
         role.setCellValueFactory(new PropertyValueFactory<>("role"));
-
-        isActive.setCellValueFactory(new PropertyValueFactory<>("activated"));
+        isActive.setCellValueFactory(new PropertyValueFactory<>("Active"));
         photo.setCellValueFactory(new PropertyValueFactory<>("photo"));
 
         TableUtilisateur.getItems().setAll(a);
@@ -404,13 +402,22 @@ public class ListeUtilisateurController implements Initializable {
             String ac = "Active";
             DesactUser(ac);
             JOptionPane.showMessageDialog(null, "Utilisateur Active ! ");
-            LoadData();
+        ImUtilisateur im = new ImUtilisateur();
+        im.affiche().stream().forEach((p) -> {
+            obsUtilisateurlist.add(p);
+        });
+                TableUtilisateur.setItems(obsUtilisateurlist);
+
         } else if (banUser.getValue().equals("Desactive")) {
             String ac = "Desactive";
 
             DesactUser(ac);
             JOptionPane.showMessageDialog(null, "Utilisateur Desactive ! ");
-            LoadData();
+  ImUtilisateur im = new ImUtilisateur();
+        im.affiche().stream().forEach((p) -> {
+            obsUtilisateurlist.add(p);
+        });
+                TableUtilisateur.setItems(obsUtilisateurlist);
         }
 
     }

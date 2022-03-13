@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="722.0" prefWidth="987.0" style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="esprit.com.views.GvAOmarController">
+   <children>
+      <ImageView fitHeight="294.0" fitWidth="282.0" layoutX="45.0" layoutY="50.0" onMouseClicked="#GoAdress" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Adresse.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="294.0" fitWidth="282.0" layoutX="531.0" layoutY="58.0" onMouseClicked="#ComAr" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/comAriene.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="294.0" fitWidth="282.0" layoutX="45.0" layoutY="414.0" onMouseClicked="#GoAv" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Vol.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="294.0" fitWidth="282.0" layoutX="556.0" layoutY="414.0" onMouseClicked="#GoVol" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Vol2.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

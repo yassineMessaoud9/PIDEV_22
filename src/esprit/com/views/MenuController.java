@@ -33,7 +33,6 @@ public class MenuController implements Initializable {
         // TODO
     }    
 
-    @FXML
     private void getview(MouseEvent event) throws IOException {
         Parent page2 = FXMLLoader.load(getClass().getResource("afficherHotels.fxml"));
 
@@ -43,7 +42,6 @@ public class MenuController implements Initializable {
                 app_stage.show();
     }
 
-    @FXML
     private void getviews2(ActionEvent event) throws IOException {
         Parent page2 = FXMLLoader.load(getClass().getResource("afficherRestau.fxml"));
 
@@ -53,7 +51,6 @@ public class MenuController implements Initializable {
                 app_stage.show();
     }
 
-    @FXML
     private void getview3(ActionEvent event) throws IOException {
           Parent page2 = FXMLLoader.load(getClass().getResource("ajouterReservationHotel.fxml"));
 
@@ -63,7 +60,6 @@ public class MenuController implements Initializable {
                 app_stage.show();
     }
 
-    @FXML
     private void getview4(ActionEvent event) throws IOException {
          Parent page2 = FXMLLoader.load(getClass().getResource("ajouterReservationRestaurant.fxml"));
 
@@ -73,7 +69,6 @@ public class MenuController implements Initializable {
                 app_stage.show();
     }
 
-    @FXML
     private void getviewHOTEL(ActionEvent event) throws IOException {
         Parent page2 = FXMLLoader.load(getClass().getResource("afficherHotels.fxml"));
 
@@ -83,7 +78,6 @@ public class MenuController implements Initializable {
                 app_stage.show();
     }
 
-    @FXML
     private void GETVIEWAFFICHAGE(ActionEvent event) throws IOException {
          Parent page2 = FXMLLoader.load(getClass().getResource("AfficherReservationRestaurant.fxml"));
 
@@ -93,7 +87,6 @@ public class MenuController implements Initializable {
                 app_stage.show();
     }
 
-    @FXML
     private void GETVIEWAFFICHAGEHOTEL(ActionEvent event) throws IOException {
         Parent page2 = FXMLLoader.load(getClass().getResource("showhotel.fxml"));
 
@@ -101,6 +94,26 @@ public class MenuController implements Initializable {
                 Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 app_stage.setScene(scene2);
                 app_stage.show();
+    }
+
+    @FXML
+    private void adresse(ActionEvent event) {
+    }
+
+    @FXML
+    private void avion(ActionEvent event) {
+    }
+
+    @FXML
+    private void compagnie(ActionEvent event) {
+    }
+
+    @FXML
+    private void vol(ActionEvent event) {
+    }
+
+    @FXML
+    private void reserver(ActionEvent event) {
     }
     }
 

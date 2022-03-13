@@ -25,14 +25,14 @@ import java.util.stream.Collectors;
  */
 public class Imreservationvol implements Igestionvol<reservationvol> {
     Connection cnx = ConnectionBd.getInstance().getCnx();
-
+    
+//ajouter reservation
     @Override
     public void ajouter(reservationvol t) {
          try {
             String req = "INSERT INTO reservationvol (idU,numvol) VALUES (?,?)";
             PreparedStatement pst = cnx.prepareCall(req);
             pst.setInt(1,ImUtilisateur.idUser);
-          
             pst.setInt(2,t.getNumvol());
             pst.executeUpdate(); 
             System.out.println("reservationvol ajoutée !");
@@ -40,7 +40,8 @@ public class Imreservationvol implements Igestionvol<reservationvol> {
             System.out.println(ex.getMessage());
         }
     }
-
+    
+//modifier reservation
     @Override
     public void modifier(reservationvol t) {
          try{
@@ -49,9 +50,6 @@ public class Imreservationvol implements Igestionvol<reservationvol> {
             pst.setInt(3,t.getIdreservationvol());
             pst.setInt(1,t.getIdU());
             pst.setInt(2,t.getNumvol());
-            
-
-            
             pst.executeUpdate();
             System.out.println("reservation vol modifiée !");
         } catch (SQLException ex) {
@@ -59,7 +57,7 @@ public class Imreservationvol implements Igestionvol<reservationvol> {
         }
     }
     
-
+//supprimer reservation
     @Override
     public void supprimer(reservationvol t) {
         try {
@@ -70,15 +68,13 @@ public class Imreservationvol implements Igestionvol<reservationvol> {
             System.out.println("reservationvol suprimée !");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
-        
-        
+        }   
     }
 
+//liste de reservation 
     @Override
     public List<reservationvol> afficher() {
         List<reservationvol> list = new ArrayList<>();
-        
         try {
             String req = "SELECT * from reservationvol";
             PreparedStatement pst = cnx.prepareStatement(req);
@@ -92,16 +88,15 @@ public class Imreservationvol implements Igestionvol<reservationvol> {
         return list;
     }
 
-    
+// rechercher reservation a partir de lid    
     public void recherche(int id) {
          List<reservationvol> list1= new ArrayList<>();
          List<reservationvol> list2= afficher();
-         
          list1= list2.stream().filter(c -> c.getIdreservationvol()==id).collect(Collectors.toList());
          System.out.println(list1); 
     }
 
-    
+ 
     public void tri() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

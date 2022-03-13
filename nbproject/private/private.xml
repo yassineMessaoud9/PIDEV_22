@@ -3,15 +3,35 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/sinscrireAdmin.fxml</file>
-            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/ReclamationbackController.java</file>
-            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/EvenementViewController.java</file>
-            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/SinscrireAdminController.java</file>
-            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/SinscrireController.java</file>
-            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/ShowController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/LoginController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/ResetPassController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/AfficheAgenceController.java</file>
             <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/triptodo/TripToDoGUI.java</file>
-            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/TicketFController.java</file>
-            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/ReclamationController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/AffichePlatController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/ComPlatChoixController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/entity/Reset.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/ImServices/Imadresse.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/ImServices/ImUtilisateur.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/EvenementViewController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/ItemvolController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/AjoutlocationController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/ItemController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/com/esprit/upload/Upload.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/AjoutagencelocationController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/MessComPlatController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/TestMapController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/PdfController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/MailingController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/UsermainController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/AjouterReservationHotelController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/ImServices/ImSponsors.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/AjouterCommandeController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/ListeUtilisateurController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/MenuClientController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/OnePlatController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/SinscrireClientController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/AjoutSponsorsController.java</file>
+            <file>file:/D:/ESPRIT/JAVA/PIWORKSPACE/TripToDo/src/esprit/com/views/SponsorsController.java</file>
         </group>
     </open-files>
 </project-private>

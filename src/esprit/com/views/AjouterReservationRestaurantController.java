@@ -5,6 +5,7 @@
  */
 package esprit.com.views;
 
+import esprit.com.ImServices.ImUtilisateur;
 import esprit.com.ImServices.ServiceReservationRestaurant;
 import esprit.com.entity.ReservationRestaurant;
 import esprit.com.utils.ConnectionBd;
@@ -47,8 +48,6 @@ public class AjouterReservationRestaurantController implements Initializable {
     private DatePicker date3;
     @FXML
     private ComboBox<Integer> comboxid;
-    @FXML
-    private TextField idu;
 
     /**
      * Initializes the controller class.
@@ -76,7 +75,7 @@ public class AjouterReservationRestaurantController implements Initializable {
     private void ajouterReserResrau(ActionEvent event) {
          ServiceReservationRestaurant sR = new ServiceReservationRestaurant();
 
-        sR.ajouter(new ReservationRestaurant(Date.valueOf(date1.getValue()),Date.valueOf(date2.getValue()),Date.valueOf(date3.getValue()),Integer.parseInt(idu.getText()),comboxid.getSelectionModel().getSelectedItem().intValue()));
+        sR.ajouter(new ReservationRestaurant(Date.valueOf(date1.getValue()),Date.valueOf(date2.getValue()),Date.valueOf(date3.getValue()),ImUtilisateur.idUser,comboxid.getSelectionModel().getSelectedItem().intValue()));
 
        JOptionPane.showMessageDialog(null, "RESTAU ajoutèe");
     }
@@ -84,7 +83,7 @@ public class AjouterReservationRestaurantController implements Initializable {
     @FXML
     private void resetmenu1(ActionEvent event) throws IOException {
           
-           Parent page2 = FXMLLoader.load(getClass().getResource("menu.fxml"));
+           Parent page2 = FXMLLoader.load(getClass().getResource("MenuClient.fxml"));
 
                 Scene scene2 = new Scene(page2);
                 Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

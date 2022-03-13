@@ -24,8 +24,9 @@ import java.util.stream.Collectors;
  * @author Gamer
  */
 public class Imvol implements Igestionvol<vol> {
-         Connection cnx = ConnectionBd.getInstance().getCnx();
-
+    Connection cnx = ConnectionBd.getInstance().getCnx();
+    
+//ajouter vol
     @Override
     public void ajouter(vol t) {
         try {
@@ -47,7 +48,8 @@ public class Imvol implements Igestionvol<vol> {
             System.out.println(ex.getMessage());
         }
     }
-
+    
+//Modifier vol avec 11 champs
     @Override
     public void modifier(vol t) {
         try{
@@ -70,7 +72,9 @@ public class Imvol implements Igestionvol<vol> {
             System.out.println(ex.getMessage());
         }
     }
-        public int nbrvol(vol t){
+    
+//nombre de vol selon destination     
+    public int nbrvol(vol t){
             int nbr = 0;
             List<vol> list = new ArrayList<>();
              try{
@@ -80,27 +84,15 @@ public class Imvol implements Igestionvol<vol> {
             ResultSet rs = pst.executeQuery();
             System.out.println("nbr vol modifiée !"+ rs);
              while(rs.next()) {
-              
-                       nbr= rs.getInt(1);
-                       
-            }
-            
-            
-            
-        } catch (SQLException ex) {
+                nbr= rs.getInt(1);          
+            }     
+            } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }
-            
-             return nbr;
-        
-        
-        
-        
-        
-        
-        
-        }
-        public void modifier2(vol t) {
+            }
+             return nbr;  
+            }
+//Modifier vol avec 9 champs    
+    public void modifier2(vol t) {
          try{
             String req = "UPDATE vol SET dateallervol=?,tempallervol=?,dateretourvol=?,tempretourvol=?,destination=?,classvol=?,prixvol=?,typevol=? WHERE numvol=?";
             PreparedStatement pst = cnx.prepareStatement(req);
@@ -121,6 +113,7 @@ public class Imvol implements Igestionvol<vol> {
         }
     }
 
+//supprimer vol    
     @Override
     public void supprimer(vol t) {
          try {
@@ -134,10 +127,10 @@ public class Imvol implements Igestionvol<vol> {
         }
     }
 
+//Afficher liste des vol    
     @Override
     public List<vol> afficher() {
         List<vol> list = new ArrayList<>();
-        
         try {
             String req = "SELECT * from vol";
             PreparedStatement pst = cnx.prepareStatement(req);
@@ -156,33 +149,27 @@ public class Imvol implements Igestionvol<vol> {
                         rs.getString(9),
                         rs.getInt(10),
                         rs.getInt(11)));
-            }
-           
+            } 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
         return list;
     }
 
-    
+//chercher vol a partir de l'id
     public void recherche(int id) {
          List<vol> list1= new ArrayList<>();
          List<vol> list2= afficher();
-        
          list1= list2.stream().filter(c -> c.getNumvol()==id).collect(Collectors.toList());
          System.out.println(list1); 
         
     }
 
-    
+//tri vol selon class    
     public void tri() {
          List<vol> list1= new ArrayList<>();
          List<vol> list2= afficher();
-         
          list1= list2.stream().sorted((o1,o2)->o1.getClassvol().compareTo(o2.getClassvol())).collect(Collectors.toList());
          System.out.println(list1);
-    }
-
-
-    
+    }   
 }

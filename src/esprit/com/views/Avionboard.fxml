@@ -37,9 +37,8 @@
       <Text fill="#4349a3" layoutX="560.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chercher :" wrappingWidth="71.9999960064888" />
       <ComboBox fx:id="combo" layoutX="323.0" layoutY="142.0" onAction="#trie" prefHeight="31.0" prefWidth="221.0" promptText="choisir votre choix de trie" />
       <TextField fx:id="chercher" layoutX="654.0" layoutY="142.0" />
-      <Button layoutX="1077.0" layoutY="787.0" mnemonicParsing="false" onAction="#retour" text="retour au menu" textFill="WHITE" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1242.0" />
-      <FontAwesomeIconView fill="#fcfcfc" glyphName="ARROW_LEFT" layoutX="22.0" layoutY="52.0" size="40" />
+      <FontAwesomeIconView fill="#fcfcfc" glyphName="ARROW_LEFT" layoutX="22.0" layoutY="52.0" onMouseClicked="#retour" size="40" text="" />
       <Text fill="WHITE" layoutX="441.0" layoutY="56.0" lineSpacing="50.0" strokeType="OUTSIDE" strokeWidth="40.0" text="Liste des  avions" wrappingWidth="384.857421875">
          <font>
             <Font name="Arial Rounded MT Bold" size="44.0" />

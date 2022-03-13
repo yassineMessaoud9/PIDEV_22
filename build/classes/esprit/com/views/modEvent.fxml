@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="703.0" prefWidth="852.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="esprit.com.views.ModEventController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4349a3" height="101.0" stroke="TRANSPARENT" strokeType="INSIDE" width="852.0" />
       <TextField fx:id="title" layoutX="143.0" layoutY="201.0" prefHeight="34.0" prefWidth="200.0" promptText="Titre" />
